@@ -1,16 +1,3 @@
-/* css/style.css */
-#chile-map {
-    margin: 0 auto;
-    display: block;
-}
-
-.region {
-    transition: all 0.3s ease;
-    stroke: #fff;
-    stroke-width: 1px;
-}
-
-.region:hover {
-    opacity: 0.8;
-    transform: scale(1.01);
-}
+.btn-region {
+    @apply bg-gradient-to-r from-cyan-400 to-blue-600 text-white font-bold px-6 py-2 rounded-full shadow-lg;
+  }
