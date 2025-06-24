@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PARK by Vaala</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/main.js"></script>
+    <!-- jVectorMap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.css" rel="stylesheet" />
+
+    <!-- jQuery y jVectorMap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/tests/assets/jquery-jvectormap-cl-mill.js"></script>
+
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-10" />
+
+            </div>
+            <nav class="hidden md:flex space-x-6 font-semibold text-sm text-cyan-800">
+                <a href="index.html" class="text-cyan-600 border-b-2 border-cyan-600">INICIO</a>
+                <a href="nosotros.html">NOSOTROS</a>
+                <a href="reconocimientos.html">RECONOCIMIENTOS</a>
+                <a href="contactanos.html">CONTACTO</a>
+            </nav>
+        </div>
+    </header>  
+
+<section class="bg-gradient-to-br from-[#0094e8] to-[#36d2ff] py-20 px-6">
+  <div class="bg-white max-w-6xl mx-auto rounded-3xl shadow-2xl p-10 grid md:grid-cols-2 gap-10 items-center">
+
+    <!-- Texto Izquierdo -->
+    <div>
+      <h2 class="text-4xl md:text-5xl font-extrabold leading-tight text-[#003366] mb-6">
+        HABLEMOS<br />
+        DE COMO <span class="text-[#36d2ff]">PARK</span><br />
+        PUEDE <span class="text-[#003366]">ADAPTARSE</span><br />
+        A <span class="text-[#003366]">TU ESPACIO</span>
+      </h2>
+      <p class="text-[#36d2ff] font-semibold text-sm md:text-base">
+        EN UN <span class="font-bold">PLAZO MÁXIMO DE 24 HORAS HÁBILES</span> RECIBIRÁS UNA RESPUESTA Y,<br />
+        SI CORRESPONDE, UN <span class="font-bold">LINK PARA AGENDAR UNA REUNIÓN.</span>
+      </p>
+    </div>
+
+    <!-- Formulario Derecho -->
+    <form class="space-y-4">
+      <input type="text" placeholder="INGRESA TU NOMBRE*" class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-blue-700 text-blue-900 font-semibold" />
+      <input type="text" placeholder="INGRESA TU COMUNA*" class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-blue-700 text-blue-900 font-semibold" />
+      <input type="email" placeholder="INGRESA TU E-MAIL*" class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-blue-700 text-blue-900 font-semibold" />
+      <input type="tel" placeholder="INGRESA TU TELÉFONO*" class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-blue-700 text-blue-900 font-semibold" />
+      <textarea placeholder="INGRESA TU MENSAJE..." rows="4" class="w-full rounded-3xl px-6 py-4 bg-blue-100 placeholder-blue-700 text-blue-900 font-semibold resize-none"></textarea>
+      <button type="submit" class="bg-gradient-to-r from-[#007ACC] to-[#36d2ff] text-white font-extrabold py-3 px-10 rounded-full shadow-md hover:opacity-90">
+        ENVIAR
+      </button>
+    </form>
+
+  </div>
+</section>
+
+
+
+</body>
+</html>
