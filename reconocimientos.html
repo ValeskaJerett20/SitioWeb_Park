@@ -10,10 +10,8 @@
     <!-- jVectorMap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.css" rel="stylesheet" />
 
-    <!-- jQuery y jVectorMap JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/tests/assets/jquery-jvectormap-cl-mill.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
 
 
 </head>
@@ -33,111 +31,101 @@
                 <a href="contactanos.html">CONTACTO</a>
             </nav>
         </div>
-    </header>  
+    </header>
 </body>
 <section class="bg-gradient-to-r from-[#0094e8] to-[#36d2ff] py-20 px-6">
-  <div class="max-w-6xl mx-auto text-left text-white">
-    <!-- Badge actualizado con degradado y texto blanco -->
-    <div class="inline-block px-6 py-2 rounded-md font-extrabold text-white bg-gradient-to-r from-[#36d2ff] to-[#007ACC] shadow mb-6">
-      SEGUIMOS AVANZANDO
-    </div>
+    <div class="max-w-6xl mx-auto text-left text-white">
+        <!-- Badge actualizado con degradado y texto blanco -->
+        <div
+            class="inline-block px-6 py-2 rounded-md font-extrabold text-white bg-gradient-to-r from-[#36d2ff] to-[#007ACC] shadow mb-6">
+            SEGUIMOS AVANZANDO
+        </div>
 
-    <!-- Texto principal -->
-    <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">
-      HEMOS GANADO<br />
-      <span class="text-[#94E6FF]">EL PREMIO ASIVA<br />2025</span> EN LA<br />
-      CATEGORÍA DE <span class="text-[#94E6FF]">INNOVACIÓN</span>
-    </h2>
-  </div>
+        <!-- Texto principal -->
+        <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">
+            HEMOS GANADO<br />
+            <span class="text-[#94E6FF]">EL PREMIO ASIVA<br />2025</span> EN LA<br />
+            CATEGORÍA DE <span class="text-[#94E6FF]">INNOVACIÓN</span>
+        </h2>
+    </div>
 </section>
 
-<!-- <style>
-  @keyframes moveBackground {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 300px 300px;
-    }
+
+<section id="confetti-section" class="relative py-20 overflow-hidden bg-[#f8f9fa] text-center">
+    <!-- Canvas para confetti -->
+    <canvas id="confetti-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
+    <!-- Contenido principal -->
+    <div class="relative z-10 max-w-3xl mx-auto px-4">
+        <!-- Frase 1 -->
+        <div
+            class="inline-block px-6 py-2 rounded-md font-extrabold text-white bg-gradient-to-r from-[#36d2ff] to-[#007ACC] shadow mb-2 text-sm md:text-base">
+            ESTE RECONOCIMIENTO NO SOLO CELEBRA
+        </div><br>
+        <!-- Frase 2 -->
+        <div
+            class="inline-block px-6 py-2 rounded-md font-extrabold text-white bg-gradient-to-r from-[#36d2ff] to-[#007ACC] shadow mb-6 text-sm md:text-base">
+            UNA INICIATIVA EN PARTICULAR...
+        </div>
+
+        <!-- Texto principal -->
+        <h2 class="text-2xl md:text-3xl font-extrabold text-[#003366] leading-tight mb-8">
+            ES UNA PRUEBA CONCRETA DE QUE<br />
+            CUANDO TRABAJAMOS EN EQUIPO, NOS<br />
+            ATREVEMOS A PENSAR DISTINTO Y<br />
+            APOSTAMOS POR HACER LAS COSAS<br />
+            MEJOR, LOS RESULTADOS LLEGAN.
+        </h2>
+
+        <!-- Botón -->
+        <a href="#!"
+            class="inline-block px-8 py-3 text-white font-extrabold text-lg rounded-md bg-gradient-to-r from-[#0094e8] to-[#36d2ff] shadow">
+            ¡VAMOS POR MÁS!
+        </a>
+    </div>
+</section> 
+
+<script>
+  const confettiCanvas = document.getElementById('confetti-canvas');
+  const myConfetti = confetti.create(confettiCanvas, { resize: true, useWorker: true });
+
+  const gradientBlues = ['#007ACC', '#0094e8', '#36d2ff', '#94E6FF'];
+
+   function launchConfetti() {
+    myConfetti({
+      particleCount: 100,
+      spread: 120,
+      origin: { y: 0.5 },
+      colors: gradientBlues,
+      gravity: 0.4 // 🎯 Aquí haces que caigan más lento
+    });
   }
 
-  .confetti-animated-bg {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABMsAAAIFCAIAAABDPe0LAAAgAElEQVR4Aey9aZdVRdY1KqA0Io10giACKo0gIIpfn0/3jjvuL3g+P5/uGDXecb/c933rKbXKKkurbMrSskAUpRdBBEEQFJFOWqUX6TtpsyXzZJ8nm3PHWisidkTs2Gefk5...");
-    background-repeat: repeat;
-    background-size: 300px;
-    animation: moveBackground 40s linear infinite;
-  }
-</style>
+  // Detecta si la sección está en pantalla
+  let isInView = false;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !isInView) {
+        isInView = true;
+        launchConfetti();
+        const interval = setInterval(() => {
+          if (isInView) launchConfetti();
+          else clearInterval(interval);
+        }, 5000);
+      } else if (!entry.isIntersecting) {
+        isInView = false;
+      }
+    });
+  }, { threshold: 0.5 });
 
-<section class="relative confetti-animated-bg py-24 px-6 text-center">
-  <div class="max-w-3xl mx-auto z-10 relative">
-    Franja superior
-    <div class="inline-block bg-gradient-to-r from-[#36d2ff] to-[#007ACC] text-white font-extrabold text-sm md:text-base px-4 py-2 rounded-md mb-4 shadow">
-      ESTE RECONOCIMIENTO NO SOLO CELEBRA<br />UNA INICIATIVA EN PARTICULAR...
-    </div>
-
-    <!- Texto principal -->
-    <!-- <p class="text-[#003F6B] font-extrabold text-2xl md:text-3xl leading-snug mb-10">
-      ES UNA PRUEBA CONCRETA DE QUE<br />
-      CUANDO TRABAJAMOS EN EQUIPO, NOS<br />
-      ATREVEMOS A PENSAR DISTINTO Y<br />
-      APOSTAMOS POR HACER LAS COSAS<br />
-      MEJOR, LOS RESULTADOS LLEGAN.
-    </p> -->
-
-    <!-- Botón -->
-    <!-- <div class="inline-block bg-gradient-to-r from-[#007ACC] to-[#36d2ff] text-white font-extrabold text-xl px-8 py-3 rounded-md shadow">
-      ¡VAMOS POR MÁS!
-    </div>
-  </div>
-</section> --> 
+  observer.observe(document.getElementById('confetti-section'));
+</script>
 
 
-<section class="relative py-20 overflow-hidden bg-[#f8f9fa] text-center">
-  <!-- Confeti animado SVG -->
-  <img src="assets/img/confeti.svg" alt="Confeti" class="absolute inset-0 w-full h-full object-cover z-0 animate-float pointer-events-none" />
 
-  <!-- Contenido en primer plano -->
-  <div class="relative z-10 max-w-3xl mx-auto px-4">
-    <!-- Frase 1 -->
-    <div class="inline-block px-6 py-2 rounded-md font-extrabold text-white bg-gradient-to-r from-[#36d2ff] to-[#007ACC] shadow mb-2 text-sm md:text-base">
-      ESTE RECONOCIMIENTO NO SOLO CELEBRA
-    </div>
-<br>
-    <!-- Frase 2 -->
-    <div class="inline-block px-6 py-2 rounded-md font-extrabold text-white bg-gradient-to-r from-[#36d2ff] to-[#007ACC] shadow mb-6 text-sm md:text-base">
-      UNA INICIATIVA EN PARTICULAR...
-    </div>
-
-    <!-- Texto principal -->
-    <h2 class="text-2xl md:text-3xl font-extrabold text-[#003366] leading-tight mb-8">
-      ES UNA PRUEBA CONCRETA DE QUE<br />
-      CUANDO TRABAJAMOS EN EQUIPO, NOS<br />
-      ATREVEMOS A PENSAR DISTINTO Y<br />
-      APOSTAMOS POR HACER LAS COSAS<br />
-      MEJOR, LOS RESULTADOS LLEGAN.
-    </h2>
-
-    <!-- Botón -->
-    <a href="#!" class="inline-block px-8 py-3 text-white font-extrabold text-lg rounded-md bg-gradient-to-r from-[#0094e8] to-[#36d2ff] shadow">
-      ¡VAMOS POR MÁS!
-    </a>
-  </div>
-</section>
-
-<!-- Animación CSS -->
-<style>
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
-  100% { transform: translateY(0); }
-}
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-</style>
 
 </body>
+
 </html>
 
 
