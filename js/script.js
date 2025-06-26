@@ -1,9 +1,17 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleBtn = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (toggleBtn && mobileMenu) {
+        toggleBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    }
     // Crear instancia del mapa
     const map = new Datamap({
         element: document.getElementById('chile-map'),
         scope: 'chl',
-        setProjection: function(element) {
+        setProjection: function (element) {
             const projection = d3.geo.mercator()
                 .center([-71, -38])
                 .scale(1200)
