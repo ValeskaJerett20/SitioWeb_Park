@@ -1,13 +1,9 @@
-<!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestra Red</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -20,70 +16,22 @@
             min-height: 100vh;
             background-color: #f0f0f0;
         }
-
         .section-background {
             background: linear-gradient(to bottom right, #e0e0e0, #f8f8f8);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             position: relative;
-            /* Essential for absolute positioning of cards on mobile */
             overflow: hidden;
-            /* Flex properties for desktop layout */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
-
-        /* Desktop layout for the main section */
-        @media (min-width: 1024px) {
-
-            /* lg breakpoint */
-            .section-background {
-                flex-direction: row;
-                justify-content: center;
-                gap: 8rem;
-                /* Adjusted gap for desktop between title/cards and map */
-            }
-        }
-
         .region-box {
-
-            background: linear-gradient(to bottom right, #33CCFF, #1A99D9);
-            /* Light to dark blue gradient */
+            background-color: #33CCFF;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
             animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
-            /* Default small size for mobile */
-            padding: 0.75rem 1.5rem;
-            /* p-3 for mobile, smaller padding */
-            font-size: 0.875rem;
-            /* text-sm for mobile, smaller font */
-            width: auto;
-            /* Allow cards to shrink */
         }
-
-        /* Larger size for desktop region boxes */
-        @media (min-width: 1024px) {
-
-            /* lg breakpoint */
-            .region-box {
-                padding: 1.5rem 4rem;
-                /* p-6 for desktop */
-                font-size: 1.125rem;
-                /* text-lg for desktop */
-                width: 100%;
-                /* w-full for desktop */
-                max-width: 12rem;
-                /* max-w-xs from previous, adjust as needed */
-            }
-        }
-
-
         .region-box:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 15px 30px rgba(51, 204, 255, 0.4);
             animation: none;
         }
-
         .lines-canvas {
             position: absolute;
             top: 0;
@@ -93,75 +41,60 @@
             pointer-events: none;
             z-index: 5;
         }
-
         .cls-1,
         .cls-2 {
             fill: #3CF;
         }
-
         .cls-1,
         .cls-3 {
             stroke: #F2F2F2;
             stroke-linecap: round;
             stroke-linejoin: round;
         }
-
         .cls-4 {
             fill: #E5E5E5;
         }
-
         .cls-3 {
             fill: #969696;
         }
-
         .cls-5 {
             fill: none;
             stroke: #3CF;
             stroke-miterlimit: 10;
         }
-
         .map-region-path {
             stroke: white;
             stroke-width: 1.5;
             transition: fill 0.3s ease-in-out, transform 0.2s ease-in-out;
             transform-origin: center;
         }
-
         .map-region-path.highlighted {
             fill: #33CCFF;
         }
-
         .map-region-path.highlighted:hover {
             fill: #13a7d8;
-            transform: scale(1.08);
-            /* Reduced scale for less aggressive hover */
-            /* Removed margin-left to prevent CLS */
+            transform: scale(1.15);
+            margin-left: 10px;
         }
-
         .map-region-path.normal {
             fill: #969696;
         }
-
         .map-region-path:hover,
         .map-region-path.hover-active {
             fill: #acacac;
             transform: scale(1.03);
             cursor: pointer;
         }
-
         @keyframes pulse {
-
             0%,
             100% {
                 transform: scale(1);
             }
-
             50% {
                 transform: scale(1.03);
                 box-shadow: 0 0 0 5px rgba(51, 204, 255, 0.2);
             }
         }
-
         @keyframes drawLine {
             0% {
                 stroke-dashoffset: 1000;
@@ -173,76 +106,38 @@
         }
     </style>
 </head>
-
 <body class="bg-gray-50 flex items-center justify-center p-4">
-
     <section id="main-network-section"
-        class="section-background rounded-2xl p-8 lg:p-12 max-w-7xl mx-auto my-8 w-full shadow-lg">
-        <!-- Contenedor del título "Nuestra Red" -->
-        <div class="p-8 rounded-full bg-white shadow-md flex items-center justify-center max-w-xs w-full mx-auto py-8 px-16 mb-10 lg:mb-0 lg:mr-16 text-center relative z-10">
-            <h1 class="text-4xl lg:text-5xl font-extrabold text-blue-700 tracking-wide uppercase text-centerleading-tight">
-                NUESTRA<br>RED
+        class="section-background rounded-2xl max-w-7xl mx-auto my-8 w-full flex flex-col lg:flex-row lg:justify-center items-center shadow-lg relative">
+
+        <div
+            class="p-8 border-2 border-[#33CCFF] rounded-full bg-white shadow-md flex items-center justify-center max-w-xs w-full mx-auto py-8 px-16 mb-10 lg:mb-0 lg:mr-16 text-center relative z-10">
+            <h1 class="text-4xl lg:text-5xl font-bold text-[#006699] tracking-wide uppercase text-center leading-tight">
+                NUESTRA<br> RED
             </h1>
         </div>
-
-        <!-- Canvas para las líneas de conexión (colocado aquí para cubrir toda la sección) -->
         <canvas id="linesCanvas" class="lines-canvas"></canvas>
-
-        <!-- Contenedor de las cajas de región para escritorio -->
-        <!-- Se muestra solo en pantallas grandes (lg y superiores) -->
         <div
-            class="hidden lg:flex lg:flex-col lg:items-center lg:justify-center lg:gap-8 lg:mb-0 lg:mr-16 lg:w-full lg:max-w-xs relative z-10">
-            <div id="valparaiso-box-desktop"
+            class="flex flex-col items-center justify-center gap-8 mb-12 lg:mb-0 lg:mr-16 w-full max-w-xs relative z-10">
+            <div id="valparaiso-box"
                 class="region-box p-6 rounded-full shadow-lg text-white font-semibold text-lg text-center w-full">
                 Valparaíso
             </div>
-            <div id="metropolitana-box-desktop"
+            <div id="metropolitana-box"
                 class="region-box p-6 rounded-full shadow-lg text-white font-semibold text-lg text-center w-full">
                 Metropolitana
             </div>
-            <div id="ohiggins-box-desktop"
+            <div id="ohiggins-box"
                 class="region-box p-6 rounded-full shadow-lg text-white font-semibold text-lg text-center w-full">
                 O'Higgins
             </div>
-            <div id="araucania-box-desktop"
+            <div id="araucania-box"
                 class="region-box p-6 rounded-full shadow-lg text-white font-semibold text-lg text-center w-full">
                 Araucanía
             </div>
         </div>
-
-        <!-- Cajas de Región para móvil - Absolutamente posicionadas -->
-        <!-- Se muestran en pantallas pequeñas (hasta lg) y se ocultan en lg y superiores -->
-        <!-- Valparaíso - Mobile -->
-        <div id="valparaiso-box-mobile"
-            class="region-box absolute sm:block lg:hidden text-sm font-semibold text-white text-center rounded-full shadow-lg z-10"
-            style="top: 25%; left: 5%; transform: translateY(-50%);">
-            Valparaíso
-        </div>
-
-        <!-- Metropolitana - Mobile -->
-        <div id="metropolitana-box-mobile"
-            class="region-box absolute sm:block lg:hidden text-sm font-semibold text-white text-center rounded-full shadow-lg z-10"
-            style="top: 25%; right: 5%; transform: translateY(-50%);">
-            Metropolitana
-        </div>
-
-        <!-- O'Higgins - Mobile -->
-        <div id="ohiggins-box-mobile"
-            class="region-box absolute sm:block lg:hidden text-sm font-semibold text-white text-center rounded-full shadow-lg z-10"
-            style="top: 75%; left: 5%; transform: translateY(-50%);">
-            O'Higgins
-        </div>
-
-        <!-- Araucanía - Mobile -->
-        <div id="araucania-box-mobile"
-            class="region-box absolute sm:block lg:hidden text-sm font-semibold text-white text-center rounded-full shadow-lg z-10"
-            style="top: 75%; right: 5%; transform: translateY(-50%);">
-            Araucanía
-        </div>
-
-        <!-- Contenedor del mapa SVG -->
         <div
-            class="map-svg-container w-full max-w-sm lg:max-w-lg aspect-[807.47/896.96] relative flex justify-center items-center overflow-hidden ">
+            class="map-svg-container w-full max-w-xs lg:max-w-md aspect-[807.47/896.96] relative flex justify-center items-center overflow-hidden ">
             <svg id="chileMap" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 807.47 896.96"
                 class="w-full h-full relative z-10">
                 <defs>
@@ -276,7 +171,7 @@
                     <path id="path-losrios" class="map-region-path normal"
                         d="M326.56,636.18c.91,1.56.87,3.46.81,5.27-.1,2.84-.19,5.67-.27,8.51-1.87-.33-3.57-1.33-4.01-3.11-.14-.52-.15-1.08-.48-1.51-.79-.95-2.35-.21-3.57-.44-2.07-.37-2.49-3.22-4.09-4.55-1.54-1.29-3.92-.93-5.67.08-.6.35-1.16.75-1.7,1.18-1.06-1.51-2.57-2.88-1.89-4.46.39-.87,1.31-1.33,1.91-2.07.68-.87.83-2.01,1.24-3.03.41-1,1.31-2.03,2.39-1.85-2.47-2.16-3.67-5.67-3.07-8.9.31-1.7,1.08-3.46.52-5.08-.35-.98-1.18-1.95-.87-2.95.37-1.22,2.24-1.72,2.18-2.99-.04-1.12-1.58-1.56-2.08-2.57-1.39-2.78,5.56-4.5,4.25-7.3-1.2,1.22-2.72,2.1-4.38,2.53,0-1.45-.37-2.91-1.08-4.21-1.6-.89-3.13,1.41-3.22,3.24-.1,1.81-.06,4.15-1.74,4.84-.31-1.78-3.4-1.97-3.92-.25-.5,1.58.97,2.99,1.97,4.3,1,1.31,1.22,3.8-.42,4.07-.5.1-1.12-.06-1.43.35-.31.42.06,1,.17,1.52.25,1.22-1.49,2.24-2.41,1.43-.56,1.35.04,2.95,1.06,4,1,1.04,2.37,1.64,3.73,2.24-1.02,1.54-1.66,3.05-2.2,4.83-1.12,3.69-.75,7.84-2.53,11.27-1.76,3.44-7.35,5.23-9.26,1.87-1.47-9.98.87-23.34,4.96-34.01,1.74-4.48,1.04-9.44-1.7-13.38-2.53-3.65-3.26-7.72-2.08-13.22.5-2.37,1.16-4.69,1.85-7.01,1.93-.42,4-.17,5.66.93.6.39,1.18.87,1.89.87.6-.02,1.14-.39,1.7-.64,1.51-.66,3.44-.17,4.48,1.12.5.62.81,1.41,1.45,1.87.69.52,1.64.54,2.51.56,2.41.02,4.84.04,7.26.06.56.02,1.16,0,1.58-.33.37-.27.56-.71.83-1.08,1-1.33,2.91-1.45,4.57-1.62,1.43-.13,2.84-.41,4.23-.77-.71,4.65-2.37,9.5-3.22,13.72-.52,2.55-1.18,5.13-.77,7.7.58,3.82,3.34,6.87,4.86,10.42,2.14,5.04,1.58,11.14-1.45,15.69-.44.66-.98,1.33-1.74,1.58-.81.27-1.72,0-2.55.21-2.47.62-1.99,4.52-.1,6.23,1.89,1.7,4.61,2.59,5.87,4.81Z" />
                     <path id="path-loslagos" class="map-region-path normal"
-                        d="M335.86,664.23c-2.35,1.33-5.27,1.1-7.86,1.93-2.57.83-4.96,3.82-3.47,6.1,2.28.02,4.56.06,6.83.1,2.1,4.48,1.95,9.96-.44,14.3-1.16,2.12-2.88,4.21-2.59,6.6.37,3.28,4.28,5.17,4.96,8.42.75,3.67-2.93,6.64-4.3,10.13-1.68,4.34.02,10.09-3.38,13.28-1.25,1.16-3.01,1.74-4.05,3.11-2.78,3.57-1.49,8.8.33,13.18-.68,2.51-2.97,4.19-4.83,6-1.22,1.22-2.26,2.57-3.11,4.03-1.29-2.57-4.01-4.48-6.93-4.46-2.3.02-4.65,1.02-6.79.23-1.37-.52-2.45-1.72-3.88-2.01-2.28-.46-4.54,2.24-3.67,4.42.27.66.77,1.27.71,1.97-.12,1.81-3.15,1.81-3.92,3.46-.97,2.12,2.66,4.56,1.39,6.5-.27.41-.69.66-1.12.91-.93.54-1.87,1.1-2.8,1.64-.75-1.52-1.24-3.13-1-4.77.1-.79.37-1.62.04-2.34-.87-1.85-4.05-.52-5.52-1.91-1.81-1.72.85-5.19-.75-7.1-.35-.42-.87-.68-1.2-1.14-.93-1.25.23-2.99.27-4.56.02-1.37-.83-2.57-1.47-3.78-.64-1.2-1.06-2.78-.23-3.86.91-1.22,2.72-1.1,4.21-.87-.54-.89.12-2.07,1-2.59.89-.54,1.95-.68,2.9-1.12.66-.33,1.25-.79,1.97-1,.69-.23,1.6-.08,1.95.58.25.48.12,1.06,0,1.6-.23,1.14-.27,2.34-.14,3.49.1.95.91,2.16,1.7,1.64-.25-1.62-.14-2.78.62-4.23.33-.62.89-1.12,1.54-1.33-1.7-1.49,2.05-4.3.89-6.23-.5-.81-1.76-1.14-1.87-2.07-.04-.39.14-.73.29-1.08,1.58-3.2,3.76-6.14,6.37-8.59-.12-1.45-.27-3.01-1.25-4.05-.98-1.04-3.11-1.06-3.59.31-.17.44-.14.98-.41,1.37-.48.68-1.56.48-2.22-.02-.64-.52-1.1-1.25-1.83-1.66-2.24-1.25-5.52,1.37-7.41-.35.54-1.56,1.08-3.13,1.62-4.69-1.66,1.47-3.34,2.93-5.02,4.38-.46.42-.97.91-1,1.52-.02.33.1.66.08,1-.02.95-1.16,1.56-2.07,1.31-.91-.25-1.54-1.14-1.8-2.05-.48-1.62.04-3.51,1.29-4.67.68-.62,1.51-1.02,2.12-1.7,1.27-1.39,1.35-3.69,2.88-4.79,1.31-.98,3.45-.85,4.21-2.3.33-.6.29-1.33.29-2.01-.02-2.28.77-5.04,2.99-5.58-.04.79-.08,1.6.27,2.3.35.69,1.22,1.2,1.91.87,1.51-.69.1-3.18.95-4.61.58.56,1.62.33,2.16-.27.56-.6.75-1.43.95-2.22.46-2.01.91-4.27-.12-6.06-.37-.66-.93-1.22-1.18-1.93-.21-.64-.15-1.35-.15-2.05.06-2.49-.46-5-1.51-7.26-.42-.93-.95-1.91-.75-2.91.29-1.64,2.41-2.39,4-1.83,1.56.56,2.66,1.99,3.61,3.36.54.79,1.08,1.66,1.1,2.62.02.58-.17,1.22.06,1.76.25.54.83.83,1.25,1.24,1.1,1.06,1.1,2.82.83,4.34-.25,1.51-.66,3.09-.12,4.54.54,1.43,2.61,2.35,3.65,1.24.83-.89.41-2.45-.54-3.22-.42-.37-.97-.64-1.27-1.12-.73-1.2.39-2.61,1.12-3.82,1.2-2.01,1.27-4.63.19-6.72-.29-.58-.69-1.16-.79-1.79-.19-1.27.77-2.41,1.66-3.34-.95-.06-1.12-1.52-.48-2.22.64-.71,1.64-.91,2.51-1.31.85-.41,1.7-1.25,1.43-2.16-.33-1.16-1.99-1.24-2.78-2.12-.95-1.04-.35-2.68.29-3.94.73-1.47,1.47-2.91,2.2-4.36.29-.58.6-1.2.62-1.83.04-.87-.37-1.66-.89-2.41.54-.42,1.1-.83,1.7-1.18,1.76-1,4.13-1.37,5.67-.08,1.6,1.33,2.03,4.19,4.09,4.55,1.22.23,2.78-.5,3.57.44.33.42.35.98.48,1.51.44,1.78,2.14,2.78,4.01,3.11-.06,1.74-.12,3.47-.17,5.19,2.95,1.72,6.35,2.61,9.75,2.61,2.51,1.02,1.54,5.13-.81,6.47Z" />
+                        d="M335.86,664.23c-2.35,1.33-5.27,1.1-7.86,1.93-2.57.83-4.96,3.82-3.47,6.1,2.28.02,4.56.06,6.83.1,2.1,4.48,1.95,9.96-.44,14.3-1.16,2.12-2.88,4.21-2.59,6.6.37,3.28,4.28,5.17,4.96,8.42.75,3.67-2.93,6.64-4.3,10.13-1.68,4.34.02,10.09-3.38,13.28-1.25,1.16-3.01,1.74-4.05,3.11-2.78,3.57,1.49,8.8.33,13.18-.68,2.51-2.97,4.19-4.83,6-1.22,1.22-2.26,2.57-3.11,4.03-1.29-2.57-4.01-4.48-6.93-4.46-2.3.02-4.65,1.02-6.79.23-1.37-.52-2.45-1.72-3.88-2.01-2.28-.46-4.54,2.24-3.67,4.42.27.66.77,1.27.71,1.97-.12,1.81-3.15,1.81-3.92,3.46-.97,2.12,2.66,4.56,1.39,6.5-.27.41-.69.66-1.12.91-.93.54-1.87,1.1-2.8,1.64-.75-1.52-1.24-3.13-1-4.77.1-.79.37-1.62.04-2.34-.87-1.85-4.05-.52-5.52-1.91-1.81-1.72.85-5.19-.75-7.1-.35-.42-.87-.68-1.2-1.14-.93-1.25.23-2.99.27-4.56.02-1.37-.83-2.57-1.47-3.78-.64-1.2-1.06-2.78-.23-3.86.91-1.22,2.72-1.1,4.21-.87-.54-.89.12-2.07,1-2.59.89-.54,1.95-.68,2.9-1.12.66-.33,1.25-.79,1.97-1,.69-.23,1.6-.08,1.95.58.25.48.12,1.06,0,1.6-.23,1.14-.27,2.34-.14,3.49.1.95.91,2.16,1.7,1.64-.25-1.62-.14-2.78.62-4.23.33-.62.89-1.12,1.54-1.33-1.7-1.49,2.05-4.3.89-6.23-.5-.81-1.76-1.14-1.87-2.07-.04-.39.14-.73.29-1.08,1.58-3.2,3.76-6.14,6.37-8.59-.12-1.45-.27-3.01-1.25-4.05-.98-1.04-3.11-1.06-3.59.31-.17.44-.14.98-.41,1.37-.48.68-1.56.48-2.22-.02-.64-.52-1.1-1.25-1.83-1.66-2.24-1.25-5.52,1.37-7.41-.35.54-1.56,1.08-3.13,1.62-4.69-1.66,1.47-3.34,2.93-5.02,4.38-.46.42-.97.91-1,1.52-.02.33.1.66.08,1-.02.95-1.16,1.56-2.07,1.31-.91-.25-1.54-1.14-1.8-2.05-.48-1.62.04-3.51,1.29-4.67.68-.62,1.51-1.02,2.12-1.7,1.27-1.39,1.35-3.69,2.88-4.79,1.31-.98,3.45-.85,4.21-2.3.33-.6.29-1.33.29-2.01-.02-2.28.77-5.04,2.99-5.58-.04.79-.08,1.6.27,2.3.35.69,1.22,1.2,1.91.87,1.51-.69.1-3.18.95-4.61.58.56,1.62.33,2.16-.27.56-.6.75-1.43.95-2.22.46-2.01.91-4.27-.12-6.06-.37-.66-.93-1.22-1.18-1.93-.21-.64-.15-1.35-.15-2.05.06-2.49-.46-5-1.51-7.26-.42-.93-.95-1.91-.75-2.91.29-1.64,2.41-2.39,4-1.83,1.56.56,2.66,1.99,3.61,3.36.54.79,1.08,1.66,1.1,2.62.02.58-.17,1.22.06,1.76.25.54.83.83,1.25,1.24,1.1,1.06,1.1,2.82.83,4.34-.25,1.51-.66,3.09-.12,4.54.54,1.43,2.61,2.35,3.65,1.24.83-.89.41-2.45-.54-3.22-.42-.37-.97-.64-1.27-1.12-.73-1.2.39-2.61,1.12-3.82,1.2-2.01,1.27-4.63.19-6.72-.29-.58-.69-1.16-.79-1.79-.19-1.27.77-2.41,1.66-3.34-.95-.06-1.12-1.52-.48-2.22.64-.71,1.64-.91,2.51-1.31.85-.41,1.7-1.25,1.43-2.16-.33-1.16-1.99-1.24-2.78-2.12-.95-1.04-.35-2.68.29-3.94.73-1.47,1.47-2.91,2.2-4.36.29-.58.6-1.2.62-1.83.04-.87-.37-1.66-.89-2.41.54-.42,1.1-.83,1.7-1.18,1.76-1,4.13-1.37,5.67-.08,1.6,1.33,2.03,4.19,4.09,4.55,1.22.23,2.78-.5,3.57.44.33.42.35.98.48,1.51.44,1.78,2.14,2.78,4.01,3.11-.06,1.74-.12,3.47-.17,5.19,2.95,1.72,6.35,2.61,9.75,2.61,2.51,1.02,1.54,5.13-.81,6.47Z" />
                     <path id="path-aysen" class="map-region-path normal"
                         d="M388.75,859.31c-1.49.39-3.07.95-3.57-.33-.46-1.2,1.06-2.14,2.3-2.53-1.29-1.41-3.65-.75-5.23.31-1.58,1.04-3.22,2.45-5.11,2.22-.95-.14-1.81-.68-2.76-.77-1.68-.17-3.2,1.02-4.88,1.22-1.31.15-2.61-.33-3.82-.81-5.39-2.08-10.75-4.15-16.12-6.23-1.37-.52-2.8-1.06-4.27-1.02-1.93.06-4.27.98-5.52-.5-.44-.54-.62-1.31-1.18-1.72-.54-.39-1.24-.35-1.89-.31-2.72.19-5.44.41-8.16.6.39-2.07-1.43-3.84-3.2-4.94-1.78-1.1-3.86-2.1-4.65-4.03-.95-2.34.1-5.69-2.07-6.97-.62-.37-1.35-.44-2.05-.52-5.98-.71-11.74-3.22-16.33-7.1-.89-.75-1.68-2.32-.68-2.88.56-.31,1.24,0,1.8.31,6.62,3.67,13.82,6.27,21.25,7.7-.15-.95-.29-1.89-.44-2.82-2.49-1.64-5.31-2.74-8.24-3.24l2.63-3.15c-2.45-2.22-6.33-1.62-9.52-1.08-.39-.33-.5-.42-.89-.75.02-1.52.12-3.05.68-4.42.69-1.68,2.26-3.11,4.07-3.09-3.38-2.37-6.77-4.75-10.15-7.12-.48-.35-1.02-.75-1.14-1.35-.23-1.25,1.58-1.91,2.76-1.45,1.2.46,2.1,1.51,3.34,1.81,2.2.56,5.08-2.7,4.11-4.77-.85.27-1.68-.58-1.89-1.45-.19-.87-.02-1.78-.14-2.66-.12-.89-.71-1.85-1.6-1.85-1.39,0-1.7,1.99-2.8,2.86-1.81,1.43-4.5-.91-6.72-.23-1.35.42-2.08,1.85-3.07,2.88-1,1.02-2.97,1.52-3.67.29-.31-.56-.21-1.25.02-1.83.89-2.24,3.3-3.36,5.33-4.63.23-.14.5-.33.5-.6.04-.52-.68-.64-1.14-.87-.81-.41-.97-1.56-.54-2.34.42-.79,1.25-1.25,2.1-1.56,1.24-.46,2.57-.69,3.8-1.22,1.22-.54,2.37-1.47,2.68-2.76.42-1.76-.81-3.46-1.99-4.86-.31-.37-.62-.73-1.04-.97-1.04-.56-2.57-.15-3.28-1.1-.6-.79-.08-2.01.79-2.49.87-.46,1.91-.41,2.9-.35.48-.89-.62-1.89-1.64-1.99-1-.12-2.08.17-3.03-.23-1.33-.62-1.79-2.43-3.15-2.99-.81-.33-1.78-.12-2.55-.52-.52-.29-.87-.81-1.2-1.31-.54-.87-1.1-1.78-1.54-2.7.93-.54,1.87-1.1,2.8-1.64.42-.25.85-.5,1.12-.91,1.27-1.95-2.35-4.38-1.39-6.5.77-1.64,3.8-1.64,3.92-3.46.06-.69-.44-1.31-.71-1.97-.87-2.18,1.39-4.88,3.67-4.42,1.43.29,2.51,1.49,3.88,2.01,2.14.79,4.5-.21,6.79-.23,2.91-.02,5.64,1.89,6.93,4.46-4.71,8.07-3.86,19.38,2.68,26.23,3.2-1.2,6.39-2.41,9.59-3.61,1.62,5.33,3.22,10.67,4.84,16,.35,1.18.73,2.39,1.64,3.22.91.85,2.2,1.12,3.42,1.33,4.84.87,9.81,1.22,14.73,1.04-1.6,2.1.21,5.19,2.41,6.62,2.35,1.52,5.67,1.81,8.36,1.04,2.7-.77,5.17-2.18,7.87-2.91,2.91-.81,6.04-.79,8.96.02,1.6.46,3.13,1.16,4.77,1.45.37.06.73.12,1.08.14.31.52.64,1.02.97,1.52,1.31,1.99.23,4.67-2.1,5.19-1.62.37-3.18.52-4.44-.46-.66-.5-1.08-1.27-1.78-1.76-1.45-1.02-3.46-.44-5.15.15.15,2.35-.21,5.42-2.51,5.94-1.33.31-2.66-.48-4.01-.54-2.91-.12-4.88,2.95-7.6,4.01-1.6.64-3.74.73-4.48,2.32-.75,1.62.66,3.61-.02,5.25-.33.79-1.08,1.33-1.47,2.1-.97,1.99.93,4.13,1.25,6.33.25,1.78-.58,3.51-.77,5.31-.19,1.8.73,4.03,2.55,4.05,1.76.02,2.74-2.08,2.78-3.84.06-1.76-.35-3.65.5-5.19,2.59,1.37,2.93,4.84,3.32,7.74.37,2.9,1.81,6.41,4.75,6.49-.12-.66-.21-1.29-.31-1.95,3.73-.41,7.6.85,10.38,3.38.52.48,1.02,1,1.68,1.29,1.81.77,3.88-.79,4.56-2.63-4.23-1.58-8.43-3.17-12.64-4.75-1.97-.73-4.19-1.78-4.57-3.82-.39-2.07,1.41-3.94,3.34-4.73,1.93-.77,4.09-.87,6.04-1.66,1.14-1.7-1.62-3.63-3.61-3.13-1.99.5-3.65,2.1-5.71,2.24-2.07.14-4.03-1.37-4.81-3.32-.77-1.93-.5-4.15.31-6.08.46.41.91.83,1.37,1.24.77-.33,1.41-.95,1.79-1.7.69-1.14-2.18-.98-2.76-2.18-.6-1.18,1.47-1.76,2.8-1.66,4.57.31,9.23-2.32,11.31-6.41.87,1.06,1.76,2.12,2.64,3.18,2.07,1.37,4.56-3.42,6.56-1.97.35.25.56.62.71,1.02-2.03,1.51-3.53,3.4-3.42,5.83.06,1.62.91,3.13,1.08,4.73.23,2.24-.83,4.57-.19,6.74.46,1.6,1.76,2.78,2.76,4.11,2.63,3.49,3.26,8.09,3.26,12.47,0,4.15-.46,8.34.08,12.45Z" />
                     <path id="path-magallanes" class="map-region-path normal"
@@ -290,165 +185,79 @@
         const ctx = canvas.getContext('2d');
         const chileMap = document.getElementById('chileMap');
         const mainNetworkSection = document.getElementById('main-network-section');
-
-        // Define region box IDs for desktop and mobile layouts
-        const desktopRegionBoxes = {
-            'Valparaíso': document.getElementById('valparaiso-box-desktop'),
-            'Metropolitana': document.getElementById('metropolitana-box-desktop'),
-            'O\'Higgins': document.getElementById('ohiggins-box-desktop'),
-            'Araucanía': document.getElementById('araucania-box-desktop')
+        const regionBoxes = {
+            'Valparaíso': document.getElementById('valparaiso-box'),
+            'Metropolitana': document.getElementById('metropolitana-box'),
+            'O\'Higgins': document.getElementById('ohiggins-box'),
+            'Araucanía': document.getElementById('araucania-box')
         };
-
-        const mobileRegionBoxes = {
-            'Valparaíso': document.getElementById('valparaiso-box-mobile'),
-            'Metropolitana': document.getElementById('metropolitana-box-mobile'),
-            'O\'Higgins': document.getElementById('ohiggins-box-mobile'),
-            'Araucanía': document.getElementById('araucania-box-mobile')
-        };
-
         const mapRegions = {
             'Valparaíso': document.getElementById('path-valparaiso'),
             'Metropolitana': document.getElementById('path-metropolitana'),
             'O\'Higgins': document.getElementById('path-ohiggins'),
             'Araucanía': document.getElementById('path-araucania')
         };
-
         function drawConnectingLines() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             canvas.width = mainNetworkSection.offsetWidth;
             canvas.height = mainNetworkSection.offsetHeight;
-            ctx.strokeStyle = '#60a5fa';
+            ctx.strokeStyle = '#60a5fa'; 
             ctx.lineWidth = 3;
-            ctx.lineCap = 'butt';
-
+            ctx.lineCap = 'round';
             const sectionRect = mainNetworkSection.getBoundingClientRect();
-            // Determine if mobile or desktop layout is active based on a media query or viewport width
-            const isMobile = window.innerWidth < 1024; // Tailwind's 'lg' breakpoint is 1024px
-
-            // Select the correct set of region boxes based on the current layout
-            const currentRegionBoxes = isMobile ? mobileRegionBoxes : desktopRegionBoxes;
-
-            for (const regionName in currentRegionBoxes) {
-                const box = currentRegionBoxes[regionName];
+            for (const regionName in regionBoxes) {
+                const box = regionBoxes[regionName];
                 const mapPath = mapRegions[regionName];
-
-                // Ensure the box element exists and is currently visible (offsetWidth > 0 implies it's not hidden by display:none)
-                if (box && mapPath && box.offsetWidth > 0 && box.offsetHeight > 0) {
+                if (box && mapPath) {
                     const boxRect = box.getBoundingClientRect();
-                    let startX, startY;
-
-                    // Calculate start point based on whether the box is on the left or right side of the map (for mobile)
-                    if (isMobile) {
-                        if (regionName === 'Valparaíso' || regionName === 'O\'Higgins') {
-                            // If on the left, start the line from the right edge of the box
-                            startX = (boxRect.right) - sectionRect.left;
-                            startY = (boxRect.top + boxRect.height / 2) - sectionRect.top;
-                        } else { // Metropolitana or Araucanía (on the right)
-                            // If on the right, start the line from the left edge of the box
-                            startX = (boxRect.left) - sectionRect.left;
-                            startY = (boxRect.top + boxRect.height / 2) - sectionRect.top;
-                        }
-                    } else { // Desktop layout
-                        // For desktop, lines always start from the right of the box
-                        startX = (boxRect.right) - sectionRect.left;
-                        startY = (boxRect.top + boxRect.height / 2) - sectionRect.top;
-                    }
-
-
+                    const startX = (boxRect.right) - sectionRect.left;
+                    const startY = (boxRect.top + boxRect.height / 2) - sectionRect.top;
                     const pathBBox = mapPath.getBBox();
                     const svgPoint = chileMap.createSVGPoint();
-
-                    // Connect to the left side of the map region for boxes on the left, right side for boxes on the right
-                    if (isMobile && (regionName === 'Valparaíso' || regionName === 'O\'Higgins')) {
-                        svgPoint.x = pathBBox.x; // Left side of map region's bounding box for left-aligned mobile boxes
-                    } else if (isMobile && (regionName === 'Metropolitana' || regionName === 'Araucanía')) {
-                        svgPoint.x = pathBBox.x + pathBBox.width; // Right side of map region's bounding box for right-aligned mobile boxes
-                    } else { // Desktop or other cases, connect to the left of map region
-                        svgPoint.x = pathBBox.x;
-                    }
-                    svgPoint.y = pathBBox.y + pathBBox.height / 2; // Middle of map region's bounding box vertically
-
+                    svgPoint.x = pathBBox.x; 
+                    svgPoint.y = pathBBox.y + pathBBox.height / 2; 
                     const ctm = chileMap.getScreenCTM();
                     const screenPoint = svgPoint.matrixTransform(ctm);
-
                     const endX = screenPoint.x - sectionRect.left;
                     const endY = screenPoint.y - sectionRect.top;
-
                     ctx.beginPath();
                     ctx.moveTo(startX, startY);
-                    ctx.lineTo(endX, endY);
-                    ctx.stroke();
-
-                    // Draw the circle at the end of the line (on the map point)
-                    ctx.beginPath();
-                    ctx.arc(endX, endY, 5, 0, 2 * Math.PI);
-                    ctx.fillStyle = '#60a5fa';
-                    ctx.fill();
-                    ctx.strokeStyle = '#FFFFFF';
-                    ctx.lineWidth = 2;
+                    const controlX1 = startX + 100; 
+                    const controlY1 = startY;
+                    const controlX2 = endX - 100; 
+                    const controlY2 = endY;
+                    ctx.bezierCurveTo(controlX1, controlY1, controlX2, controlY2, endX, endY);
                     ctx.stroke();
                 }
             }
         }
-
         function setupHoverEffects() {
-            // Function to add/remove hover classes
-            const applyHover = (box, mapPath, add) => {
-                if (add) {
-                    mapPath.classList.add('hover-active');
-                    box.classList.add('hover-active');
-                } else {
-                    mapPath.classList.remove('hover-active');
-                    box.classList.remove('hover-active');
-                }
-            };
-
-            const isMobileScreen = window.innerWidth < 1024; // Check current screen size
-
-            // Attach hover effects to currently visible boxes
-            const currentRegionBoxes = isMobileScreen ? mobileRegionBoxes : desktopRegionBoxes;
-
-            for (const regionName in currentRegionBoxes) {
-                const box = currentRegionBoxes[regionName];
+            for (const regionName in regionBoxes) {
+                const box = regionBoxes[regionName];
                 const mapPath = mapRegions[regionName];
 
                 if (box && mapPath) {
-                    // Clear previous listeners to prevent duplicates
-                    // Check if handlers are already defined on the element before removing
-                    if (box.mouseEnterHandler) {
-                        box.removeEventListener('mouseenter', box.mouseEnterHandler);
-                        box.removeEventListener('mouseleave', box.mouseLeaveHandler);
-                    }
-                    if (mapPath.mouseEnterHandler) {
-                        mapPath.removeEventListener('mouseenter', mapPath.mouseEnterHandler);
-                        mapPath.removeEventListener('mouseleave', mapPath.mouseLeaveHandler);
-                    }
+                    box.addEventListener('mouseenter', () => {
+                        mapPath.classList.add('hover-active');
+                    });
+                    box.addEventListener('mouseleave', () => {
+                        mapPath.classList.remove('hover-active');
+                    });
 
-                    // Define handlers and store them on the element for easy removal
-                    box.mouseEnterHandler = () => applyHover(box, mapPath, true);
-                    box.mouseLeaveHandler = () => applyHover(box, mapPath, false);
-                    mapPath.mouseEnterHandler = () => applyHover(box, mapPath, true);
-                    mapPath.mouseLeaveHandler = () => applyHover(box, mapPath, false);
-
-                    // Add new listeners
-                    box.addEventListener('mouseenter', box.mouseEnterHandler);
-                    box.addEventListener('mouseleave', box.mouseLeaveHandler);
-                    mapPath.addEventListener('mouseenter', mapPath.mouseEnterHandler);
-                    mapPath.addEventListener('mouseleave', mapPath.mouseLeaveHandler);
+                    mapPath.addEventListener('mouseenter', () => {
+                        box.classList.add('hover-active');
+                    });
+                    mapPath.addEventListener('mouseleave', () => {
+                        box.classList.remove('hover-active');
+                    });
                 }
             }
         }
-
-
-        // Re-draw lines and re-setup hover effects on load and resize
         window.addEventListener('load', () => {
             drawConnectingLines();
             setupHoverEffects();
         });
-        window.addEventListener('resize', () => {
-            drawConnectingLines();
-            setupHoverEffects(); // Re-setup hover effects on resize to apply to correct elements
-        });
+        window.addEventListener('resize', drawConnectingLines);
     </script>
 </body>
 
