@@ -102,6 +102,35 @@
             cursor: pointer;
         }
 
+        .map-svg-container {
+            position: absolute;
+            /* Posicionamiento absoluto */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            /* Para centrar el SVG dentro de su contenedor si es necesario */
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            z-index: 8;
+            /* Menor que el canvas */
+        }
+
+        .lines-canvas {
+            position: absolute;
+            /* Posicionamiento absoluto */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            /* Permite interactuar con elementos debajo del canvas */
+            z-index: 10;
+            /* Asegura que el canvas esté por encima de todo */
+        }
+
         @keyframes pulse {
 
             0%,
@@ -145,7 +174,7 @@
                 NUESTRA<br> RED
             </h1>
         </div>
-        <canvas id="linesCanvas" class="lines-canvas"></canvas>
+
         <div
             class="flex flex-col items-center justify-center gap-8 mb-12 lg:mb-0 lg:mr-16 w-full max-w-xs relative z-10">
             <div id="valparaiso-box"
@@ -208,6 +237,7 @@
                 </g>
             </svg>
         </div>
+        <canvas id="linesCanvas" class="lines-canvas"></canvas>
     </section>
     <script>
         const canvas = document.getElementById('linesCanvas');
@@ -228,62 +258,97 @@
         };
 
         function drawConnectingLines() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            canvas.width = mainNetworkSection.offsetWidth;
-            canvas.height = mainNetworkSection.offsetHeight;
+    const canvas = document.getElementById('linesCanvas');
+    const ctx = canvas.getContext('2d');
+    const mainNetworkSection = document.getElementById('main-network-section'); // Asegúrate de que esto esté definido o pásalo como argumento
+    const chileMap = document.getElementById('chileMap'); // Asegúrate de que esto esté definido o pásalo como argumento
 
-            // *** CAMBIOS AQUI: Color rojo y mayor grosor ***
-            ctx.strokeStyle = '#33CCFF'; // Rojo
-            ctx.lineWidth = 1;           // Grosor de 3px
-            ctx.lineCap = 'square';       // Puedes mantener 'round' o cambiar a 'butt' o 'square' si prefieres bordes más afilados.
+    // Asegúrate de que regionBoxes y mapRegions estén definidos y accesibles aquí
+    // Por ejemplo, si se definen fuera de la función, deben ser globales o pasados como argumentos
+    // Asumo que están definidos en un ámbito superior accesible por esta función.
+    // Ejemplo de cómo podrían ser si no los tienes:
+    /*
+    const regionBoxes = {
+        'valparaiso': document.getElementById('valparaiso-box'),
+        'metropolitana': document.getElementById('metropolitana-box'),
+        'ohiggins': document.getElementById('ohiggins-box'),
+        'araucania': document.getElementById('araucania-box')
+    };
 
-            const sectionRect = mainNetworkSection.getBoundingClientRect();
+    const mapRegions = {
+        'valparaiso': document.getElementById('path-valparaiso'),
+        'metropolitana': document.getElementById('path-metropolitana'),
+        'ohiggins': document.getElementById('path-ohiggins'),
+        'araucania': document.getElementById('path-araucania')
+    };
+    */
 
-            for (const regionName in regionBoxes) {
-                const box = regionBoxes[regionName];
-                const mapPath = mapRegions[regionName];
 
-                if (box && mapPath) {
-                    const boxRect = box.getBoundingClientRect();
-                    const startX = (boxRect.right) - sectionRect.left;
-                    const startY = (boxRect.top + boxRect.height / 2) - sectionRect.top;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    canvas.width = mainNetworkSection.offsetWidth;
+    canvas.height = mainNetworkSection.offsetHeight;
 
-                    // Obtener el centro horizontal del bounding box del path SVG
-                    const pathBBox = mapPath.getBBox();
-                    const svgPoint = chileMap.createSVGPoint();
+    // ESTILOS DE LÍNEA PREDETERMINADOS (para las líneas de conexión)
+    ctx.strokeStyle = '#33CCFF'; // Color azul para las líneas
+    ctx.lineWidth = 2; // Grosor de 2px para las líneas
+    ctx.lineCap = 'round'; // Estilo de punta para las líneas (puedes ajustar)
+    // ctx.setLineDash([5, 5]); // Estilo de línea punteada
 
-                    // Para que la línea se conecte al "centro" del mapa de la región en el eje Y
-                    // y al inicio/final del bounding box en el eje X
-                    svgPoint.x = pathBBox.x; // Punto de conexión en el mapa (extremo izquierdo del bounding box)
-                    svgPoint.y = pathBBox.y + pathBBox.height / 5; // Centro vertical del bounding box
+    const sectionRect = mainNetworkSection.getBoundingClientRect();
 
-                    const ctm = chileMap.getScreenCTM();
-                    const screenPoint = svgPoint.matrixTransform(ctm);
+    for (const regionName in regionBoxes) {
+        const box = regionBoxes[regionName];
+        const mapPath = mapRegions[regionName];
 
-                    const endX = screenPoint.x - sectionRect.left;
-                    const endY = screenPoint.y - sectionRect.top;
+        if (box && mapPath) {
+            const boxRect = box.getBoundingClientRect();
+            const startX = (boxRect.right) - sectionRect.left;
+            const startY = (boxRect.top + boxRect.height / 2) - sectionRect.top;
 
-                    ctx.beginPath();
-                    ctx.moveTo(startX, startY);
+            const pathBBox = mapPath.getBBox();
+            const svgPoint = chileMap.createSVGPoint();
 
-                    // *** CAMBIOS AQUI: Dibujar líneas ortogonales en lugar de curvas Bezier ***
-                    // Opción 1: Mover primero horizontalmente, luego verticalmente
-                    ctx.lineTo(startX + (endX - startX) * 0.1, startY); // Mover a la mitad de la distancia horizontal, manteniendo el Y inicial
-                    ctx.lineTo(startX + (endX - startX) * 0.7, endY);   // Mover verticalmente al Y final
-                    ctx.lineTo(endX, endY);                             // Mover horizontalmente al X final
+            svgPoint.x = pathBBox.x;
+            svgPoint.y = pathBBox.y + pathBBox.height / 5;
 
-                    // Opción 2: Mover primero verticalmente, luego horizontalmente (menos común para este layout)
-                    // ctx.lineTo(startX, endY); // Mover verticalmente al Y de destino
-                    // ctx.lineTo(endX, endY);   // Luego mover horizontalmente al X de destino
+            const ctm = chileMap.getScreenCTM();
+            const screenPoint = svgPoint.matrixTransform(ctm);
 
-                    ctx.stroke();
-                    ctx.beginPath(); // Inicia un nuevo camino para el círculo
-                    ctx.arc(endX, endY, 5, 0, Math.PI * 2); // Dibuja un círculo de radio 5 en el final de la línea
-                    ctx.fillStyle = 'red'; // Color de relleno del círculo
-                    ctx.fill(); // Rellena el círculo
-                }
-            }
+            const endX = screenPoint.x - sectionRect.left;
+            const endY = screenPoint.y - sectionRect.top;
+
+            // Dibuja la línea
+            ctx.beginPath();
+            ctx.moveTo(startX, startY);
+
+            // Usa los estilos de línea predeterminados que definimos al inicio de la función
+            ctx.lineTo(startX + (endX - startX) * 0.1, startY);
+            ctx.lineTo(startX + (endX - startX) * 0.7, endY);
+            ctx.lineTo(endX, endY);
+
+            ctx.stroke(); // Aplica el trazo a la línea con los estilos de línea actuales
+
+            // --- INICIO: SECCIÓN DEL CÍRCULO ---
+            ctx.save(); // *** GUARDA EL ESTADO ACTUAL DEL CONTEXTO (incluyendo estilos de línea y relleno) ***
+
+            ctx.beginPath(); // Inicia un nuevo camino para el círculo
+            ctx.arc(endX, endY, 5, 0, Math.PI * 2); // Dibuja el círculo
+
+            // ESTILOS ESPECÍFICOS PARA EL CÍRCULO
+            ctx.fillStyle = '#C7E4EE'; // Color de relleno del círculo
+            ctx.strokeStyle = '#FFFFFF'; // Color del borde (blanco)
+            ctx.lineWidth = 1; // Grosor del borde (1 píxel)
+
+            ctx.fill(); // Rellena el círculo
+            ctx.stroke(); // Dibuja el borde del círculo
+
+            ctx.restore(); // *** RESTAURA EL ESTADO ANTERIOR DEL CONTEXTO ***
+                           // Esto revierte los estilos a los que estaban antes de ctx.save(),
+                           // asegurando que la próxima línea use los estilos predeterminados.
+            // --- FIN: SECCIÓN DEL CÍRCULO ---
         }
+    }
+}
 
         function setupHoverEffects() {
             for (const regionName in regionBoxes) {
