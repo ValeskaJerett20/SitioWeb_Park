@@ -156,5 +156,3 @@ function setupObserver(id, initialClass, finalClass) {
     setupObserver('anim-right', 'translate-x-10');
   });
 
-
-// mapa 
