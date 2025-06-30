@@ -1,3 +1,129 @@
 .btn-region {
-    @apply bg-gradient-to-r from-cyan-400 to-blue-600 text-white font-bold px-6 py-2 rounded-full shadow-lg;
-  }
+  @apply bg-gradient-to-r from-cyan-400 to-blue-600 text-white font-bold px-6 py-2 rounded-full shadow-lg;
+}
+
+.region-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.region-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 9999px;
+  background: linear-gradient(120deg, #26D0FE, #1A8DFF);
+  z-index: 0;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.region-card:hover::before {
+  opacity: 1;
+}
+
+.region-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* Mapa */
+body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .section-background {
+            background: linear-gradient(to bottom right, #e0e0e0, #f8f8f8);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .region-box {
+            background-color: #33CCFF;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
+        .region-box:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(51, 204, 255, 0.4);
+            animation: none;
+        }
+        .lines-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+        .cls-1,
+        .cls-2 {
+            fill: #3CF;
+        }
+        .cls-1,
+        .cls-3 {
+            stroke: #F2F2F2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .cls-4 {
+            fill: #E5E5E5;
+        }
+        .cls-3 {
+            fill: #969696;
+        }
+        .cls-5 {
+            fill: none;
+            stroke: #3CF;
+            stroke-miterlimit: 10;
+        }
+        .map-region-path {
+            stroke: white;
+            stroke-width: 1.5;
+            transition: fill 0.3s ease-in-out, transform 0.2s ease-in-out;
+            transform-origin: center;
+        }
+        .map-region-path.highlighted {
+            fill: #33CCFF;
+        }
+        .map-region-path.highlighted:hover {
+            fill: #13a7d8;
+            transform: scale(1.15);
+            margin-left: 10px;
+        }
+        .map-region-path.normal {
+            fill: #969696;
+        }
+        .map-region-path:hover,
+        .map-region-path.hover-active {
+            fill: #acacac;
+            transform: scale(1.03);
+            cursor: pointer;
+        }
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 0 0 5px rgba(51, 204, 255, 0.2);
+            }
+        }
+        @keyframes drawLine {
+            0% {
+                stroke-dashoffset: 1000;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }

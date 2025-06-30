@@ -10,11 +10,12 @@
   <!-- jVectorMap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.css" rel="stylesheet" />
   <script src="js/script.js"></script>
+  <link rel="stylesheet" href="styles.css">
   <!-- jQuery y jVectorMap JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/tests/assets/jquery-jvectormap-cl-mill.js"></script>
-
+  <!--Boton despues del video-->
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -57,42 +58,45 @@
 
   <!-- Main Section -->
   <section
-    class="max-w-full bg-[url('assets/img/bg/fondoinicio2.png')] bg-no-repeat bg-cover bg-center mx-auto pb-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    class="max-w-full bg-[url('assets/img/bg/fondoinicio2.png')] bg-no-repeat bg-cover bg-center mx-auto pb-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+    style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
     <!-- Left: Imagen -->
-    <div class="flex justify-center bg-white py-48"
-      style=" border-top-left-radius: 0; border-top-right-radius: 2000px; border-bottom-left-radius: 0; border-bottom-right-radius: 2000px; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;">
+    <!-- Sección animada -->
+    <div id="logo-section"
+      class="flex justify-center bg-white py-48 opacity-0 -translate-x-10 transition-all duration-1000"
+      style="border-top-left-radius: 0; border-top-right-radius: 2000px; border-bottom-left-radius: 0; border-bottom-right-radius: 2000px; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;">
       <img src="assets/img/logo-park.png" alt="Logo PARK" class="w-72 md:w-96" />
     </div>
 
+
     <!-- Right: Texto -->
-    <div class="py-16 ">
-      <h1 class="text-4xl md:text-5xl font-bold text-[#006699] leading-tight">
-        CONECTIVIDAD,<br />
-        CONTROL Y COBRO<br />
-        <span class="text-[#006699] font-extrabold">EN UNA SOLA<br /> SOLUCIÓN</span>
+    <div class="py-16 overflow-hidden">
+      <h1 id="typewriter-title"
+        class="text-4xl md:text-5xl font-bold text-[#006699] leading-tight opacity-0 translate-x-10 transition-all duration-1000">
+        <!-- El texto se llenará por JS -->
       </h1>
-      <p class="mt-8 text-[#33CCFF] font-extrabold text-sm leading-relaxed">
-        EN PARK, NOS MUEVE LA INNOVACIÓN,<br />
-        LA EFICIENCIA Y EL DISEÑO DE HERRAMIENTAS<br />
-        QUE HACEN MÁS SIMPLE, SEGURO<br />
-        Y ORDENADO EL USO DE LOS ESPACIOS.
+      <p id="typewriter-paragraph"
+        class="mt-8 text-[#33CCFF] font-extrabold text-sm leading-relaxed opacity-0 translate-x-10 transition-all duration-1000">
+        <!-- El texto se llenará por JS -->
       </p>
     </div>
   </section>
 
   <!-- ¿Qué es PARK? Section -->
-  <section class="max-w-7xl mx-auto px-4 py-10 relative overflow-hidden">
+  <section class="max-w-full mx-auto px-4 py-10 relative overflow-hidden"
+    style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
     <!-- Líneas decorativas -->
-    <div class="absolute left-1/2 top-10 transform -translate-x-1/2 hidden md:block">
+    <!-- <div class="absolute left-1/2 top-10 transform -translate-x-1/2 hidden md:block">
       <div class="w-1 h-10 bg-[#33CCFF] rounded-full mx-auto"></div>
       <div class="w-1 h-64 bg-gradient-to-b from-[#33CCFF] to-transparent mx-auto"></div>
-    </div>
+    </div> -->
 
     <!-- Grid de contenido -->
     <div
-      class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center justify-center text-center md:text-left w-full max-w-4xl mx-auto">
+      class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center justify-center text-center md:text-left w-full max-w-4xl mx-auto py-20">
+
       <!-- Texto izquierdo -->
-      <div class="flex justify-center md:justify-end w-full">
+      <div id="anim-left" class="flex justify-center md:justify-end w-full opacity-0  transition-all duration-1000">
         <div class="w-full max-w-md">
           <h2 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-[#33CCFF] leading-snug text-center">
             ¿QUÉ ES<br /> PARK?
@@ -101,7 +105,8 @@
       </div>
 
       <!-- Texto derecho -->
-      <div class="flex justify-center md:justify-start w-full">
+      <div id="anim-right" class="flex justify-center md:justify-start w-full opacity-0 transition-all duration-1000"
+        style="border-left:5px solid lightblue; padding-left:30px;">
         <div class="w-full max-w-md">
           <p class="text-base sm:text-lg font-black text-[#006699] text-justify">
             UNA <span class="text-[#33CCFF]">SOLUCIÓN TECNOLÓGICA INTEGRAL</span><br />
@@ -120,13 +125,15 @@
       </div>
     </div>
 
+
     <!-- Video centrado -->
-    <div class="mt-16 flex justify-center">
+    <div id="video-section"
+      class="mt-16 flex justify-center opacity-0 translate-y-10 transition-all duration-1000 ease-out">
       <div class="relative w-full max-w-4xl aspect-video shadow-lg rounded-lg overflow-hidden">
-        <iframe class="w-full h-full" src="https://www.youtube.com/embed/KC-DS8HZMXs" title="Video de Park"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
+        <iframe id="video-frame" class="w-full h-full"
+          src="https://www.youtube.com/embed/KC-DS8HZMXs?autoplay=0&modestbranding=1&rel=0&showinfo=0&controls=1&mute=1"
+          title="Video de Park" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
 
         <!-- Logo superpuesto -->
         <img src="assets/img/icono-park.png" alt="Logo"
@@ -134,7 +141,10 @@
       </div>
     </div>
 
-    <div class="mt-20 flex flex-col items-center text-center">
+
+    <div id="funciona-section"
+      class="mt-20 flex flex-col items-center text-center opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+
       <!-- Título -->
       <h2 class="text-3xl sm:text-4xl font-extrabold text-[#33CCFF] leading-tight">
         ¿CÓMO FUNCIONA <br class="sm:hidden" /> PARK?
@@ -147,6 +157,7 @@
       </a>
     </div>
 
+
   </section>
 
   <!-- Sección Nuestra RED -->
@@ -157,33 +168,6 @@
       class="w-full max-w-[90%] lg:max-w-[70%] mx-auto mt-12 flex flex-col-reverse opacity-60 lg:flex-row items-center py-20 justify-center gap-10 rounded-2xl shadow-md bg-white">
       <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12">
         <!-- Botones -->
-        <style>
-          .region-card {
-            position: relative;
-            overflow: hidden;
-          }
-
-          .region-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border: 2px solid transparent;
-            border-radius: 9999px;
-            background: linear-gradient(120deg, #26D0FE, #1A8DFF);
-            z-index: 0;
-            transition: opacity 0.3s ease;
-            opacity: 0;
-          }
-
-          .region-card:hover::before {
-            opacity: 1;
-          }
-
-          .region-content {
-            position: relative;
-            z-index: 10;
-          }
-        </style>
 
         <div class="flex flex-col gap-4 text-white font-bold text-center w-full max-w-xs pl-20">
 
