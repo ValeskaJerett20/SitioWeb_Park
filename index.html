@@ -2,152 +2,125 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nuestra Red</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Red</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-[#F2F2F2] text-gray-800 font-sans">
-  <header class="bg-white header shadow fixed w-full  z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-14 py-3">
-      <!-- Logo -->
-      <div class="logo">
-        <img src="assets/img/logo-park.png" alt="Logo Park" class="h-16" />
-      </div>
+    <header class="bg-white header shadow fixed w-full z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-14 py-3">
+            <div class="logo">
+                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-16" />
+            </div>
 
-      <!-- Botón hamburguesa (solo visible en mobile) -->
-      <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center space-y-1"
-        aria-label="Abrir menú">
-        <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
-        <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
-        <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
-      </button>
-
-      <!-- Menú de escritorio -->
-      <nav class="hidden md:flex space-x-6">
-        <a href="index.html"
-          class=" text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">INICIO</a>
-        <a href="nosotros.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">NOSOTROS</a>
-        <a href="reconocimientos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">RECONOCIMIENTOS</a>
-        <a href="contactanos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">CONTACTO</a>
-      </nav>
-    </div>
-
-    <!-- Menú desplegable para mobile -->
-    <div id="mobile-menu"
-      class="md:hidden hidden flex-col items-center bg-white shadow-inner px-4 py-4 space-y-4 text-center">
-      <a href="index.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">INICIO</a>
-      <a href="nosotros.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">NOSOTROS</a>
-      <a href="reconocimientos.html"
-        class="block text-[#006699] font-bold text-sm hover:text-blue-600">RECONOCIMIENTO</a>
-      <a href="contactanos.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">CONTACTO</a>
-    </div>
-  </header>
-  <div
-    class="flex flex-row flex-wrap w-full justify-center items-center p-0 border border-gray-300 bg-gray-50 h-36">
-    <section
-      class="w-full bg-[url('assets/img/bg/fondoinicio2.png')] bg-no-repeat bg-cover bg-center mx-auto pb-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
-      style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
-      <!-- Left: Imagen -->
-      <!-- Sección animada -->
-      <div id="logo-section"
-        class="flex justify-center bg-white py-48 opacity-0 -translate-x-10 transition-all duration-1000"
-        style="border-top-left-radius: 0; border-top-right-radius: 2000px; border-bottom-left-radius: 0; border-bottom-right-radius: 2000px; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;">
-        <img src="assets/img/logo-park.png" alt="Logo PARK" class="w-72 md:w-96" />
-      </div>
-
-
-      <!-- Right: Texto -->
-      <div class="py-16 overflow-hidden">
-        <h1 id="typewriter-title"
-          class="text-4xl md:text-5xl font-bold text-[#006699] leading-tight opacity-0 translate-x-10 transition-all duration-1000">
-          <!-- El texto se llenará por JS -->
-        </h1>
-        <p id="typewriter-paragraph"
-          class="mt-8 text-[#33CCFF] font-extrabold text-sm leading-relaxed opacity-0 translate-x-10 transition-all duration-1000">
-          <!-- El texto se llenará por JS -->
-        </p>
-      </div>
-    </section>
-    <section class="w-full mx-auto px-4 py-10 relative overflow-hidden bg-cover bg-center bg-no-repeat"
-      style="background-image: url('assets/img/bg/Fondovideo.png'); box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
-      <!-- Líneas decorativas -->
-      <!-- <div class="absolute left-1/2 top-10 transform -translate-x-1/2 hidden md:block">
-      <div class="w-1 h-10 bg-[#33CCFF] rounded-full mx-auto"></div>
-      <div class="w-1 h-64 bg-gradient-to-b from-[#33CCFF] to-transparent mx-auto"></div>
-    </div> -->
-
-      <!-- Grid de contenido -->
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center justify-center text-center md:text-left w-full max-w-4xl mx-auto py-20">
-
-        <!-- Texto izquierdo -->
-        <div id="anim-left" class="flex justify-center md:justify-end w-full opacity-0  transition-all duration-1000">
-          <div class="w-full max-w-md">
-            <h2 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-[#33CCFF] leading-snug text-center">
-              ¿QUÉ ES<br /> PARK?
-            </h2>
-          </div>
-        </div>
-
-        <!-- Texto derecho -->
-        <div id="anim-right" class="flex justify-center md:justify-start w-full opacity-0 transition-all duration-1000"
-          style="border-left:5px solid lightblue; padding-left:30px;">
-          <div class="w-full max-w-md">
-            <p class="text-base font-black text-[#006699] text-justify">
-              UNA <span class="text-[#33CCFF]">SOLUCIÓN TECNOLÓGICA INTEGRAL</span><br />
-              PARA LA <span class="text-[#33CCFF]">GESTIÓN Y CONTROL EFICIENTE DE</span>,<br />
-              <span class="text-[#33CCFF]">ESTACIONAMIENTOS</span> ORIENTADA AL <span class="text-[#006699]">COBRO
-                OPORTUNO</span>,
-              <span class="text-[#006699]">LA PREVENCIÓN DE FRAUDES</span> Y <br />
-              <span class="text-[#006699]">LA VALORACIÓN DEL USO DEL ESPACIO</span>.
-            </p>
-
-            <button
-              class="mt-6 px-6 py-2 rounded-full bg-gradient-to-r from-[#006699] to-[#33CCFF] text-white font-bold text-sm shadow-md hover:scale-105 transition">
-              CONTÁCTANOS
+            <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center space-y-1"
+                aria-label="Abrir menú">
+                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
             </button>
-          </div>
+
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html"
+                    class="text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">INICIO</a>
+                <a href="nosotros.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">NOSOTROS</a>
+                <a href="reconocimientos.html"
+                    class="text-sm font-bold text-[#006699] hover:text-blue-600">RECONOCIMIENTOS</a>
+                <a href="contactanos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">CONTACTO</a>
+            </nav>
         </div>
-      </div>
 
-
-      <!-- Video centrado -->
-      <div id="video-section"
-        class="mt-4 flex justify-center opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-        <div class="relative w-full max-w-4xl aspect-video shadow-lg rounded-lg overflow-hidden">
-          <iframe id="video-frame" class="w-full h-full"
-            src="https://www.youtube.com/embed/KC-DS8HZMXs?autoplay=0&modestbranding=1&rel=0&showinfo=0&controls=1&mute=1"
-            title="Video de Park" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-          </iframe>
-
-          <!-- Logo superpuesto -->
-          <img src="assets/img/icono-park.png" alt="Logo"
-            class="absolute top-4 left-4 w-14 h-14 sm:w-16 sm:h-16 object-contain bg-white p-2 rounded-full shadow-lg" />
+        <div id="mobile-menu"
+            class="md:hidden hidden flex-col items-center bg-white shadow-inner px-4 py-4 space-y-4 text-center">
+            <a href="index.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">INICIO</a>
+            <a href="nosotros.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">NOSOTROS</a>
+            <a href="reconocimientos.html"
+                class="block text-[#006699] font-bold text-sm hover:text-blue-600">RECONOCIMIENTO</a>
+            <a href="contactanos.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">CONTACTO</a>
         </div>
-      </div>
+    </header>
 
+    <div
+        class="flex flex-row flex-wrap w-full justify-center items-center p-0 border border-gray-300 bg-gray-50 h-36">
+        <section
+            class="w-full bg-[url('assets/img/bg/fondoinicio2.png')] bg-no-repeat bg-cover bg-center mx-auto pb-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+            style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+            <div id="logo-section"
+                class="flex justify-center bg-white py-48 opacity-0 -translate-x-10 transition-all duration-1000"
+                style="border-top-left-radius: 0; border-top-right-radius: 2000px; border-bottom-left-radius: 0; border-bottom-right-radius: 2000px; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;">
+                <img src="assets/img/logo-park.png" alt="Logo PARK" class="w-72 md:w-96" />
+            </div>
 
-      <div id="funciona-section"
-        class="mt-20 flex flex-col items-center text-center opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+            <div class="p-8 overflow-hidden">
+                <h1 id="typewriter-title"
+                    class="text-4xl md:text-5xl font-bold text-[#006699] sm:p-4 leading-tight opacity-0 translate-x-10 transition-all duration-1000">
+                    </h1>
+                <p id="typewriter-paragraph"
+                    class="mt-8 text-[#33CCFF] font-extrabold text-sm leading-relaxed opacity-0 translate-x-10 transition-all duration-1000">
+                    </p>
+            </div>
+        </section>
 
-        <!-- Título -->
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#33CCFF] leading-tight">
-          ¿CÓMO FUNCIONA <br class="sm:hidden" /> PARK?
-        </h2>
+        <section class="w-full mx-auto px-4 py-10 relative overflow-hidden bg-cover bg-center bg-no-repeat"
+            style="background-image: url('assets/img/bg/Fondovideo.png'); box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center justify-center text-center md:text-left w-full max-w-4xl mx-auto py-20">
 
-        <!-- Botón -->
-        <a href="#nosotros"
-          class="mt-6 bg-gradient-to-r from-[#006699] to-[#33CCFF] text-white text-lg font-extrabold px-10 py-4 rounded-full shadow-lg hover:scale-105 transition-all duration-300">
-          NOSOTROS
-        </a>
-      </div>
+                <div id="anim-left" class="flex justify-center md:justify-end w-full opacity-0 -translate-x-10 transition-all duration-1000">
+                    <div class="w-full max-w-md">
+                        <h2 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-[#33CCFF] leading-snug text-center">
+                            ¿QUÉ ES<br /> PARK?
+                        </h2>
+                    </div>
+                </div>
 
+                <div id="anim-right"
+                    class="flex justify-center md:justify-start w-full opacity-0 translate-x-10 transition-all duration-1000"
+                    style="border-left:5px solid lightblue; padding-left:30px;">
+                    <div class="w-full max-w-md">
+                        <p class="text-base font-black text-[#006699] text-justify">
+                            UNA <span class="text-[#33CCFF]">SOLUCIÓN TECNOLÓGICA INTEGRAL</span><br />
+                            PARA LA <span class="text-[#33CCFF]">GESTIÓN Y CONTROL EFICIENTE DE</span>,<br />
+                            <span class="text-[#33CCFF]">ESTACIONAMIENTOS</span> ORIENTADA AL <span class="text-[#006699]">COBRO
+                                OPORTUNO</span>,
+                            <span class="text-[#006699]">LA PREVENCIÓN DE FRAUDES</span> Y <br />
+                            <span class="text-[#006699]">LA VALORACIÓN DEL USO DEL ESPACIO</span>.
+                        </p>
+                        <button id="boton-contactanos"
+                            class="mt-6 px-6 py-2 rounded-full bg-gradient-to-r from-[#006699] to-[#33CCFF] text-white font-bold text-sm shadow-md hover:scale-105 transition">
+                            CONTÁCTANOS
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-    </section>
+            <div id="video-section"
+                class="mt-4 flex justify-center opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+                <div class="relative w-full max-w-4xl aspect-video shadow-lg rounded-lg overflow-hidden">
+                    <iframe id="video-frame" class="w-full h-full"
+                        src="https://www.youtube.com/embed/KC-DS8HZMXs?autoplay=0&modestbranding=1&rel=0&showinfo=0&controls=1&mute=1"
+                        title="Video de Park" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                    </iframe>
+                    <img src="assets/img/icono-park.png" alt="Logo"
+                        class="absolute top-4 left-4 w-14 h-14 sm:w-16 sm:h-16 object-contain bg-white p-2 rounded-full shadow-lg" />
+                </div>
+            </div>
+
+            <div id="funciona-section"
+                class="mt-20 flex flex-col items-center text-center opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#33CCFF] leading-tight">
+                    ¿CÓMO FUNCIONA <br class="sm:hidden" /> PARK?
+                </h2>
+                <a id="boton-nosotros" href="#nosotros"
+                    class="mt-6 bg-gradient-to-r from-[#006699] to-[#33CCFF] text-white text-lg font-extrabold px-10 py-4 rounded-full shadow-lg hover:scale-105 transition-all duration-300">
+                    NOSOTROS
+                </a>
+            </div>
+        </section>
 
 
     <section id="main-network-section"
@@ -272,6 +245,31 @@
   <script src="js/main.js"></script>
   <script src="js/mapa.js"></script>
   <script src="js/script.js"></script>
+  <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar el menú móvil
+            setupMobileMenu("menu-toggle", "mobile-menu");
+
+            // Animación de la sección del logo
+            setupScrollAnimation("logo-section", "-translate-x-10", 0.2); // El logo se resetea al salir por defecto
+
+            // Animación y control de video
+            setupVideoPlayerOnScroll("video-section", "video-frame");
+
+            // Animación de texto "¿Qué es Park?" (anim-left y anim-right)
+            setupScrollAnimation('anim-left', '-translate-x-10');
+            setupScrollAnimation('anim-right', 'translate-x-10');
+            // Animación de pulso para el botón "CONTÁCTANOS" (si lo deseas)
+            // Para que este botón tenga pulso, debes agregar la clase "animate-pulse-smooth" a tu CSS/Tailwind
+            // setupButtonPulseAnimation("anim-right", "boton-contactanos", 0.5, 1000, false); // No anima la sección anim-right, solo el botón
+
+            // Animación de la sección "Cómo funciona Park" y su botón "NOSOTROS"
+            setupButtonPulseAnimation("funciona-section", "boton-nosotros", 0.5, 1000); // Esto anima la sección y el botón
+
+            // Animación de "Typewriter"
+            setupTypewriterAnimation("typewriter-title", "typewriter-paragraph", DEFAULT_TITLE_TEXT, DEFAULT_PARAGRAPH_TEXT);
+        });
+    </script>
 </body>
 
 </html>

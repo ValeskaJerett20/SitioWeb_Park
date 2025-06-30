@@ -19,14 +19,12 @@
 
 <body class="bg-gray-50 text-gray-800 font-sans">
     <!-- Header -->
-    <header class="bg-white header shadow fixed w-full  z-50">
-        <div class="max-w-8xl mx-auto flex justify-between items-center px-16 py-3">
-            <!-- Logo -->
+    <header class="bg-white header shadow fixed w-full z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-14 py-3">
             <div class="logo">
-                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-10" />
+                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-16" />
             </div>
 
-            <!-- Botón hamburguesa (solo visible en mobile) -->
             <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center space-y-1"
                 aria-label="Abrir menú">
                 <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
@@ -34,18 +32,16 @@
                 <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
             </button>
 
-            <!-- Menú de escritorio -->
             <nav class="hidden md:flex space-x-6">
                 <a href="index.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">INICIO</a>
                 <a href="nosotros.html"
-                    class="text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">NOSOTROS</a>
+                    class=" text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">NOSOTROS</a>
                 <a href="reconocimientos.html"
-                    class="text-sm font-bold text-[#006699] hover:text-blue-600 ">RECONOCIMIENTOS</a>
+                    class="text-sm font-bold text-[#006699] hover:text-blue-600">RECONOCIMIENTOS</a>
                 <a href="contactanos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">CONTACTO</a>
             </nav>
         </div>
 
-        <!-- Menú desplegable para mobile -->
         <div id="mobile-menu"
             class="md:hidden hidden flex-col items-center bg-white shadow-inner px-4 py-4 space-y-4 text-center">
             <a href="index.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">INICIO</a>
@@ -78,30 +74,29 @@
 
             <!-- Secciones: Gestión - Supervisión - Seguimiento -->
             <div class="flex flex-col md:flex-row justify-center items-center gap-8 mt-6">
-                <!-- GESTIÓN -->
-                <div class="bg-[#29C5FF] rounded-full px-6 py-4 w-64 shadow-xl flex items-center gap-4">
+                <div id="gestion-card" class="bg-[#29C5FF] rounded-full px-6 py-4 w-64 shadow-xl flex items-center gap-4
+               opacity-0 -translate-y-10 transition-all duration-700 ease-out
+               hover:scale-105 hover:shadow-2xl hover:bg-[#0099CC] cursor-pointer">
                     <div class="bg-white p-4 rounded-full shadow-md">
-                        <!-- ícono de ejemplo -->
-                        <img src="assets/img/icons/Proceso01_Sin_fondo.png" alt="Gestión"
-                            class="w-10 h-10" />
+                        <img src="assets/img/icons/Proceso01_Sin_fondo.png" alt="Gestión" class="w-10 h-10" />
                     </div>
                     <span class="text-white font-bold text-lg">GESTIÓN</span>
                 </div>
 
-                <!-- SUPERVISIÓN -->
-                <div class="bg-[#29C5FF] rounded-full px-6 py-4 w-64 shadow-xl flex items-center gap-4">
+                <div id="supervision-card" class="bg-[#29C5FF] rounded-full px-6 py-4 w-64 shadow-xl flex items-center gap-4
+               opacity-0 -translate-y-10 transition-all duration-700 ease-out delay-150
+               hover:scale-105 hover:shadow-2xl hover:bg-[#0099CC] cursor-pointer">
                     <div class="bg-white p-4 rounded-full shadow-md">
-                        <img src="assets/img/icons/Proceso02_Sin_fondo.png" alt="Supervisión"
-                            class="w-10 h-10" />
+                        <img src="assets/img/icons/Proceso02_Sin_fondo.png" alt="Supervisión" class="w-10 h-10" />
                     </div>
                     <span class="text-white font-bold text-lg">SUPERVISIÓN</span>
                 </div>
 
-                <!-- SEGUIMIENTO -->
-                <div class="bg-[#29C5FF] rounded-full px-6 py-4 w-64 shadow-xl flex items-center gap-4">
+                <div id="seguimiento-card" class="bg-[#29C5FF] rounded-full px-6 py-4 w-64 shadow-xl flex items-center gap-4
+               opacity-0 -translate-y-10 transition-all duration-700 ease-out delay-300
+               hover:scale-105 hover:shadow-2xl hover:bg-[#0099CC] cursor-pointer">
                     <div class="bg-white p-4 rounded-full shadow-md">
-                        <img src="assets/img/icons/Proceso03_Sin_fondo.png" alt="Seguimiento"
-                            class="w-10 h-10" />
+                        <img src="assets/img/icons/Proceso03_Sin_fondo.png" alt="Seguimiento" class="w-10 h-10" />
                     </div>
                     <span class="text-white font-bold text-lg">SEGUIMIENTO</span>
                 </div>
@@ -110,51 +105,51 @@
     </section>
 
 
-    <section class="bg-[#F2F2F2] py-16 px-4 text-center font-sans">
+    <section id="benefits-section" class="bg-[#F2F2F2] py-16 px-4 text-center font-sans">
         <div class="max-w-6xl mx-auto">
-            <!-- Título -->
-            <h2 class="text-3xl md:text-5xl font-extrabold text-[#003F6B] mb-12">
+            <h2 id="benefits-title" class="text-3xl md:text-5xl font-extrabold text-[#003F6B] mb-12
+                   opacity-0 -translate-y-10 transition-all duration-1000 ease-out">
                 ¿QUÉ <span class="text-[#00C3FF]">OBTENDRÁS</span><br class="md:hidden" />
                 <span class="text-[#00C3FF]">CON NOSOTROS?</span>
             </h2>
 
-            <!-- Cards -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- CARD 1 -->
-                <div class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center">
+                <div id="benefit-card-1" class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center
+                       opacity-0 translate-y-10 transition-all duration-700 ease-out
+                       hover:scale-105 hover:shadow-lg cursor-pointer">
                     <div class="bg-transparent p-4 rounded-full mb-4">
-                        <img src="assets/img/icons/ICON_01.png" class="w-16 h-16"
-                            alt="Monitoreo" />
+                        <img src="assets/img/icons/ICON_01.png" class="w-16 h-16" alt="Monitoreo" />
                     </div>
                     <p class="text-[#00568F] font-bold leading-tight">
                         MONITOREO<br /><span class="font-extrabold">EN TIEMPO REAL</span>
                     </p>
                 </div>
 
-                <!-- CARD 2 -->
-                <div class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center">
+                <div id="benefit-card-2" class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center
+                       opacity-0 translate-y-10 transition-all duration-700 ease-out delay-150
+                       hover:scale-105 hover:shadow-lg cursor-pointer">
                     <div class="bg-transparent p-4 rounded-full mb-4">
-                        <img src="assets/img/icons/ICON_02.png" class="w-16 h-16"
-                            alt="Validación" />
+                        <img src="assets/img/icons/ICON_02.png" class="w-16 h-16" alt="Validación" />
                     </div>
                     <p class="text-[#00568F] font-bold leading-tight">
                         VALIDACIÓN POR<br /><span class="font-extrabold">DIRECCIÓN DEL TRABAJO</span>
                     </p>
                 </div>
 
-                <!-- CARD 3 -->
-                <div class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center">
+                <div id="benefit-card-3" class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center
+                       opacity-0 translate-y-10 transition-all duration-700 ease-out delay-300
+                       hover:scale-105 hover:shadow-lg cursor-pointer">
                     <div class="bg-transparent p-4 rounded-full mb-4">
-                        <img src="assets/img/icons/ICON_03.png" class="w-16 h-16"
-                            alt="Clientes" />
+                        <img src="assets/img/icons/ICON_03.png" class="w-16 h-16" alt="Clientes" />
                     </div>
                     <p class="text-[#00568F] font-bold leading-tight">
                         ESPACIO PARA<br /><span class="font-extrabold">TUS CLIENTES</span>
                     </p>
                 </div>
 
-                <!-- CARD 4 -->
-                <div class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center">
+                <div id="benefit-card-4" class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center
+                       opacity-0 translate-y-10 transition-all duration-700 ease-out delay-[450ms]
+                       hover:scale-105 hover:shadow-lg cursor-pointer">
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_04.png" class="w-16 h-16" alt="SII" />
                     </div>
@@ -163,22 +158,22 @@
                     </p>
                 </div>
 
-                <!-- CARD 5 -->
-                <div class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center">
+                <div id="benefit-card-5" class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center
+                       opacity-0 translate-y-10 transition-all duration-700 ease-out delay-[600ms]
+                       hover:scale-105 hover:shadow-lg cursor-pointer">
                     <div class="bg-transparent p-4 rounded-full mb-4">
-                        <img src="assets/img/icons/ICON_05.png" class="w-16 h-16"
-                            alt="Verticales" />
+                        <img src="assets/img/icons/ICON_05.png" class="w-16 h-16" alt="Verticales" />
                     </div>
                     <p class="text-[#00568F] font-bold leading-tight">
                         NUEVAS<br /><span class="font-extrabold">VERTICALES<br />DE NEGOCIO</span>
                     </p>
                 </div>
 
-                <!-- CARD 6 -->
-                <div class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center">
+                <div id="benefit-card-6" class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center
+                       opacity-0 translate-y-10 transition-all duration-700 ease-out delay-[750ms]
+                       hover:scale-105 hover:shadow-lg cursor-pointer">
                     <div class="bg-transparent p-4 rounded-full mb-4">
-                        <img src="assets/img/icons/ICON_06.png" class="w-16 h-16"
-                            alt="Comunicación" />
+                        <img src="assets/img/icons/ICON_06.png" class="w-16 h-16" alt="Comunicación" />
                     </div>
                     <p class="text-[#00568F] font-bold leading-tight">
                         COMUNICACIÓN<br /><span class="font-extrabold">DIRECTA CON<br />TUS CLIENTES</span>
@@ -253,6 +248,29 @@
             </a>
         </p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            setupMobileMenu("menu-toggle", "mobile-menu");
+            setupScrollAnimation("logo-section", "-translate-x-10", 0.2);
+            setupVideoPlayerOnScroll("video-section", "video-frame");
+            setupScrollAnimation('anim-left', '-translate-x-10');
+            setupScrollAnimation('anim-right', 'translate-x-10');
+
+            setupButtonPulseAnimation("funciona-section", "boton-nosotros", 0.5, 1000);
+            setupTypewriterAnimation("typewriter-title", "typewriter-paragraph", DEFAULT_TITLE_TEXT, DEFAULT_PARAGRAPH_TEXT);
+            setupScrollAnimation("gestion-card", "-translate-y-10", 0.3, false); 
+            setupScrollAnimation("supervision-card", "-translate-y-10", 0.3, false);
+            setupScrollAnimation("seguimiento-card", "-translate-y-10", 0.3, false);
+            setupScrollAnimation("benefits-title", "-translate-y-10", 0.4);
+            setupScrollAnimation("benefit-card-1", "translate-y-10", 0.2, false);
+            setupScrollAnimation("benefit-card-2", "translate-y-10", 0.2, false);
+            setupScrollAnimation("benefit-card-3", "translate-y-10", 0.2, false);
+            setupScrollAnimation("benefit-card-4", "translate-y-10", 0.2, false);
+            setupScrollAnimation("benefit-card-5", "translate-y-10", 0.2, false);
+            setupScrollAnimation("benefit-card-6", "translate-y-10", 0.2, false);
+
+        });
+    </script>
 
 </body>
 
