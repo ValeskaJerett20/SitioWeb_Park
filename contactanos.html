@@ -7,6 +7,7 @@
     <title>PARK by Vaala</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
     <!-- jVectorMap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.css" rel="stylesheet" />
 
@@ -19,54 +20,153 @@
 
 <body class="bg-gray-50 text-gray-800 font-sans">
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
+    <header class="bg-white header shadow fixed w-full  z-50">
+    <div class="max-w-8xl mx-auto flex justify-between items-center px-16 py-3">
+            <!-- Logo -->
+            <div class="logo">
                 <img src="assets/img/logo-park.png" alt="Logo Park" class="h-10" />
-
             </div>
-            <nav class="hidden md:flex space-x-6 font-semibold text-sm text-cyan-800">
-                <a href="index.html" class="text-cyan-600 border-b-2 border-cyan-600">INICIO</a>
-                <a href="nosotros.html">NOSOTROS</a>
-                <a href="reconocimientos.html">RECONOCIMIENTOS</a>
-                <a href="contactanos.html">CONTACTO</a>
+
+            <!-- Botón hamburguesa (solo visible en mobile) -->
+            <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center space-y-1"
+                aria-label="Abrir menú">
+                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+            </button>
+
+            <!-- Menú de escritorio -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">INICIO</a>
+                <a href="nosotros.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">NOSOTROS</a>
+                <a href="reconocimientos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">RECONOCIMIENTOS</a>
+                <a href="contactanos.html" class=" text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">CONTACTO</a>
             </nav>
         </div>
-    </header>  
 
-<section class="bg-gradient-to-br from-[#0094e8] to-[#36d2ff] py-20 px-6">
-  <div class="bg-white max-w-6xl mx-auto rounded-3xl shadow-2xl p-10 grid md:grid-cols-2 gap-10 items-center">
+        <!-- Menú desplegable para mobile -->
+        <div id="mobile-menu"
+            class="md:hidden hidden flex-col items-center bg-white shadow-inner px-4 py-4 space-y-4 text-center">
+            <a href="index.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">INICIO</a>
+            <a href="nosotros.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">NOSOTROS</a>
+            <a href="reconocimientos.html"
+                class="block text-[#006699] font-bold text-sm hover:text-blue-600">RECONOCIMIENTO</a>
+            <a href="contactanos.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">CONTACTO</a>
+        </div>
+    </header>
 
+<section
+  class="relative py-16 md:py-24 px-4 md:px-8 bg-cover bg-center bg-no-repeat bg-gradient-to-r from-[#33CDFC] to-[#66A1BE]"
+>
+  <!-- Overlay oscuro -->
+  <div class="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+
+  <!-- Contenido principal -->
+  <div
+    class="relative z-10 bg-white bg-opacity-90 backdrop-blur-sm max-w-6xl mx-auto rounded-3xl shadow-2xl p-6 md:p-10 grid md:grid-cols-2 gap-10 items-center"
+  >
     <!-- Texto Izquierdo -->
-    <div>
-      <h2 class="text-4xl md:text-5xl font-extrabold leading-tight text-[#003366] mb-6">
+    <div class="text-center md:text-left">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-[#003366] mb-6">
         HABLEMOS<br />
         DE COMO <span class="text-[#36d2ff]">PARK</span><br />
         PUEDE <span class="text-[#003366]">ADAPTARSE</span><br />
         A <span class="text-[#003366]">TU ESPACIO</span>
       </h2>
-      <p class="text-[#36d2ff] font-semibold text-sm md:text-base">
-        EN UN <span class="font-bold">PLAZO MÁXIMO DE 24 HORAS HÁBILES</span> RECIBIRÁS UNA RESPUESTA Y,<br />
+      <p class="text-[#36d2ff] font-semibold text-sm md:text-base leading-relaxed">
+        EN UN <span class="font-bold">PLAZO MÁXIMO DE 24 HORAS HÁBILES</span> RECIBIRÁS UNA RESPUESTA Y,
         SI CORRESPONDE, UN <span class="font-bold">LINK PARA AGENDAR UNA REUNIÓN.</span>
       </p>
     </div>
 
     <!-- Formulario Derecho -->
-    <form class="space-y-4">
-      <input type="text" placeholder="INGRESA TU NOMBRE*" class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-blue-700 text-blue-900 font-semibold" />
-      <input type="text" placeholder="INGRESA TU COMUNA*" class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-blue-700 text-blue-900 font-semibold" />
-      <input type="email" placeholder="INGRESA TU E-MAIL*" class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-blue-700 text-blue-900 font-semibold" />
-      <input type="tel" placeholder="INGRESA TU TELÉFONO*" class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-blue-700 text-blue-900 font-semibold" />
-      <textarea placeholder="INGRESA TU MENSAJE..." rows="4" class="w-full rounded-3xl px-6 py-4 bg-blue-100 placeholder-blue-700 text-blue-900 font-semibold resize-none"></textarea>
-      <button type="submit" class="bg-gradient-to-r from-[#007ACC] to-[#36d2ff] text-white font-extrabold py-3 px-10 rounded-full shadow-md hover:opacity-90">
-        ENVIAR
-      </button>
+    <form class="space-y-4 w-full">
+      <input
+        type="text"
+        placeholder="INGRESA TU NOMBRE*"
+        class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-[#66A1BE] text-[#66A1BE] font-semibold focus:outline-none focus:ring-2 focus:ring-[#36d2ff] transition"
+        required
+      />
+      <input
+        type="text"
+        placeholder="INGRESA TU COMUNA*"
+        class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-[#66A1BE] text-[#66A1BE] font-semibold focus:outline-none focus:ring-2 focus:ring-[#36d2ff] transition"
+        required
+      />
+      <input
+        type="email"
+        placeholder="INGRESA TU E-MAIL*"
+        class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-[#66A1BE] text-[#66A1BE] font-semibold focus:outline-none focus:ring-2 focus:ring-[#36d2ff] transition"
+        required
+      />
+      <input
+        type="tel"
+        placeholder="INGRESA TU TELÉFONO*"
+        class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-[#66A1BE] text-[#66A1BE] font-semibold focus:outline-none focus:ring-2 focus:ring-[#36d2ff] transition"
+        required
+      />
+      <textarea
+        placeholder="INGRESA TU MENSAJE..."
+        rows="4"
+        class="w-full rounded-3xl px-6 py-4 bg-blue-100 placeholder-[#66A1BE] text-[#66A1BE] font-semibold resize-none focus:outline-none focus:ring-2 focus:ring-[#36d2ff] transition"
+        required
+      ></textarea>
+      <div class="text-right">
+        <button
+          type="submit"
+          class="bg-gradient-to-r from-[#007ACC] to-[#36d2ff] text-white font-extrabold py-3 px-10 rounded-full shadow-md hover:opacity-90 transition"
+        >
+          ENVIAR
+        </button>
+      </div>
     </form>
-
   </div>
 </section>
 
 
+<footer class="bg-gradient-to-br from-[#0D7FB2] to-[#1B9DD0] text-white py-8">
+    <div class="max-w-5xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-6 px-6">
+      <img src="assets/img/logo-park-negativo.png" alt="Logo blanco"
+        class="w-20 sm:w-24 md:w-28 lg:w-32 h-auto max-w-full" />
+
+      <div class="flex gap-4 justify-center md:justify-end">
+        <!-- WhatsApp -->
+        <a href="#"
+          class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
+          aria-label="WhatsApp">
+          <img src="assets/img/svg/whatsapp-logo.svg" alt="WhatsApp logo" class="w-6 h-6 md:w-8 md:h-8 invert" />
+        </a>
+
+        <!-- Instagram -->
+        <a href="#"
+          class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
+          aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24" fill="#ffffff">
+            <path
+              d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.75 2.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" />
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="#"
+          class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
+          aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 md:w-8 md:h-8 fill-white">
+            <path
+              d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <p class="text-center font-semibold text-lg mt-4">© 2025 Vaalagroup</p>
+    <p class="text-center font-semibold text-md mt-4">
+      Desarrollado Por
+      <a href="https://www.kalexmart.com" target="_blank" rel="noopener noreferrer"
+        class="text-cyan-200  hover:text-cyan-700 transition">
+        kalexmart.com
+      </a>
+    </p>
+  </footer>
 
 </body>
 </html>

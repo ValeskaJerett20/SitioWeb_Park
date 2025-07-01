@@ -11,79 +11,134 @@
     <link href="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.css" rel="stylesheet" />
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
+    <script src="js/script.js"></script>
 
 
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans">
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <!-- <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+           
             <div class="flex items-center space-x-2">
-                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-10" />
-
+                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-10 w-auto" />
             </div>
+
+           
             <nav class="hidden md:flex space-x-6 font-semibold text-sm text-cyan-800">
-                <a href="index.html" class="text-cyan-600 border-b-2 border-cyan-600">INICIO</a>
-                <a href="nosotros.html">NOSOTROS</a>
-                <a href="reconocimientos.html">RECONOCIMIENTOS</a>
-                <a href="contactanos.html">CONTACTO</a>
+                <a href="index.html" class="hover:text-cyan-600 transition">INICIO</a>
+                <a href="nosotros.html" class="hover:text-cyan-600 transition">NOSOTROS</a>
+                <a href="reconocimientos.html" class="text-cyan-600 border-b-2 border-cyan-600">RECONOCIMIENTOS</a>
+                <a href="contactanos.html" class="hover:text-cyan-600 transition">CONTACTO</a>
             </nav>
         </div>
-    </header>
-</body>
-<section class="bg-gradient-to-r from-[#0094e8] to-[#36d2ff] py-20 px-6">
-    <div class="max-w-6xl mx-auto text-left text-white">
-        <!-- Badge actualizado con degradado y texto blanco -->
-        <div
-            class="inline-block px-6 py-2 rounded-md font-extrabold text-white bg-gradient-to-r from-[#36d2ff] to-[#007ACC] shadow mb-6">
-            SEGUIMOS AVANZANDO
+    </header> -->
+    <header class="bg-white header shadow fixed w-full  z-50">
+        <div class="max-w-8xl mx-auto flex justify-between items-center px-16 py-3">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-10" />
+            </div>
+
+            <!-- Botón hamburguesa (solo visible en mobile) -->
+            <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center space-y-1"
+                aria-label="Abrir menú">
+                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+            </button>
+
+            <!-- Menú de escritorio -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">INICIO</a>
+                <a href="nosotros.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">NOSOTROS</a>
+                <a href="reconocimientos.html"
+                    class="text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">RECONOCIMIENTOS</a>
+                <a href="contactanos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">CONTACTO</a>
+            </nav>
         </div>
 
-        <!-- Texto principal -->
-        <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">
-            HEMOS GANADO<br />
-            <span class="text-[#94E6FF]">EL PREMIO ASIVA<br />2025</span> EN LA<br />
-            CATEGORÍA DE <span class="text-[#94E6FF]">INNOVACIÓN</span>
-        </h2>
+        <!-- Menú desplegable para mobile -->
+        <div id="mobile-menu"
+            class="md:hidden hidden flex-col items-center bg-white shadow-inner px-4 py-4 space-y-4 text-center">
+            <a href="index.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">INICIO</a>
+            <a href="nosotros.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">NOSOTROS</a>
+            <a href="reconocimientos.html"
+                class="block text-[#006699] font-bold text-sm hover:text-blue-600">RECONOCIMIENTO</a>
+            <a href="contactanos.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">CONTACTO</a>
+        </div>
+    </header>
+
+    <!-- Hero Reconocimiento -->
+    <section class="relative overflow-hidden py-24 px-6 bg-white">
+  <!-- Fondo con imagen + overlay azul -->
+  <div class="absolute inset-0 z-0">
+    <div class="w-full h-full bg-[url('assets/img/bg/premios.png')] bg-cover bg-center grayscale"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#007ACC]/90 to-[#0094e8]/80"></div>
+  </div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
+    <!-- Texto -->
+    <div class="text-white md:w-1/2 text-center md:text-left">
+      <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" class="w-5 h-5">
+          <path d="M12 2L8.5 8.5 2 9.3l5 4.9-1.2 6.9L12 17.8l6.2 3.3L17 14.2l5-4.9-6.5-.8L12 2z" />
+        </svg>
+        <span class="font-semibold text-sm uppercase tracking-wide">Seguimos avanzando</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+        Hemos ganado <br />
+        el <span class="text-[#94E6FF]">Premio ASIVA 2025</span><br />
+        en la categoría de <span class="text-[#94E6FF]">Innovación</span>
+      </h1>
     </div>
+
+    <!-- Imagen (opcional si no quieres usar imagen de fondo) -->
+    <div class="hidden md:block md:w-1/2">
+      <!-- Podrías usar una imagen transparente o figura si no quieres usar fondo -->
+      <!-- <img src="assets/img/premio-equipo.png" alt="Premio ASIVA" class="w-full rounded-lg shadow-lg" /> -->
+    </div>
+  </div>
 </section>
 
 
-<section id="confetti-section" class="relative py-20 overflow-hidden bg-[#f8f9fa] text-center">
-    <!-- Canvas para confetti -->
-    <canvas id="confetti-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
 
-    <!-- Contenido principal -->
-    <div class="relative z-10 max-w-3xl mx-auto px-4">
-        <!-- Frase 1 -->
-        <div
-            class="inline-block px-6 py-2 rounded-md font-extrabold text-white bg-gradient-to-r from-[#36d2ff] to-[#007ACC] shadow mb-2 text-sm md:text-base">
-            ESTE RECONOCIMIENTO NO SOLO CELEBRA
-        </div><br>
-        <!-- Frase 2 -->
-        <div
-            class="inline-block px-6 py-2 rounded-md font-extrabold text-white bg-gradient-to-r from-[#36d2ff] to-[#007ACC] shadow mb-6 text-sm md:text-base">
-            UNA INICIATIVA EN PARTICULAR...
-        </div>
+    <!-- Confetti Section Modernizado -->
+<section id="confetti-section" class="relative py-24 overflow-hidden bg-white text-center">
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
 
-        <!-- Texto principal -->
-        <h2 class="text-2xl md:text-3xl font-extrabold text-[#003366] leading-tight mb-8">
-            ES UNA PRUEBA CONCRETA DE QUE<br />
-            CUANDO TRABAJAMOS EN EQUIPO, NOS<br />
-            ATREVEMOS A PENSAR DISTINTO Y<br />
-            APOSTAMOS POR HACER LAS COSAS<br />
-            MEJOR, LOS RESULTADOS LLEGAN.
-        </h2>
+  <!-- Contenido -->
+  <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
+    <!-- Etiquetas -->
+    <div class="flex justify-center items-center gap-4 mb-6 flex-wrap sm:flex-nowrap">
 
-        <!-- Botón -->
-        <a href="#!"
-            class="inline-block px-8 py-3 text-white font-extrabold text-lg rounded-md bg-gradient-to-r from-[#0094e8] to-[#36d2ff] shadow">
-            ¡VAMOS POR MÁS!
-        </a>
+      <span class="inline-block bg-gradient-to-r from-[#36d2ff] to-[#007ACC] text-white text-xs font-bold px-5 py-2 rounded-xl shadow">
+        ⭐ ESTE RECONOCIMIENTO NO SOLO CELEBRA
+      </span>
+    
+      <span class="inline-block bg-gradient-to-r from-[#0094e8] to-[#005F99] text-white text-xs font-bold px-5 py-2 rounded-xl shadow">
+        UNA INICIATIVA EN PARTICULAR...
+      </span>
     </div>
-</section> 
+
+    <!-- Mensaje central -->
+    <h2 class="text-[#002244] text-2xl sm:text-3xl font-extrabold leading-relaxed mb-10">
+      Es una prueba concreta de que<br />
+      cuando trabajamos en equipo,<br />
+      nos atrevemos a pensar distinto<br />
+      y apostamos por hacer las cosas mejor.<br />
+      ¡Los resultados llegan!
+    </h2>
+
+    <!-- CTA visual estilo botón -->
+    <div class="inline-block bg-gradient-to-r from-[#00BFFF] to-[#007ACC] text-white text-base font-bold px-8 py-3 rounded-full shadow-md">
+      ¡VAMOS POR MÁS!
+    </div>
+  </div>
+</section>
 
 <script>
   const confettiCanvas = document.getElementById('confetti-canvas');
@@ -91,17 +146,17 @@
 
   const gradientBlues = ['#007ACC', '#0094e8', '#36d2ff', '#94E6FF'];
 
-   function launchConfetti() {
+  function launchConfetti() {
     myConfetti({
-      particleCount: 100,
-      spread: 120,
-      origin: { y: 0.5 },
+      particleCount: 180,
+      spread: 160,
+      origin: { y: 0.6 },
       colors: gradientBlues,
-      gravity: 0.4 // 🎯 Aquí haces que caigan más lento
+      gravity: 0.3,
+      scalar: 0.8
     });
   }
 
-  // Detecta si la sección está en pantalla
   let isInView = false;
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -111,23 +166,65 @@
         const interval = setInterval(() => {
           if (isInView) launchConfetti();
           else clearInterval(interval);
-        }, 5000);
+        }, 4000);
       } else if (!entry.isIntersecting) {
         isInView = false;
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.4 });
 
   observer.observe(document.getElementById('confetti-section'));
 </script>
 
 
 
+    <footer class="bg-gradient-to-br from-[#0D7FB2] to-[#1B9DD0] text-white py-8">
+        <div class="max-w-5xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-6 px-6">
+            <img src="assets/img/logo-park-negativo.png" alt="Logo blanco"
+                class="w-20 sm:w-24 md:w-28 lg:w-32 h-auto max-w-full" />
+
+            <div class="flex gap-4 justify-center md:justify-end">
+                <!-- WhatsApp -->
+                <a href="#"
+                    class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
+                    aria-label="WhatsApp">
+                    <img src="assets/img/svg/whatsapp-logo.svg" alt="WhatsApp logo"
+                        class="w-6 h-6 md:w-8 md:h-8 invert" />
+                </a>
+
+                <!-- Instagram -->
+                <a href="#"
+                    class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
+                    aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24"
+                        fill="#ffffff">
+                        <path
+                            d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.75 2.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" />
+                    </svg>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="#"
+                    class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                        class="w-6 h-6 md:w-8 md:h-8 fill-white">
+                        <path
+                            d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <p class="text-center font-semibold text-lg mt-4">© 2025 Vaalagroup</p>
+        <p class="text-center font-semibold text-md mt-4">
+            Desarrollado Por
+            <a href="https://www.kalexmart.com" target="_blank" rel="noopener noreferrer"
+                class="text-cyan-200  hover:text-cyan-700 transition">
+                kalexmart.com
+            </a>
+        </p>
+    </footer>
 
 </body>
-
-</html>
-
-
 
 </html>

@@ -7,182 +7,275 @@
     <title>PARK by Vaala</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/main.js"></script>
+
+
     <!-- jVectorMap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.css" rel="stylesheet" />
-
+    <script src="js/script.js"></script>
     <!-- jQuery y jVectorMap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/tests/assets/jquery-jvectormap-cl-mill.js"></script>
+    <link rel="stylesheet" href="css/animacion-fondo.css">
 
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans">
+    <canvas id="digitalNetworkCanvas"></canvas>
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-10" />
-
+    <header class="bg-white header shadow fixed w-full z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-14 py-3">
+            <div class="logo">
+                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-16" />
             </div>
-            <nav class="hidden md:flex space-x-6 font-semibold text-sm text-cyan-800">
-                <a href="index.html" class="text-cyan-600 border-b-2 border-cyan-600">INICIO</a>
-                <a href="nosotros.html">NOSOTROS</a>
-                <a href="reconocimientos.html">RECONOCIMIENTOS</a>
-                <a href="contactanos.html">CONTACTO</a>
+
+            <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center space-y-1"
+                aria-label="Abrir menú">
+                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+            </button>
+
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">INICIO</a>
+                <a href="nosotros.html"
+                    class=" text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">NOSOTROS</a>
+                <a href="reconocimientos.html"
+                    class="text-sm font-bold text-[#006699] hover:text-blue-600">RECONOCIMIENTOS</a>
+                <a href="contactanos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">CONTACTO</a>
             </nav>
         </div>
+
+        <div id="mobile-menu"
+            class="md:hidden hidden flex-col items-center bg-white shadow-inner px-4 py-4 space-y-4 text-center">
+            <a href="index.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">INICIO</a>
+            <a href="nosotros.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">NOSOTROS</a>
+            <a href="reconocimientos.html"
+                class="block text-[#006699] font-bold text-sm hover:text-blue-600">RECONOCIMIENTO</a>
+            <a href="contactanos.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">CONTACTO</a>
+        </div>
     </header>
-</body>
-<section class="bg-[#F2F2F2] py-12 px-4 text-center font-sans">
-    <div class="max-w-5xl mx-auto">
-        <!-- Título principal -->
-        <h2 class="text-3xl md:text-5xl font-extrabold text-[#00568F] leading-tight mb-4">
-            ¿CÓMO FUNCIONA<br />
-            <span class="text-[#003F6B]">PARK BY VAALA?</span>
-        </h2>
 
-        <!-- Subtítulo -->
-        <p class="text-[#003F6B] text-lg md:text-xl font-medium leading-snug mb-6">
-            OPERA A TRAVÉS DE UNA <span class="font-bold">PLATAFORMA DIGITAL</span> DISEÑADA PARA<br />
-            FACILITAR LA GESTIÓN DE ESTACIONAMIENTOS DE MANERA<br />
-            EFICIENTE, SEGURA Y ORDENADA.
+    <section class=" bg-[#F2F2F2] py-16 px-4">
+        <div class="text-center mx-auto">
+            <!-- Título principal -->
+            <h2 class="text-3xl md:text-5xl font-bold text-[#006699] leading-tight mt-24 mb-4">
+                ¿CÓMO FUNCIONA<br />
+                <span class="text-[#006699] font-extrabold">PARK BY VAALA?</span>
+            </h2>
+
+            <!-- Subtítulo -->
+            <p class="text-[#006699] text-lg md:text-xl font-medium leading-snug mb-6">
+                OPERA A TRAVÉS DE UNA <span class="font-extrabold">PLATAFORMA DIGITAL</span> DISEÑADA PARA<br />
+                FACILITAR LA GESTIÓN DE ESTACIONAMIENTOS DE MANERA<br />
+                EFICIENTE, SEGURA Y ORDENADA.
+            </p>
+
+            <!-- Franja con proceso clave -->
+            <div class="inline-block bg-[#29C5FF] text-white px-5 py-2 rounded-full font-bold text-base mb-10 shadow">
+                SU FUNCIONAMIENTO SE BASA EN <span class="font-extrabold">TRES PROCESOS CLAVE:</span>
+            </div>
+
+            <!-- Secciones: Gestión - Supervisión - Seguimiento -->
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 mt-6">
+                <div id="gestion-card" class="bg-[#29C5FF] rounded-full px-6 py-4 w-64 shadow-xl flex items-center gap-4
+               opacity-0 -translate-y-10 transition-all duration-700 ease-out
+               hover:scale-105 hover:shadow-2xl hover:bg-[#0099CC] cursor-pointer">
+                    <div class="bg-white p-4 rounded-full shadow-md">
+                        <img src="assets/img/icons/Proceso01_Sin_fondo.png" alt="Gestión" class="w-10 h-10" />
+                    </div>
+                    <span class="text-white font-bold text-lg">GESTIÓN</span>
+                </div>
+
+                <div id="supervision-card" class="bg-[#29C5FF] rounded-full px-6 py-4 w-64 shadow-xl flex items-center gap-4
+               opacity-0 -translate-y-10 transition-all duration-700 ease-out delay-150
+               hover:scale-105 hover:shadow-2xl hover:bg-[#0099CC] cursor-pointer">
+                    <div class="bg-white p-4 rounded-full shadow-md">
+                        <img src="assets/img/icons/Proceso02_Sin_fondo.png" alt="Supervisión" class="w-10 h-10" />
+                    </div>
+                    <span class="text-white font-bold text-lg">SUPERVISIÓN</span>
+                </div>
+
+                <div id="seguimiento-card" class="bg-[#29C5FF] rounded-full px-6 py-4 w-64 shadow-xl flex items-center gap-4
+               opacity-0 -translate-y-10 transition-all duration-700 ease-out delay-300
+               hover:scale-105 hover:shadow-2xl hover:bg-[#0099CC] cursor-pointer">
+                    <div class="bg-white p-4 rounded-full shadow-md">
+                        <img src="assets/img/icons/Proceso03_Sin_fondo.png" alt="Seguimiento" class="w-10 h-10" />
+                    </div>
+                    <span class="text-white font-bold text-lg">SEGUIMIENTO</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="benefits-section" class="bg-[#F2F2F2] py-16 px-4 text-center font-sans">
+        <div class="max-w-6xl mx-auto">
+            <h2 id="benefits-title" class="text-3xl md:text-5xl font-extrabold text-[#003F6B] mb-12
+                   opacity-0 -translate-y-10 transition-all duration-1000 ease-out">
+                ¿QUÉ <span class="text-[#00C3FF]">OBTENDRÁS</span><br class="md:hidden" />
+                <span class="text-[#00C3FF]">CON NOSOTROS?</span>
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div id="benefit-card-1" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
+                        translate-y-10 transition-all duration-700 ease-out
+                       hover:scale-105 hover:shadow-lg cursor-pointer">
+                    <div class="bg-transparent p-4 rounded-full mb-4">
+                        <img src="assets/img/icons/ICON_01.png" class="w-16 h-16" alt="Monitoreo" />
+                    </div>
+                    <p class="text-[#00568F] font-bold leading-tight">
+                        MONITOREO<br /><span class="font-extrabold">EN TIEMPO REAL</span>
+                    </p>
+                </div>
+
+                <div id="benefit-card-2" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
+                        translate-y-10 transition-all duration-700 ease-out delay-150
+                       hover:scale-105 hover:shadow-lg cursor-pointer">
+                    <div class="bg-transparent p-4 rounded-full mb-4">
+                        <img src="assets/img/icons/ICON_02.png" class="w-16 h-16" alt="Validación" />
+                    </div>
+                    <p class="text-[#00568F] font-bold leading-tight">
+                        VALIDACIÓN POR<br /><span class="font-extrabold">DIRECCIÓN DEL TRABAJO</span>
+                    </p>
+                </div>
+
+                <div id="benefit-card-3" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
+                        translate-y-10 transition-all duration-700 ease-out delay-300
+                       hover:scale-105 hover:shadow-lg cursor-pointer">
+                    <div class="bg-transparent p-4 rounded-full mb-4">
+                        <img src="assets/img/icons/ICON_03.png" class="w-16 h-16" alt="Clientes" />
+                    </div>
+                    <p class="text-[#00568F] font-bold leading-tight">
+                        ESPACIO PARA<br /><span class="font-extrabold">TUS CLIENTES</span>
+                    </p>
+                </div>
+
+                <div id="benefit-card-4" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
+                        translate-y-10 transition-all duration-700 ease-out delay-450
+                       hover:scale-105 hover:shadow-lg cursor-pointer">
+                    <div class="bg-transparent p-4 rounded-full mb-4">
+                        <img src="assets/img/icons/ICON_04.png" class="w-16 h-16" alt="SII" />
+                    </div>
+                    <p class="text-[#00568F] font-bold leading-tight">
+                        VENTA ENLAZADA<br /><span class="font-extrabold">AL SERVICIO DE<br />IMPUESTOS INTERNOS</span>
+                    </p>
+                </div>
+
+                <div id="benefit-card-5" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
+                        translate-y-10 transition-all duration-700 ease-out delay-600
+                       hover:scale-105 hover:shadow-lg cursor-pointer">
+                    <div class="bg-transparent p-4 rounded-full mb-4">
+                        <img src="assets/img/icons/ICON_05.png" class="w-16 h-16" alt="Verticales" />
+                    </div>
+                    <p class="text-[#00568F] font-bold leading-tight">
+                        NUEVAS<br /><span class="font-extrabold">VERTICALES<br />DE NEGOCIO</span>
+                    </p>
+                </div>
+
+                <div id="benefit-card-6" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
+                        translate-y-10 transition-all duration-700 ease-out delay-750
+                       hover:scale-105 hover:shadow-lg cursor-pointer">
+                    <div class="bg-transparent p-4 rounded-full mb-4">
+                        <img src="assets/img/icons/ICON_06.png" class="w-16 h-16" alt="Comunicación" />
+                    </div>
+                    <p class="text-[#00568F] font-bold leading-tight">
+                        COMUNICACIÓN<br /><span class="font-extrabold">DIRECTA CON<br />TUS CLIENTES</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#F2F2F2] py-16 px-4 font-sans">
+        <div class="max-w-3xl mx-auto">
+            <div class="border-2 border-[#00C3FF] rounded-full px-10 py-10 text-center">
+                <h3 class="text-2xl md:text-3xl font-bold text-[#00568F] mb-4">
+                    SÚMATE A UN <span class="font-extrabold">SOFTWARE<br />MÁS COMPLETO</span>
+                </h3>
+                <button class="bg-gradient-to-r from-[#00C3FF] to-[#007ACC] text-white rounded-full px-10 py-2 mt-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline" fill="none" viewBox="0 0 24 24"
+                        stroke="white">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="6"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gradient-to-br from-[#0D7FB2] to-[#1B9DD0] text-white py-8">
+        <div class="max-w-5xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-6 px-6">
+            <img src="assets/img/logo-park-negativo.png" alt="Logo blanco"
+                class="w-20 sm:w-24 md:w-28 lg:w-32 h-auto max-w-full" />
+
+            <div class="flex gap-4 justify-center md:justify-end">
+                <!-- WhatsApp -->
+                <a href="#"
+                    class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
+                    aria-label="WhatsApp">
+                    <img src="assets/img/svg/whatsapp-logo.svg" alt="WhatsApp logo"
+                        class="w-6 h-6 md:w-8 md:h-8 invert" />
+                </a>
+
+                <!-- Instagram -->
+                <a href="#"
+                    class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
+                    aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24"
+                        fill="#ffffff">
+                        <path
+                            d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.75 2.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" />
+                    </svg>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="#"
+                    class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                        class="w-6 h-6 md:w-8 md:h-8 fill-white">
+                        <path
+                            d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <p class="text-center font-semibold text-lg mt-4">© 2025 Vaalagroup</p>
+        <p class="text-center font-semibold text-md mt-4">
+            Desarrollado Por
+            <a href="https://www.kalexmart.com" target="_blank" rel="noopener noreferrer"
+                class="text-cyan-200  hover:text-cyan-700 transition">
+                kalexmart.com
+            </a>
         </p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            setupMobileMenu("menu-toggle", "mobile-menu");
+            setupScrollAnimation("logo-section", "-translate-x-10", 0.2);
+            setupVideoPlayerOnScroll("video-section", "video-frame");
+            setupScrollAnimation('anim-left', '-translate-x-10');
+            setupScrollAnimation('anim-right', 'translate-x-10');
 
-        <!-- Franja con proceso clave -->
-        <div class="inline-block bg-[#29C5FF] text-white px-5 py-2 rounded-full font-bold text-base mb-10 shadow">
-            SU FUNCIONAMIENTO SE BASA EN <span class="font-extrabold">TRES PROCESOS CLAVE:</span>
-        </div>
+            setupButtonPulseAnimation("funciona-section", "boton-nosotros", 0.5, 1000);
+            setupTypewriterAnimation("typewriter-title", "typewriter-paragraph", DEFAULT_TITLE_TEXT, DEFAULT_PARAGRAPH_TEXT);
+            setupScrollAnimation("gestion-card", "-translate-y-10", 0.3, false);
+            setupScrollAnimation("supervision-card", "-translate-y-10", 0.3, false);
+            setupScrollAnimation("seguimiento-card", "-translate-y-10", 0.3, false);
+            setupScrollAnimation("benefits-title", "-translate-y-10", 0.4);
+            setupScrollAnimation("benefit-card-1", "translate-y-10", 0.2, false);
+            setupScrollAnimation("benefit-card-2", "translate-y-10", 0.2, false);
+            setupScrollAnimation("benefit-card-3", "translate-y-10", 0.2, false);
+            setupScrollAnimation("benefit-card-4", "translate-y-10", 0.2, false);
+            setupScrollAnimation("benefit-card-5", "translate-y-10", 0.2, false);
+            setupScrollAnimation("benefit-card-6", "translate-y-10", 0.2, false);
 
-        <!-- Secciones: Gestión - Supervisión - Seguimiento -->
-        <div class="flex flex-col md:flex-row justify-center items-center gap-8 mt-6">
-            <!-- GESTIÓN -->
-            <div class="bg-[#29C5FF] rounded-full px-6 py-4 w-64 shadow-xl flex items-center gap-4">
-                <div class="bg-white p-4 rounded-full shadow-md">
-                    <!-- ícono de ejemplo -->
-                    <img src="https://cdn-icons-png.flaticon.com/512/10778/10778920.png" alt="Gestión"
-                        class="w-10 h-10" />
-                </div>
-                <span class="text-white font-bold text-lg">GESTIÓN</span>
-            </div>
-
-            <!-- SUPERVISIÓN -->
-            <div class="bg-[#29C5FF] rounded-full px-6 py-4 w-64 shadow-xl flex items-center gap-4">
-                <div class="bg-white p-4 rounded-full shadow-md">
-                    <img src="https://cdn-icons-png.flaticon.com/512/10778/10778923.png" alt="Supervisión"
-                        class="w-10 h-10" />
-                </div>
-                <span class="text-white font-bold text-lg">SUPERVISIÓN</span>
-            </div>
-
-            <!-- SEGUIMIENTO -->
-            <div class="bg-[#29C5FF] rounded-full px-6 py-4 w-64 shadow-xl flex items-center gap-4">
-                <div class="bg-white p-4 rounded-full shadow-md">
-                    <img src="https://cdn-icons-png.flaticon.com/512/10778/10778919.png" alt="Seguimiento"
-                        class="w-10 h-10" />
-                </div>
-                <span class="text-white font-bold text-lg">SEGUIMIENTO</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="bg-[#F2F2F2] py-16 px-4 text-center font-sans">
-    <div class="max-w-6xl mx-auto">
-        <!-- Título -->
-        <h2 class="text-3xl md:text-5xl font-extrabold text-[#003F6B] mb-12">
-            ¿QUÉ <span class="text-[#00C3FF]">OBTENDRÁS</span><br class="md:hidden" />
-            <span class="text-[#00C3FF]">CON NOSOTROS?</span>
-        </h2>
-
-        <!-- Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- CARD 1 -->
-            <div class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center">
-                <div class="bg-gradient-to-b from-[#00C3FF] to-[#007ACC] p-4 rounded-full mb-4">
-                    <img src="https://cdn-icons-png.flaticon.com/512/11186/11186136.png" class="w-8 h-8"
-                        alt="Monitoreo" />
-                </div>
-                <p class="text-[#00568F] font-bold leading-tight">
-                    MONITOREO<br /><span class="font-extrabold">EN TIEMPO REAL</span>
-                </p>
-            </div>
-
-            <!-- CARD 2 -->
-            <div class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center">
-                <div class="bg-gradient-to-b from-[#00C3FF] to-[#007ACC] p-4 rounded-full mb-4">
-                    <img src="https://cdn-icons-png.flaticon.com/512/7024/7024690.png" class="w-8 h-8"
-                        alt="Validación" />
-                </div>
-                <p class="text-[#00568F] font-bold leading-tight">
-                    VALIDACIÓN POR<br /><span class="font-extrabold">DIRECCIÓN DEL TRABAJO</span>
-                </p>
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center">
-                <div class="bg-gradient-to-b from-[#00C3FF] to-[#007ACC] p-4 rounded-full mb-4">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" class="w-8 h-8" alt="Clientes" />
-                </div>
-                <p class="text-[#00568F] font-bold leading-tight">
-                    ESPACIO PARA<br /><span class="font-extrabold">TUS CLIENTES</span>
-                </p>
-            </div>
-
-            <!-- CARD 4 -->
-            <div class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center">
-                <div class="bg-gradient-to-b from-[#00C3FF] to-[#007ACC] p-4 rounded-full mb-4">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-8 h-8" alt="SII" />
-                </div>
-                <p class="text-[#00568F] font-bold leading-tight">
-                    VENTA ENLAZADA<br /><span class="font-extrabold">AL SERVICIO DE<br />IMPUESTOS INTERNOS</span>
-                </p>
-            </div>
-
-            <!-- CARD 5 -->
-            <div class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center">
-                <div class="bg-gradient-to-b from-[#00C3FF] to-[#007ACC] p-4 rounded-full mb-4">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828961.png" class="w-8 h-8"
-                        alt="Verticales" />
-                </div>
-                <p class="text-[#00568F] font-bold leading-tight">
-                    NUEVAS<br /><span class="font-extrabold">VERTICALES<br />DE NEGOCIO</span>
-                </p>
-            </div>
-
-            <!-- CARD 6 -->
-            <div class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center">
-                <div class="bg-gradient-to-b from-[#00C3FF] to-[#007ACC] p-4 rounded-full mb-4">
-                    <img src="https://cdn-icons-png.flaticon.com/512/893/893257.png" class="w-8 h-8"
-                        alt="Comunicación" />
-                </div>
-                <p class="text-[#00568F] font-bold leading-tight">
-                    COMUNICACIÓN<br /><span class="font-extrabold">DIRECTA CON<br />TUS CLIENTES</span>
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="bg-[#F2F2F2] py-16 px-4 font-sans">
-    <div class="max-w-3xl mx-auto">
-        <div class="border-2 border-[#00C3FF] rounded-full px-10 py-10 text-center">
-            <h3 class="text-2xl md:text-3xl font-extrabold text-[#00568F] mb-4">
-                SÚMATE A UN <span class="font-bold">SOFTWARE<br />MÁS COMPLETO</span>
-            </h3>
-            <button class="bg-gradient-to-r from-[#00C3FF] to-[#007ACC] text-white rounded-full px-6 py-2 mt-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline" fill="none" viewBox="0 0 24 24"
-                    stroke="white">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-
-            </button>
-        </div>
-    </div>
-</section>
-
-
+        });
+    </script>
+    <script src="js/animacion-fondo.js"></script>
+</body>
 
 </html>
