@@ -7,6 +7,8 @@
     <title>PARK by Vaala</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/main.js"></script>
+
+
     <!-- jVectorMap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.css" rel="stylesheet" />
     <script src="js/script.js"></script>
@@ -14,10 +16,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/tests/assets/jquery-jvectormap-cl-mill.js"></script>
+    <link rel="stylesheet" href="css/animacion-fondo.css">
 
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans">
+    <canvas id="digitalNetworkCanvas"></canvas>
     <!-- Header -->
     <header class="bg-white header shadow fixed w-full z-50">
         <div class="max-w-7xl mx-auto flex justify-between items-center px-14 py-3">
@@ -114,8 +118,8 @@
             </h2>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div id="benefit-card-1" class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center
-                       opacity-0 translate-y-10 transition-all duration-700 ease-out
+                <div id="benefit-card-1" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
+                        translate-y-10 transition-all duration-700 ease-out
                        hover:scale-105 hover:shadow-lg cursor-pointer">
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_01.png" class="w-16 h-16" alt="Monitoreo" />
@@ -125,8 +129,8 @@
                     </p>
                 </div>
 
-                <div id="benefit-card-2" class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center
-                       opacity-0 translate-y-10 transition-all duration-700 ease-out delay-150
+                <div id="benefit-card-2" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
+                        translate-y-10 transition-all duration-700 ease-out delay-150
                        hover:scale-105 hover:shadow-lg cursor-pointer">
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_02.png" class="w-16 h-16" alt="Validación" />
@@ -136,8 +140,8 @@
                     </p>
                 </div>
 
-                <div id="benefit-card-3" class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center
-                       opacity-0 translate-y-10 transition-all duration-700 ease-out delay-300
+                <div id="benefit-card-3" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
+                        translate-y-10 transition-all duration-700 ease-out delay-300
                        hover:scale-105 hover:shadow-lg cursor-pointer">
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_03.png" class="w-16 h-16" alt="Clientes" />
@@ -147,8 +151,8 @@
                     </p>
                 </div>
 
-                <div id="benefit-card-4" class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center
-                       opacity-0 translate-y-10 transition-all duration-700 ease-out delay-[450ms]
+                <div id="benefit-card-4" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
+                        translate-y-10 transition-all duration-700 ease-out delay-450
                        hover:scale-105 hover:shadow-lg cursor-pointer">
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_04.png" class="w-16 h-16" alt="SII" />
@@ -158,8 +162,8 @@
                     </p>
                 </div>
 
-                <div id="benefit-card-5" class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center
-                       opacity-0 translate-y-10 transition-all duration-700 ease-out delay-[600ms]
+                <div id="benefit-card-5" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
+                        translate-y-10 transition-all duration-700 ease-out delay-600
                        hover:scale-105 hover:shadow-lg cursor-pointer">
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_05.png" class="w-16 h-16" alt="Verticales" />
@@ -169,8 +173,8 @@
                     </p>
                 </div>
 
-                <div id="benefit-card-6" class="bg-[#EDEDED] rounded-lg shadow-md py-6 px-4 flex flex-col items-center
-                       opacity-0 translate-y-10 transition-all duration-700 ease-out delay-[750ms]
+                <div id="benefit-card-6" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
+                        translate-y-10 transition-all duration-700 ease-out delay-750
                        hover:scale-105 hover:shadow-lg cursor-pointer">
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_06.png" class="w-16 h-16" alt="Comunicación" />
@@ -258,7 +262,7 @@
 
             setupButtonPulseAnimation("funciona-section", "boton-nosotros", 0.5, 1000);
             setupTypewriterAnimation("typewriter-title", "typewriter-paragraph", DEFAULT_TITLE_TEXT, DEFAULT_PARAGRAPH_TEXT);
-            setupScrollAnimation("gestion-card", "-translate-y-10", 0.3, false); 
+            setupScrollAnimation("gestion-card", "-translate-y-10", 0.3, false);
             setupScrollAnimation("supervision-card", "-translate-y-10", 0.3, false);
             setupScrollAnimation("seguimiento-card", "-translate-y-10", 0.3, false);
             setupScrollAnimation("benefits-title", "-translate-y-10", 0.4);
@@ -271,7 +275,7 @@
 
         });
     </script>
-
+    <script src="js/animacion-fondo.js"></script>
 </body>
 
 </html>

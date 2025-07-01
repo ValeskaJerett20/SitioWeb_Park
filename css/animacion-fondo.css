@@ -1,0 +1,35 @@
+/*
+ * Estilos para el fondo de red digital animado
+ */
+
+/*
+  Aseguramos que el canvas se posicione correctamente detrás de todo el contenido.
+  Usamos 'fixed' para que ocupe toda la pantalla y no se mueva con el scroll.
+*/
+#digitalNetworkCanvas {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* ¡La clave! Lo envía al fondo. */
+}
+
+/*
+  Hacemos que el contenido principal (header, sections, footer) tenga un contexto
+  de apilamiento propio para que se renderice por encima del canvas.
+*/
+header, section, footer {
+    position: relative;
+    z-index: 1; /* Cualquier valor mayor que el z-index del canvas (-1) funciona. */
+}
+
+/*
+  Hacemos que el fondo de las secciones sea transparente para que la animación
+  del canvas sea visible a través de ellas. El color de fondo general
+  lo define la clase del <body>.
+*/
+section {
+    background-color: transparent !important;
+}
