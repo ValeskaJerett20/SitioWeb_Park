@@ -23,12 +23,14 @@
 <body class="bg-gray-50 text-gray-800 font-sans">
     <!-- <canvas id="digitalNetworkCanvas"></canvas> -->
     <!-- Header -->
-    <header class="bg-white header shadow fixed w-full z-50">
-        <div class="max-w-7xl mx-auto flex justify-between items-center px-14 py-3">
+    <header class="bg-white header shadow fixed w-full  z-50">
+        <div class="max-w-8xl mx-auto flex justify-between items-center px-16 py-3">
+            <!-- Logo -->
             <div class="logo">
-                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-16" />
+                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-10" />
             </div>
 
+            <!-- Botón hamburguesa (solo visible en mobile) -->
             <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center space-y-1"
                 aria-label="Abrir menú">
                 <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
@@ -36,16 +38,17 @@
                 <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
             </button>
 
+            <!-- Menú de escritorio -->
             <nav class="hidden md:flex space-x-6">
                 <a href="index.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">INICIO</a>
-                <a href="nosotros.html"
-                    class=" text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">NOSOTROS</a>
+                <a href="nosotros.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">NOSOTROS</a>
                 <a href="reconocimientos.html"
-                    class="text-sm font-bold text-[#006699] hover:text-blue-600">RECONOCIMIENTOS</a>
+                    class="text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">RECONOCIMIENTOS</a>
                 <a href="contactanos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">CONTACTO</a>
             </nav>
         </div>
 
+        <!-- Menú desplegable para mobile -->
         <div id="mobile-menu"
             class="md:hidden hidden flex-col items-center bg-white shadow-inner px-4 py-4 space-y-4 text-center">
             <a href="index.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">INICIO</a>

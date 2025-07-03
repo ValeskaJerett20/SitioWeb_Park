@@ -27,37 +27,41 @@
 </head>
 
 <body class="bg-[#FFFFFF] text-gray-800 font-sans">
-  <header class="bg-white header shadow fixed w-full z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-14 py-3">
-      <div class="logo">
-        <img src="assets/img/logo-park.png" alt="Logo Park" class="h-16" />
-      </div>
+   <header class="bg-white header shadow fixed w-full  z-50">
+        <div class="max-w-8xl mx-auto flex justify-between items-center px-16 py-3">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-10" />
+            </div>
 
-      <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center space-y-1"
-        aria-label="Abrir menú">
-        <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
-        <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
-        <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
-      </button>
+            <!-- Botón hamburguesa (solo visible en mobile) -->
+            <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center space-y-1"
+                aria-label="Abrir menú">
+                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+            </button>
 
-      <nav class="hidden md:flex space-x-6">
-        <a href="index.html"
-          class="text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">INICIO</a>
-        <a href="nosotros.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">NOSOTROS</a>
-        <a href="reconocimientos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">RECONOCIMIENTOS</a>
-        <a href="contactanos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">CONTACTO</a>
-      </nav>
-    </div>
+            <!-- Menú de escritorio -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">INICIO</a>
+                <a href="nosotros.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">NOSOTROS</a>
+                <a href="reconocimientos.html"
+                    class="text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">RECONOCIMIENTOS</a>
+                <a href="contactanos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">CONTACTO</a>
+            </nav>
+        </div>
 
-    <div id="mobile-menu"
-      class="md:hidden hidden flex-col items-center bg-white shadow-inner px-4 py-4 space-y-4 text-center">
-      <a href="index.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">INICIO</a>
-      <a href="nosotros.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">NOSOTROS</a>
-      <a href="reconocimientos.html"
-        class="block text-[#006699] font-bold text-sm hover:text-blue-600">RECONOCIMIENTO</a>
-      <a href="contactanos.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">CONTACTO</a>
-    </div>
-  </header>
+        <!-- Menú desplegable para mobile -->
+        <div id="mobile-menu"
+            class="md:hidden hidden flex-col items-center bg-white shadow-inner px-4 py-4 space-y-4 text-center">
+            <a href="index.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">INICIO</a>
+            <a href="nosotros.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">NOSOTROS</a>
+            <a href="reconocimientos.html"
+                class="block text-[#006699] font-bold text-sm hover:text-blue-600">RECONOCIMIENTO</a>
+            <a href="contactanos.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">CONTACTO</a>
+        </div>
+    </header>
 
   <div class="flex flex-row flex-wrap w-full justify-center items-center p-0 border border-gray-300 bg-gray-50 h-36">
 
