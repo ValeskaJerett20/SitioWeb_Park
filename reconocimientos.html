@@ -2,23 +2,23 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PARK by Vaala</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/main.js"></script>
-    <!-- jVectorMap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PARK by Vaala</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/main.js"></script>
+  <!-- jVectorMap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.css" rel="stylesheet" />
 
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="js/script.js"></script>
 
 
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans">
-    <!-- Header -->
-    <!-- <header class="bg-white shadow-md sticky top-0 z-50">
+  <!-- Header -->
+  <!-- <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
            
             <div class="flex items-center space-x-2">
@@ -34,280 +34,294 @@
             </nav>
         </div>
     </header> -->
-    <header class="bg-white header shadow fixed w-full  z-50">
-        <div class="max-w-8xl mx-auto flex justify-between items-center px-16 py-3">
-            <!-- Logo -->
-            <div class="logo">
-                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-10" />
-            </div>
+  <header class="bg-white header shadow fixed w-full  z-50">
+    <div class="max-w-8xl mx-auto flex justify-between items-center px-16 py-3">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="assets/img/logo-park.png" alt="Logo Park" class="h-10" />
+      </div>
 
-            <!-- Botón hamburguesa (solo visible en mobile) -->
-            <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center space-y-1"
-                aria-label="Abrir menú">
-                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
-                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
-                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
-            </button>
+      <!-- Botón hamburguesa (solo visible en mobile) -->
+      <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center space-y-1"
+        aria-label="Abrir menú">
+        <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+        <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+        <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+      </button>
 
-            <!-- Menú de escritorio -->
-            <nav class="hidden md:flex space-x-6">
-                <a href="index.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">INICIO</a>
-                <a href="nosotros.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">NOSOTROS</a>
-                <a href="reconocimientos.html"
-                    class="text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">RECONOCIMIENTOS</a>
-                <a href="contactanos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">CONTACTO</a>
-            </nav>
-        </div>
-
-        <!-- Menú desplegable para mobile -->
-        <div id="mobile-menu"
-            class="md:hidden hidden flex-col items-center bg-white shadow-inner px-4 py-4 space-y-4 text-center">
-            <a href="index.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">INICIO</a>
-            <a href="nosotros.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">NOSOTROS</a>
-            <a href="reconocimientos.html"
-                class="block text-[#006699] font-bold text-sm hover:text-blue-600">RECONOCIMIENTO</a>
-            <a href="contactanos.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">CONTACTO</a>
-        </div>
-    </header>
-
-    <!-- Hero Reconocimiento -->
-  <section class="relative bg-gradient-to-br from-[#003e65] to-[#0074a9] py-24 px-4 text-center text-white overflow-hidden">
-  <!-- Ícono central -->
-  <div class="flex justify-center mb-6 animate-fade-in-up">
-    <div class="bg-sky-500 w-28 h-28 rounded-full flex items-center justify-center shadow-xl z-10">
-      <img src="/assets/icons/premio.svg" alt="Premio ASIVA" class="w-12 h-12 text-white">
-    </div>
-  </div>
-
-  <!-- Título -->
-  <h2 class="text-3xl md:text-5xl font-extrabold mb-2 animate-fade-in-up delay-100 z-10 relative">
-    SEGUIMOS <span class="text-sky-300">AVANZANDO</span>
-  </h2>
-
-  <!-- Subtítulo -->
-  <p class="text-xl md:text-3xl font-bold mb-4 animate-fade-in-up delay-200 z-10 relative">
-    Hemos ganado<br />
-    el <span class="text-sky-300">Premio ASIVA 2025</span><br />
-    en la categoría de <span class="italic">Innovación</span>
-  </p>
-
-  <div class="h-1 w-24 bg-sky-400 mx-auto rounded-full animate-grow-in delay-300 z-10 relative"></div>
-
-  <!-- Círculos flotantes animados -->
-  <!-- Círculos animados con parallax y brillo -->
-<div class="absolute inset-0 pointer-events-none z-0">
-  <span class="floating-circle pulse w-16 h-16 left-[20%] top-[30%] parallax"></span>
-  <span class="floating-circle w-10 h-10 left-[70%] top-[20%] delay-500 parallax"></span>
-  <span class="floating-circle pulse w-14 h-14 left-[40%] top-[60%] delay-1000 parallax"></span>
-  <span class="floating-circle w-12 h-12 left-[85%] top-[75%] delay-700 parallax"></span>
-  <span class="floating-circle w-8 h-8 left-[10%] top-[80%] delay-300 parallax"></span>
-</div>
-
-</section>
-
-<section class="relative py-20 bg-gradient-to-b from-[#f4fbff] to-white overflow-hidden">
-  <!-- Círculos flotantes -->
-  <div class="absolute top-10 left-10 w-36 h-36 bg-sky-100 rounded-full opacity-30 animate-float-slow"></div>
-  <div class="absolute top-40 right-20 w-24 h-24 bg-sky-200 rounded-full opacity-30 animate-float-slower"></div>
-  <div class="absolute bottom-10 left-1/3 w-28 h-28 bg-sky-100 rounded-full opacity-20 animate-float-slower"></div>
-
-  <!-- Confetti Canvas -->
-  <canvas id="confetti-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
-
-  <!-- Contenido -->
-  <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-10 items-center">
-    <!-- Texto -->
-    <div class="bg-white shadow-2xl rounded-2xl p-8 animate-fade-in-up transition-all duration-700 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-3xl">
-      <h4 class="text-sky-600 font-semibold text-sm mb-2">PREMIO ASIVA 2025</h4>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight mb-4">
-        Reconocimiento a la <br><span class="text-primary">Innovación</span>
-      </h2>
-      <p class="text-gray-600 mb-4">
-        "Este reconocimiento no solo celebra una iniciativa en particular, sino que también destaca el compromiso constante con la innovación y la excelencia que caracteriza a nuestro equipo."
-      </p>
-      <p class="text-sky-700 font-semibold">Equipo Park by Vaala</p>
-      <p class="text-sm text-gray-500">Desarrolladores de soluciones tecnológicas</p>
+      <!-- Menú de escritorio -->
+      <nav class="hidden md:flex space-x-6">
+        <a href="index.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">INICIO</a>
+        <a href="nosotros.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">NOSOTROS</a>
+        <a href="reconocimientos.html"
+          class="text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">RECONOCIMIENTOS</a>
+        <a href="contactanos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">CONTACTO</a>
+      </nav>
     </div>
 
-    <!-- Imagen -->
-    <div class="relative animate-fade-in-up delay-300">
-      <img src="assets/img/bg/Premios.png" alt="Premio ASIVA 2025" class="rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105" />
-      <p class="text-center text-sm text-sky-600 mt-2">Premio ASIVA 2025 - Categoría Innovación</p>
+    <!-- Menú desplegable para mobile -->
+    <div id="mobile-menu"
+      class="md:hidden hidden flex-col items-center bg-white shadow-inner px-4 py-4 space-y-4 text-center">
+      <a href="index.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">INICIO</a>
+      <a href="nosotros.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">NOSOTROS</a>
+      <a href="reconocimientos.html"
+        class="block text-[#006699] font-bold text-sm hover:text-blue-600">RECONOCIMIENTO</a>
+      <a href="contactanos.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">CONTACTO</a>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- Estilos personalizados en tu <style> o CSS global -->
-<style>
-  .floating-circle {
-    position: absolute;
-    border-radius: 9999px;
-    opacity: 0.2;
-    animation: float 6s ease-in-out infinite;
-    background: #0ea5e9; /* sky-500 */
-  }
+  <!-- Hero Reconocimiento -->
+  <section
+    class="relative bg-gradient-to-br from-[#003e65] to-[#0074a9] py-24 px-4 text-center text-white overflow-hidden">
+    <!-- Ícono central -->
+    <div class="flex justify-center mb-6 animate-fade-in-up">
+      <div class="bg-sky-500 w-28 h-28 rounded-full flex items-center justify-center shadow-xl z-10">
+        <img src="/assets/icons/premio.svg" alt="Premio ASIVA" class="w-12 h-12 text-white">
+      </div>
+    </div>
 
-  @keyframes float {
-    0% {
-      transform: translateY(0) translateX(0);
-    }
-    50% {
-      transform: translateY(-20px) translateX(10px);
-    }
-    100% {
-      transform: translateY(0) translateX(0);
-    }
-  }
-</style>
-
-<!-- Sección -->
-<section class="relative bg-gray-100 py-24 px-4 overflow-hidden" id="significado-premio">
-  <!-- Círculos animados -->
-  <div class="floating-circle w-20 h-20 top-10 left-10 bg-sky-300"></div>
-  <div class="floating-circle w-14 h-14 top-1/3 right-20 bg-sky-400 animate-delay-1000"></div>
-  <div class="floating-circle w-10 h-10 bottom-10 left-1/3 bg-sky-200 animate-delay-300"></div>
-
-  <div class="max-w-7xl mx-auto text-center relative z-10">
     <!-- Título -->
-    <h2 data-aos="fade-up" class="text-3xl sm:text-4xl font-extrabold text-slate-800 mb-4">
-      LO QUE <span class="text-sky-600">SIGNIFICA</span> ESTE PREMIO
+    <h2 class="text-3xl md:text-5xl font-extrabold mb-2 animate-fade-in-up delay-100 z-10 relative">
+      SEGUIMOS <span class="text-sky-300">AVANZANDO</span>
     </h2>
-    <p data-aos="fade-up" data-aos-delay="100" class="text-gray-600 max-w-xl mx-auto text-base mb-12">
-      Un reconocimiento que valida nuestro compromiso con la innovación y la excelencia
+
+    <!-- Subtítulo -->
+    <p class="text-xl md:text-3xl font-bold mb-4 animate-fade-in-up delay-200 z-10 relative">
+      Hemos ganado<br />
+      el <span class="text-sky-300">Premio ASIVA 2025</span><br />
+      en la categoría de <span class="italic">Innovación</span>
     </p>
 
-    <!-- Tarjetas -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <!-- Tarjeta 1 -->
-      <div data-aos="zoom-in" data-aos-delay="200" class="bg-white rounded-2xl shadow-lg p-6 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl">
-        <div class="bg-gradient-to-tr from-sky-500 to-sky-700 text-white w-14 h-14 mx-auto flex items-center justify-center rounded-xl mb-4 text-2xl">
-          🏆
-        </div>
-        <h3 class="font-bold text-slate-800 text-lg mb-1">INNOVACIÓN TECNOLÓGICA</h3>
-        <p class="text-sm text-gray-600">
-          Reconocimiento por el desarrollo de soluciones tecnológicas disruptivas
-        </p>
-      </div>
+    <div class="h-1 w-24 bg-sky-400 mx-auto rounded-full animate-grow-in delay-300 z-10 relative"></div>
 
-      <!-- Tarjeta 2 -->
-      <div data-aos="zoom-in" data-aos-delay="300" class="bg-white rounded-2xl shadow-lg p-6 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl">
-        <div class="bg-gradient-to-tr from-sky-500 to-sky-700 text-white w-14 h-14 mx-auto flex items-center justify-center rounded-xl mb-4 text-2xl ">
-          🎯
-        </div>
-        <h3 class="font-bold text-slate-800 text-lg mb-1">IMPACTO EN EL MERCADO</h3>
-        <p class="text-sm text-gray-600">
-          Transformación significativa en la gestión de estacionamientos en Chile
-        </p>
-      </div>
-
-      <!-- Tarjeta 3 -->
-      <div data-aos="zoom-in" data-aos-delay="400" class="bg-white rounded-2xl shadow-lg p-6 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl">
-        <div class="bg-gradient-to-tr from-sky-500 to-sky-700 text-white w-14 h-14 mx-auto flex items-center justify-center rounded-xl mb-4 text-2xl">
-          👥
-        </div>
-        <h3 class="font-bold text-slate-800 text-lg mb-1">SATISFACCIÓN DEL CLIENTE</h3>
-        <p class="text-sm text-gray-600">
-          Altos índices de satisfacción y adopción por parte de nuestros usuarios
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="relative py-20 bg-[#004d7a] bg-grid-pattern text-white overflow-hidden">
-  <!-- Círculos decorativos -->
-  <div class="absolute top-10 left-10 w-6 h-6 bg-yellow-400 rounded-full opacity-70 animate-float-slow"></div>
-  <div class="absolute bottom-16 right-12 w-4 h-4 bg-yellow-400 rounded-full opacity-70 animate-float-slower"></div>
-  <div class="absolute bottom-24 left-1/2 w-5 h-5 bg-yellow-400 rounded-full opacity-70 animate-float-slow"></div>
-
-  <!-- Contenido -->
-  <div class="relative z-10 max-w-6xl mx-auto text-center px-4">
-    <h2 class="text-4xl sm:text-5xl font-extrabold mb-4">
-      ¡VAMOS POR MÁS! <span class="inline-block animate-bounce"></span>
-    </h2>
-    <p class="text-lg text-white/90 mb-10 max-w-3xl mx-auto">
-      Estos reconocimientos son solo el comienzo de nuestro viaje hacia la excelencia.<br>
-      Continuamos innovando y desarrollando nuevas funcionalidades para mantener nuestro
-      liderazgo en el sector y ofrecer las mejores soluciones tecnológicas del mercado.
-    </p>
-
-    <!-- Tarjetas -->
-    <div class="grid md:grid-cols-3 gap-6 mb-8">
-      <!-- 1 -->
-      <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-white/30 hover:shadow-xl transition-all duration-300">
-        <div class="text-yellow-400 text-3xl mb-3">
-          🎯
-        </div>
-        <h3 class="font-bold text-lg mb-2">EXPANSIÓN INTERNACIONAL</h3>
-        <p class="text-white/80 text-sm">Llevando nuestra tecnología a mercados latinoamericanos</p>
-      </div>
-
-      <!-- 2 -->
-      <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-white/30 hover:shadow-xl transition-all duration-300">
-        <div class="text-yellow-400 text-3xl mb-3">
-          ⚡
-        </div>
-        <h3 class="font-bold text-lg mb-2">NUEVAS TECNOLOGÍAS</h3>
-        <p class="text-white/80 text-sm">Integración de blockchain y realidad aumentada</p>
-      </div>
-
-      <!-- 3 -->
-      <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-white/30 hover:shadow-xl transition-all duration-300">
-        <div class="text-yellow-400 text-3xl mb-3">
-          🏆
-        </div>
-        <h3 class="font-bold text-lg mb-2">SOSTENIBILIDAD</h3>
-        <p class="text-white/80 text-sm">Soluciones eco-friendly para ciudades inteligentes</p>
-      </div>
+    <!-- Círculos flotantes animados -->
+    <!-- Círculos animados con parallax y brillo -->
+    <div class="absolute inset-0 pointer-events-none z-0">
+      <span class="floating-circle pulse w-16 h-16 left-[20%] top-[30%] parallax"></span>
+      <span class="floating-circle w-10 h-10 left-[70%] top-[20%] delay-500 parallax"></span>
+      <span class="floating-circle pulse w-14 h-14 left-[40%] top-[60%] delay-1000 parallax"></span>
+      <span class="floating-circle w-12 h-12 left-[85%] top-[75%] delay-700 parallax"></span>
+      <span class="floating-circle w-8 h-8 left-[10%] top-[80%] delay-300 parallax"></span>
     </div>
 
-    <!-- Texto destacado -->
-    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-md rounded-full px-6 py-3 text-sm text-white font-semibold shadow transition hover:shadow-lg">
-      🏅 Próximamente más innovaciones
-    </div>
-  </div>
-</section>
+  </section>
 
+  <section class="relative py-20 bg-gradient-to-b from-[#f4fbff] to-white overflow-hidden">
+    <!-- Círculos flotantes -->
+    <div class="absolute top-10 left-10 w-36 h-36 bg-sky-100 rounded-full opacity-30 animate-float-slow"></div>
+    <div class="absolute top-40 right-20 w-24 h-24 bg-sky-200 rounded-full opacity-30 animate-float-slower"></div>
+    <div class="absolute bottom-10 left-1/3 w-28 h-28 bg-sky-100 rounded-full opacity-20 animate-float-slower"></div>
 
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
 
-
-
-
-
-
-
-
-
-
-   <!-- FOOTER -->
-    <footer class="bg-[#032F41] text-white pt-12 pb-6 px-6 md:px-12">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-    <!-- Columna 1: Logo + descripción + RRSS -->
-    <div class="flex flex-col gap-4">
-      <div class="flex items-center gap-3">
-        <div class="bg-[#28B7E3] p-3 rounded-xl">
-          <img src="assets/img/logo-park-negativo.png" alt="Ícono Park" class="w-12" />
-        </div>
-        <div>
-          <h2 class="text-xl font-bold">PARK</h2>
-          <p class="text-sm text-[#94E6FF]">by Vaala</p>
-        </div>
+    <!-- Contenido -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-10 items-center">
+      <!-- Texto -->
+      <div
+        class="bg-white shadow-2xl rounded-2xl p-8 animate-fade-in-up transition-all duration-700 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-3xl">
+        <h4 class="text-sky-600 font-semibold text-sm mb-2">PREMIO ASIVA 2025</h4>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight mb-4">
+          Reconocimiento a la <br><span class="text-primary">Innovación</span>
+        </h2>
+        <p class="text-gray-600 mb-4">
+          "Este reconocimiento no solo celebra una iniciativa en particular, sino que también destaca el compromiso
+          constante con la innovación y la excelencia que caracteriza a nuestro equipo."
+        </p>
+        <p class="text-sky-700 font-semibold">Equipo Park by Vaala</p>
+        <p class="text-sm text-gray-500">Desarrolladores de soluciones tecnológicas</p>
       </div>
-      <p class="text-sm leading-relaxed text-[#D1ECF5]">
-        Solución tecnológica integral para la gestión y control eficiente de estacionamientos, orientada al cobro oportuno, la prevención de fraudes y la valorización del uso del espacio.
+
+      <!-- Imagen -->
+      <div class="relative animate-fade-in-up delay-300">
+        <img src="assets/img/bg/Premios.png" alt="Premio ASIVA 2025"
+          class="rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105" />
+        <p class="text-center text-sm text-sky-600 mt-2">Premio ASIVA 2025 - Categoría Innovación</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estilos personalizados en tu <style> o CSS global -->
+  <style>
+    .floating-circle {
+      position: absolute;
+      border-radius: 9999px;
+      opacity: 0.2;
+      animation: float 6s ease-in-out infinite;
+      background: #0ea5e9;
+      /* sky-500 */
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0);
+      }
+
+      50% {
+        transform: translateY(-20px) translateX(10px);
+      }
+
+      100% {
+        transform: translateY(0) translateX(0);
+      }
+    }
+  </style>
+
+  <!-- Sección -->
+  <section class="relative bg-gray-100 py-24 px-4 overflow-hidden" id="significado-premio">
+    <!-- Círculos animados -->
+    <div class="floating-circle w-20 h-20 top-10 left-10 bg-sky-300"></div>
+    <div class="floating-circle w-14 h-14 top-1/3 right-20 bg-sky-400 animate-delay-1000"></div>
+    <div class="floating-circle w-10 h-10 bottom-10 left-1/3 bg-sky-200 animate-delay-300"></div>
+
+    <div class="max-w-7xl mx-auto text-center relative z-10">
+      <!-- Título -->
+      <h2 data-aos="fade-up" class="text-3xl sm:text-4xl font-extrabold text-slate-800 mb-4">
+        LO QUE <span class="text-sky-600">SIGNIFICA</span> ESTE PREMIO
+      </h2>
+      <p data-aos="fade-up" data-aos-delay="100" class="text-gray-600 max-w-xl mx-auto text-base mb-12">
+        Un reconocimiento que valida nuestro compromiso con la innovación y la excelencia
       </p>
-      <div class="flex gap-4 mt-2">
-        <a href="#"
-            class=" hover:scale-105 transition"
-            aria-label="WhatsApp">
+
+      <!-- Tarjetas -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <!-- Tarjeta 1 -->
+        <div data-aos="zoom-in" data-aos-delay="200"
+          class="bg-white rounded-2xl shadow-lg p-6 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+          <div
+            class="bg-gradient-to-tr from-sky-500 to-sky-700 text-white w-14 h-14 mx-auto flex items-center justify-center rounded-xl mb-4 text-2xl">
+            🏆
+          </div>
+          <h3 class="font-bold text-slate-800 text-lg mb-1">INNOVACIÓN TECNOLÓGICA</h3>
+          <p class="text-sm text-gray-600">
+            Reconocimiento por el desarrollo de soluciones tecnológicas disruptivas
+          </p>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div data-aos="zoom-in" data-aos-delay="300"
+          class="bg-white rounded-2xl shadow-lg p-6 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+          <div
+            class="bg-gradient-to-tr from-sky-500 to-sky-700 text-white w-14 h-14 mx-auto flex items-center justify-center rounded-xl mb-4 text-2xl ">
+            🎯
+          </div>
+          <h3 class="font-bold text-slate-800 text-lg mb-1">IMPACTO EN EL MERCADO</h3>
+          <p class="text-sm text-gray-600">
+            Transformación significativa en la gestión de estacionamientos en Chile
+          </p>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div data-aos="zoom-in" data-aos-delay="400"
+          class="bg-white rounded-2xl shadow-lg p-6 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+          <div
+            class="bg-gradient-to-tr from-sky-500 to-sky-700 text-white w-14 h-14 mx-auto flex items-center justify-center rounded-xl mb-4 text-2xl">
+            👥
+          </div>
+          <h3 class="font-bold text-slate-800 text-lg mb-1">SATISFACCIÓN DEL CLIENTE</h3>
+          <p class="text-sm text-gray-600">
+            Altos índices de satisfacción y adopción por parte de nuestros usuarios
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="relative py-20 bg-[#004d7a] bg-grid-pattern text-white overflow-hidden">
+    <!-- Círculos decorativos -->
+    <div class="absolute top-10 left-10 w-6 h-6 bg-yellow-400 rounded-full opacity-70 animate-float-slow"></div>
+    <div class="absolute bottom-16 right-12 w-4 h-4 bg-yellow-400 rounded-full opacity-70 animate-float-slower"></div>
+    <div class="absolute bottom-24 left-1/2 w-5 h-5 bg-yellow-400 rounded-full opacity-70 animate-float-slow"></div>
+
+    <!-- Contenido -->
+    <div class="relative z-10 max-w-6xl mx-auto text-center px-4">
+      <h2 class="text-4xl sm:text-5xl font-extrabold mb-4">
+        ¡VAMOS POR MÁS! <span class="inline-block animate-bounce"></span>
+      </h2>
+      <p class="text-lg text-white/90 mb-10 max-w-3xl mx-auto">
+        Estos reconocimientos son solo el comienzo de nuestro viaje hacia la excelencia.<br>
+        Continuamos innovando y desarrollando nuevas funcionalidades para mantener nuestro
+        liderazgo en el sector y ofrecer las mejores soluciones tecnológicas del mercado.
+      </p>
+
+      <!-- Tarjetas -->
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <!-- 1 -->
+        <div
+          class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-white/30 hover:shadow-xl transition-all duration-300">
+          <div class="text-yellow-400 text-3xl mb-3">
+            🎯
+          </div>
+          <h3 class="font-bold text-lg mb-2">EXPANSIÓN INTERNACIONAL</h3>
+          <p class="text-white/80 text-sm">Llevando nuestra tecnología a mercados latinoamericanos</p>
+        </div>
+
+        <!-- 2 -->
+        <div
+          class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-white/30 hover:shadow-xl transition-all duration-300">
+          <div class="text-yellow-400 text-3xl mb-3">
+            ⚡
+          </div>
+          <h3 class="font-bold text-lg mb-2">NUEVAS TECNOLOGÍAS</h3>
+          <p class="text-white/80 text-sm">Integración de blockchain y realidad aumentada</p>
+        </div>
+
+        <!-- 3 -->
+        <div
+          class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-white/30 hover:shadow-xl transition-all duration-300">
+          <div class="text-yellow-400 text-3xl mb-3">
+            🏆
+          </div>
+          <h3 class="font-bold text-lg mb-2">SOSTENIBILIDAD</h3>
+          <p class="text-white/80 text-sm">Soluciones eco-friendly para ciudades inteligentes</p>
+        </div>
+      </div>
+
+      <!-- Texto destacado -->
+      <div
+        class="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-md rounded-full px-6 py-3 text-sm text-white font-semibold shadow transition hover:shadow-lg">
+        🏅 Próximamente más innovaciones
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="bg-[#032F41] text-white pt-12 pb-6 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- Columna 1: Logo + descripción + RRSS -->
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <div class="bg-[#28B7E3] p-3 rounded-xl">
+            <img src="assets/img/logo-park-negativo.png" alt="Ícono Park" class="w-12" />
+          </div>
+          <div>
+            <h2 class="text-xl font-bold">PARK</h2>
+            <p class="text-sm text-[#94E6FF]">by Vaala</p>
+          </div>
+        </div>
+        <p class="text-sm leading-relaxed text-[#D1ECF5]">
+          Solución tecnológica integral para la gestión y control eficiente de estacionamientos, orientada al cobro
+          oportuno, la prevención de fraudes y la valorización del uso del espacio.
+        </p>
+        <div class="flex gap-4 mt-2">
+          <a href="#" class=" hover:scale-105 transition" aria-label="WhatsApp">
             <img src="assets/img/svg/whatsapp-logo.svg" alt="WhatsApp logo" class="w-6 h-6 md:w-8 md:h-8 invert" />
           </a>
 
           <!-- Instagram -->
-          <a href="#"
-            class=" hover:scale-105 transition"
-            aria-label="Instagram">
+          <a href="#" class=" hover:scale-105 transition" aria-label="Instagram">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24" fill="#ffffff">
               <path
                 d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.75 2.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" />
@@ -315,92 +329,97 @@
           </a>
 
           <!-- LinkedIn -->
-          <a href="#"
-            class=" hover:scale-105 transition"
-            aria-label="LinkedIn">
+          <a href="#" class=" hover:scale-105 transition" aria-label="LinkedIn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 md:w-8 md:h-8 fill-white">
               <path
                 d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z" />
             </svg>
           </a>
+        </div>
+      </div>
+
+      <!-- Columna 2: Contacto -->
+      <div class="flex flex-col gap-4">
+        <h3 class="text-[#33CCFF] font-bold text-lg">CONTACTO</h3>
+        <div class="flex items-center gap-3 text-[#D1ECF5]">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75 12 13.5 2.25 6.75"></path>
+          </svg>
+          <span>contacto@parkbyvaala.cl</span>
+        </div>
+        <div class="flex items-center gap-3 text-[#D1ECF5]">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 4.5 21.75 19.5M21.75 4.5 2.25 19.5" />
+          </svg>
+          <span>+56 2 XXXX XXXX</span>
+        </div>
+        <div class="flex items-center gap-3 text-[#D1ECF5]">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25z">
+            </path>
+          </svg>
+          <span>Santiago, Chile</span>
+        </div>
+      </div>
+
+      <!-- Columna 3: Servicios -->
+      <div class="flex flex-col gap-4">
+        <h3 class="text-[#33CCFF] font-bold text-lg">SERVICIOS</h3>
+        <ul class="text-[#D1ECF5] space-y-1">
+          <li>Gestión Inteligente</li>
+          <li>Control de Fraudes</li>
+          <li>Integración SII</li>
+          <li>Análisis de Datos</li>
+        </ul>
       </div>
     </div>
 
-    <!-- Columna 2: Contacto -->
-    <div class="flex flex-col gap-4">
-      <h3 class="text-[#33CCFF] font-bold text-lg">CONTACTO</h3>
-      <div class="flex items-center gap-3 text-[#D1ECF5]">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
-          viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M21.75 6.75 12 13.5 2.25 6.75"></path>
-        </svg>
-        <span>contacto@parkbyvaala.cl</span>
-      </div>
-      <div class="flex items-center gap-3 text-[#D1ECF5]">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
-          viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M2.25 4.5 21.75 19.5M21.75 4.5 2.25 19.5" />
-        </svg>
-        <span>+56 2 XXXX XXXX</span>
-      </div>
-      <div class="flex items-center gap-3 text-[#D1ECF5]">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
-          viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25z"></path>
-        </svg>
-        <span>Santiago, Chile</span>
+    <!-- Línea divisoria -->
+    <div class="w-full border-t border-[#0F4D64] my-6"></div>
+
+    <!-- Footer legal -->
+    <div
+      class="max-w-7xl mx-auto px-6 md:px-12 text-sm flex flex-col md:flex-row justify-between items-center gap-4 text-[#B3DFF1]">
+      <p>© 2025 Park by Vaala. Todos los derechos reservados.</p>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="#" class="hover:underline">Política de Privacidad</a>
+        <a href="#" class="hover:underline">Términos de Uso</a>
+        <span class="flex items-center gap-1">
+          Premio ASIVA 2025 <span class="w-2 h-2 bg-yellow-400 rounded-full inline-block"></span>
+        </span>
       </div>
     </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      setupMobileMenu("menu-toggle", "mobile-menu");
+      setupScrollAnimation("logo-section", "-translate-x-10", 0.2);
 
-    <!-- Columna 3: Servicios -->
-    <div class="flex flex-col gap-4">
-      <h3 class="text-[#33CCFF] font-bold text-lg">SERVICIOS</h3>
-      <ul class="text-[#D1ECF5] space-y-1">
-        <li>Gestión Inteligente</li>
-        <li>Control de Fraudes</li>
-        <li>Integración SII</li>
-        <li>Análisis de Datos</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Línea divisoria -->
-  <div class="w-full border-t border-[#0F4D64] my-6"></div>
-
-  <!-- Footer legal -->
-  <div class="max-w-7xl mx-auto px-6 md:px-12 text-sm flex flex-col md:flex-row justify-between items-center gap-4 text-[#B3DFF1]">
-    <p>© 2025 Park by Vaala. Todos los derechos reservados.</p>
-    <div class="flex items-center gap-4 text-sm">
-      <a href="#" class="hover:underline">Política de Privacidad</a>
-      <a href="#" class="hover:underline">Términos de Uso</a>
-      <span class="flex items-center gap-1">
-        Premio ASIVA 2025 <span class="w-2 h-2 bg-yellow-400 rounded-full inline-block"></span>
-      </span>
-    </div>
-  </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<script>
-  const canvas = document.getElementById('confetti-canvas');
-  const confetti = window.confetti.create(canvas, { resize: true, useWorker: true });
-
-  setInterval(() => {
-    confetti({
-      particleCount: 4,
-      spread: 70,
-      startVelocity: 30,
-      scalar: Math.random() * 0.8 + 0.5,
-      origin: { y: Math.random() * 0.2 },
-      colors: ['#33CBFE', '#B3E5FC', '#006699'],
-      shapes: ['square', 'circle']
     });
-  }, 500);
-</script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    const canvas = document.getElementById('confetti-canvas');
+    const confetti = window.confetti.create(canvas, { resize: true, useWorker: true });
+
+    setInterval(() => {
+      confetti({
+        particleCount: 4,
+        spread: 70,
+        startVelocity: 30,
+        scalar: Math.random() * 0.8 + 0.5,
+        origin: { y: Math.random() * 0.2 },
+        colors: ['#33CBFE', '#B3E5FC', '#006699'],
+        shapes: ['square', 'circle']
+      });
+    }, 500);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
 
 
 </body>

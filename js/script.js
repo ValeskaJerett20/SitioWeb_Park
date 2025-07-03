@@ -439,6 +439,17 @@ function drawConfetti() {
   requestAnimationFrame(drawConfetti);
 }
 drawConfetti();
+
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      screens: {
+        xs: '360px', // opcional si deseas un punto extra para móviles chicos
+      },
+    },
+  },
+};
  
    
 
