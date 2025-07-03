@@ -2,160 +2,177 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra Red</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestra Red</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+   <!-- Enlaza tu hoja de estilos principal y la nueva -->
+    <link rel="stylesheet" href="css/estilos.css"> <!-- Tu CSS principal -->
+    <link rel="stylesheet" href="css/mapa-interactivo.css"> <!-- El CSS de la sección -->
+
+    <!-- También la fuente de Google si no la tienes ya -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+
+
+
 </head>
 
 <body class="bg-[#FFFFFF] text-gray-800 font-sans">
-    <header class="bg-white header shadow fixed w-full z-50">
-        <div class="max-w-7xl mx-auto flex justify-between items-center px-14 py-3">
-            <div class="logo">
-                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-16" />
-            </div>
+  <header class="bg-white header shadow fixed w-full z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-14 py-3">
+      <div class="logo">
+        <img src="assets/img/logo-park.png" alt="Logo Park" class="h-16" />
+      </div>
 
-            <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center space-y-1"
-                aria-label="Abrir menú">
-                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
-                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
-                <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
-            </button>
+      <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center space-y-1"
+        aria-label="Abrir menú">
+        <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+        <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+        <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+      </button>
 
-            <nav class="hidden md:flex space-x-6">
-                <a href="index.html"
-                    class="text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">INICIO</a>
-                <a href="nosotros.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">NOSOTROS</a>
-                <a href="reconocimientos.html"
-                    class="text-sm font-bold text-[#006699] hover:text-blue-600">RECONOCIMIENTOS</a>
-                <a href="contactanos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">CONTACTO</a>
-            </nav>
+      <nav class="hidden md:flex space-x-6">
+        <a href="index.html"
+          class="text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">INICIO</a>
+        <a href="nosotros.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">NOSOTROS</a>
+        <a href="reconocimientos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">RECONOCIMIENTOS</a>
+        <a href="contactanos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">CONTACTO</a>
+      </nav>
+    </div>
+
+    <div id="mobile-menu"
+      class="md:hidden hidden flex-col items-center bg-white shadow-inner px-4 py-4 space-y-4 text-center">
+      <a href="index.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">INICIO</a>
+      <a href="nosotros.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">NOSOTROS</a>
+      <a href="reconocimientos.html"
+        class="block text-[#006699] font-bold text-sm hover:text-blue-600">RECONOCIMIENTO</a>
+      <a href="contactanos.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">CONTACTO</a>
+    </div>
+  </header>
+
+  <div class="flex flex-row flex-wrap w-full justify-center items-center p-0 border border-gray-300 bg-gray-50 h-36">
+
+    <!-- Hero Section -->
+    <section class="hero-section relative h-screen w-full overflow-hidden text-white"
+      style="font-family: 'Work Sans', sans-serif;">
+      <!-- Fondo con degradado dinámico y partículas -->
+      <div class="absolute inset-0 z-0 bg-gradient-to-br from-[#003B5C] via-[#005F8E] to-[#00B8FF]">
+        <div class="absolute inset-0 bg-[url('assets/img/particles.svg')] bg-cover opacity-10 animate-pulse"></div>
+        <div class="absolute inset-0">
+          <!-- Orbes animados -->
+          <div class="absolute w-48 h-48 bg-[#00B8FF]/30 rounded-full blur-3xl animate-ping-slow left-[10%] top-[20%]">
+          </div>
+          <div class="absolute w-64 h-64 bg-[#33CCFF]/20 rounded-full blur-2xl animate-ping-slow right-[15%] top-[30%]">
+          </div>
+          <div
+            class="absolute w-40 h-40 bg-[#007ACC]/30 rounded-full blur-2xl animate-ping-slow left-[45%] bottom-[10%]">
+          </div>
         </div>
+      </div>
 
-        <div id="mobile-menu"
-            class="md:hidden hidden flex-col items-center bg-white shadow-inner px-4 py-4 space-y-4 text-center">
-            <a href="index.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">INICIO</a>
-            <a href="nosotros.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">NOSOTROS</a>
-            <a href="reconocimientos.html"
-                class="block text-[#006699] font-bold text-sm hover:text-blue-600">RECONOCIMIENTO</a>
-            <a href="contactanos.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">CONTACTO</a>
-        </div>
-    </header>
-
-    <div
-        class="flex flex-row flex-wrap w-full justify-center items-center p-0 border border-gray-300 bg-gray-50 h-36">
-        <section
-            class="w-full bg-[url('assets/img/bg/fondoinicio2.png')] bg-no-repeat bg-cover bg-center mx-auto pb-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
-            style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
-            <div id="logo-section"
-                class="flex justify-center bg-white py-48 opacity-0 -translate-x-10 transition-all duration-1000"
-                style="border-top-left-radius: 0; border-top-right-radius: 2000px; border-bottom-left-radius: 0; border-bottom-right-radius: 2000px; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;">
-                <img src="assets/img/logo-park.png" alt="Logo PARK" class="w-72 md:w-96" />
-            </div>
-
-            <div class="p-8 overflow-hidden">
-                <h1 id="typewriter-title"
-                    class="text-4xl md:text-5xl font-bold text-[#006699] sm:p-4 leading-tight opacity-0 translate-x-10 transition-all duration-1000">
-                    </h1>
-                <p id="typewriter-paragraph"
-                    class="mt-8 text-[#33CCFF] font-extrabold text-sm leading-relaxed opacity-0 translate-x-10 transition-all duration-1000">
-                    </p>
-            </div>
-        </section>
-
-        <section class="w-full mx-auto px-4 py-10 relative overflow-hidden bg-cover bg-center bg-no-repeat"
-            style="background-image: url('assets/img/bg/Fondovideo.png'); box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
-            <div
-                class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center justify-center text-center md:text-left w-full max-w-4xl mx-auto py-5">
-
-                <div id="anim-left" class="flex justify-center md:justify-end w-full opacity-0 -translate-x-10 transition-all duration-1000">
-                    <div class="w-full max-w-md">
-                        <h2 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-[#33CCFF] leading-snug text-center">
-                            ¿QUÉ ES<br /> PARK?
-                        </h2>
-                    </div>
-                </div>
-
-                <div id="anim-right"
-                    class="flex justify-center md:justify-start w-full opacity-0 translate-x-10 transition-all duration-1000"
-                    style="border-left:5px solid lightblue; padding-left:30px;">
-                    <div class="w-full max-w-md">
-                        <p class="text-base font-black text-[#006699] text-justify">
-                            UNA <span class="text-[#33CCFF]">SOLUCIÓN TECNOLÓGICA INTEGRAL</span><br />
-                            PARA LA <span class="text-[#33CCFF]">GESTIÓN Y CONTROL EFICIENTE DE</span>,<br />
-                            <span class="text-[#33CCFF]">ESTACIONAMIENTOS</span> ORIENTADA AL <span class="text-[#006699]">COBRO
-                                OPORTUNO</span>,
-                            <span class="text-[#006699]">LA PREVENCIÓN DE FRAUDES</span> Y <br />
-                            <span class="text-[#006699]">LA VALORACIÓN DEL USO DEL ESPACIO</span>.
-                        </p>
-                        <br/>
-                        <a id="boton-contactanos" href="contactanos.html"
-                            class="mt-6 px-6 py-2 rounded-full bg-gradient-to-r from-[#006699] to-[#33CCFF] text-white font-bold text-sm shadow-md hover:scale-105 transition">
-                            CONTÁCTANOS
-                      </a>
-                    </div>
-                </div>
-            </div>
-
-            <div id="video-section"
-                class="mt-4 flex justify-center opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-                <div class="relative w-full max-w-4xl aspect-video shadow-lg rounded-lg overflow-hidden">
-                    <iframe id="video-frame" class="w-full h-full"
-                        src="https://www.youtube.com/embed/KC-DS8HZMXs?autoplay=0&modestbranding=1&rel=0&showinfo=0&controls=1&mute=1"
-                        title="Video de Park" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-                    </iframe>
-                    <img src="assets/img/icono-park.png" alt="Logo"
-                        class="absolute top-4 left-4 w-14 h-14 sm:w-16 sm:h-16 object-contain bg-white p-2 rounded-full shadow-lg" />
-                </div>
-            </div>
-
-            <div id="funciona-section"
-                class="mt-20 flex flex-col items-center text-center opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#33CCFF] leading-tight">
-                    ¿CÓMO FUNCIONA <br class="sm:hidden" /> PARK?
-                </h2>
-                <a id="boton-nosotros" href="nosotros.html"
-                    class="mt-6 bg-gradient-to-r from-[#006699] to-[#33CCFF] text-white text-lg font-extrabold px-10 py-4 rounded-full shadow-lg hover:scale-105 transition-all duration-300">
-                    NOSOTROS
-                </a>
-            </div>
-        </section>
-
-
-    <section id="main-network-section"
-      class=" rounded-2xl  my-20 w-full max-w-7xl bg-[#F3F8FB] flex flex-col lg:flex-row lg:justify-center items-center  relative" >
-
-      <div
-        class="p-8 border-2 border-[#33CCFF] rounded-full bg-[#F3F8FB] shadow-md flex items-center justify-center max-w-xs w-full mx-auto py-8 px-16 mb-10 lg:mb-0 lg:mr-16 text-center relative z-10">
-        <h1 class="text-4xl lg:text-5xl font-bold text-[#006699] tracking-wide uppercase text-center leading-tight">
-          NUESTRA<br> RED
+      <!-- Contenido principal -->
+      <div class="relative z-10 flex flex-col justify-center items-center text-center px-6">
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6">
+          <span class="block" data-aos="fade-up">Conectividad,</span>
+          <span class="block text-[#33CCFF]" data-aos="fade-up" data-aos-delay="200">Control y Cobro</span>
+          <span class="block" data-aos="fade-up" data-aos-delay="400">en una sola solución</span>
         </h1>
-      </div>
+        <p class="text-base sm:text-lg md:text-xl font-medium text-white/90 max-w-3xl" data-aos="fade-up"
+          data-aos-delay="600">
+          En Park, nos mueve la innovación, la eficiencia y el diseño de herramientas
+          que hacen más simple, seguro y ordenado el uso de los espacios.
+        </p>
 
-      <div class="flex flex-col items-center justify-center gap-8 mb-12 lg:mb-0 lg:mr-16 w-full max-w-xs relative z-10">
-        <div id="valparaiso-box"
-          class="region-box p-3 rounded-full shadow-lg text-white font-semibold text-lg text-center w-full">
-          Valparaíso
-        </div>
-        <div id="metropolitana-box"
-          class="region-box p-3 rounded-full shadow-lg text-white font-semibold text-lg text-center w-full">
-          Metropolitana
-        </div>
-        <div id="ohiggins-box"
-          class="region-box p-3 rounded-full shadow-lg text-white font-semibold text-lg text-center w-full">
-          O'Higgins
-        </div>
-        <div id="araucania-box"
-          class="region-box p-3 rounded-full shadow-lg text-white font-semibold text-lg text-center w-full">
-          Araucanía
+        <!-- Indicador scroll -->
+        <div class="mt-16 animate-bounce text-white/70" data-aos="fade-up" data-aos-delay="800">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
         </div>
       </div>
-      <div
-        class="map-svg-container w-full max-w-xs lg:max-w-md aspect-[807.47/896.96] relative flex justify-center items-center overflow-hidden ">
+    </section>
+
+<!-- Sección del video -->
+    <section id="video-section" class="relative w-full py-24 px-4 text-white overflow-hidden" style="font-family: 'Work Sans', sans-serif;">
+  <!-- Fondo con gradiente + partículas -->
+  <div id="particles-js" class="absolute inset-0 z-0 bg-[#FFFFFF] opacity-95"></div>
+
+  <!-- Contenido -->
+  <!-- Contenido principal -->
+  <div class="relative z-10 max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-[#006699]">
+      ¿QUÉ ES <span class="text-[#33CCFF]">PARK BY VAALA</span>?
+    </h2>
+    <p class="text-lg md:text-xl font-medium mb-12 max-w-3xl mx-auto text-[#006699]">
+      Una solución tecnológica integral para la gestión y control eficiente de estacionamientos, orientada al cobro oportuno, la prevención de fraudes y la valoración del uso del espacio.
+    </p>
+    <!-- Decorador inferior animado -->
+  <div class="mt-6 flex justify-center">
+    <div class="h-1.5 w-20 bg-gradient-to-r from-sky-400 via-cyan-500 to-sky-500 rounded-full animate-pulse"></div>
+  </div>
+
+</br> 
+    
+
+
+    <!-- Video -->
+    <div class="relative w-full max-w-5xl aspect-video mx-auto rounded-xl overflow-hidden shadow-2xl border border-white/10">
+      <iframe
+        id="park-video"
+        class="w-full h-full"
+        src="https://www.youtube.com/embed/KC-DS8HZMXs?autoplay=1&mute=1&controls=1&loop=0&playlist=KC-DS8HZMXs"
+        title="Video Park by Vaala"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
+
+      <!-- Botón Activar Sonido -->
+      <button
+        onclick="unmuteVideo()"
+        class="absolute bottom-4 right-4 px-4 py-2 text-sm bg-white text-[#003B5C] font-semibold rounded-full shadow-md hover:bg-[#33CCFF] hover:text-white transition"
+      >
+        🔊 Activar Sonido
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- SECCION NUESTRA RED -->
+
+<section class="w-full bg-[#F2F2F2] py-20 px-6">
+  <div class="max-w-7xl mx-auto text-center mb-16">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-[#006699]" data-aos="fade-up">NUESTRA RED NACIONAL</h2>
+    <p class="mt-4 text-lg text-gray-700 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+      Con presencia consolidada en las principales regiones de Chile, Park by Vaala conecta<br />
+      más de 390 proyectos activos, sirviendo a más de 20,000 usuarios en todo el territorio nacional.
+    </p>
+    <!-- Decorador inferior animado -->
+  <div class="mt-6 flex justify-center">
+    <div class="h-1.5 w-20 bg-gradient-to-r from-sky-400 via-cyan-500 to-sky-500 rounded-full animate-pulse"></div>
+  </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl mx-auto items-start">
+    <!-- Mapa interactivo -->
+    <div class="bg-white shadow-xl rounded-3xl p-6" data-aos="fade-right">
+      <h3 class="text-lg font-bold text-[#006699] mb-4">MAPA INTERACTIVO DE CHILE</h3>
+      <div class="w-full aspect-[4/4] flex items-center justify-center bg-[#e6f7fd] rounded-xl">
+
+        <!-- Aquí va el SVG del mapa -->
         <svg id="chileMap" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 807.47 896.96"
-          class="w-full h-full relative z-10">
+          class="w-full  relative z-10">
           <defs>
           </defs>
           <g id="chile-regions-group">
@@ -194,27 +211,100 @@
               d="M807.47,0v210.7c-2.49.46-4.99.66-7.5.64-.6-.02-1.2-.04-1.72-.29-.73-.37-1.16-1.12-1.68-1.75-.5-.64-1.27-1.21-2.06-1.04-1.02.25-1.31,1.54-1.87,2.43-1.06,1.64-3.68,1.95-5.09.6.81-.56,1.43-1.41,1.68-2.35-1.06-.66-2.16-1.31-3.39-1.43-1.23-.1-2.62.56-2.93,1.77-.25.98.29,1.99.5,2.99.23.98-.15,2.35-1.18,2.41-.62.04-1.16-.44-1.73-.64-1.33-.46-2.68.5-3.76,1.39-1.52,1.29-3.05,2.58-4.59,3.86-.35.29-.69.62-.87,1.04-.37.94.4,1.99.39,3.01-.02,1.41-1.58,2.37-2.97,2.29-1.41-.06-2.66-.85-3.84-1.6-1.2-.73-2.49-1.48-3.87-1.45-1.62.04-3.01,1.1-4.36,1.97-1.37.87-2.49,1.12-3.95.46-4.74,4.66-11.12,7.21-17.17,10-6.05,2.78-12.22,6.13-15.82,11.74-1.16,1.79-2.06,3.84-3.76,5.11-.79.6-1.72.98-2.53,1.52-3.55,2.33-4.78,6.94-5.18,11.18-.13,1.31-.42,2.91-1.66,3.37-.71.25-1.66.08-2.1.69-.19.29-.21.64-.21.98.12,3.01,2.39,5.57,2.79,8.56.29,2.06-.33,4.12-.64,6.21-.1.62-.15,1.23-.15,1.85,0,3.99,2.53,7.9,1.46,11.76-.73,2.68-3.1,4.68-3.97,7.34-.94,2.83-.15,6.28-1.97,8.65-.33.4-.71.77-1.02,1.21-.91,1.33-.33,2.31-.27,3.93.12,3.24-3.22,5.3-5.69,7.4-2.27,1.93-4.07,4.36-5.84,6.77-7.23,9.81-14.5,19.66-20.43,30.3-2.24,4.03-4.32,8.19-7.32,11.66-2.99,3.41-6.8,6.05-9.64,9.58-1.19,1.5-2.24,3.14-3.68,4.39-1.46,1.23-3.51,2-5.3,1.35,3.82-4.8,7.63-9.58,11.45-14.36,2.39-2.99,4.76-5.99,7.15-8.98.54-.67,1.08-1.37,1.5-2.12.67-1.25.98-2.66,1.27-4.05.42-1.91.83-3.82,1.23-5.72-2.08.6-4.16,1.21-6.25,1.81-.31-2.37-1.75-4.59-3.8-5.84.87,4.84,1.64,10.25-1.18,14.28-.93,1.33-2.22,2.43-2.83,3.91-.6,1.43-.52,3.1-1.31,4.43-1.06,1.75-3.26,2.37-5.15,3.14-1.91.79-3.93,2.31-3.72,4.36.1,1.14.91,2.27.52,3.33-.25.67-.89,1.08-1.45,1.5-2.87,2.12-4.55,6.88-1.75,9.08-3.6,5.84-7.23,11.7-10.83,17.56-2.62,4.22-5.32,8.56-9.33,11.53-.73.56-1.56,1.1-1.99,1.93-.6,1.23-.15,2.74-.62,4.03-.64,1.83-2.85,2.66-3.86,4.34-.64,1.04-.73,2.31-1.18,3.45-1.73,4.32-7.58,5.05-10.87,8.33-2.45,2.45-3.97,6.96-7.4,6.65-3.76-.31-7.44-1.37-10.79-3.08-1.68-.85-3.47-1.91-5.32-1.58-1.72.29-2.99,1.68-4.43,2.68-1.43.98-3.57,1.54-4.76.29-.93-.96-.91-2.66-2.02-3.39-.46-.31-1.04-.39-1.6-.48-2.02-.37-3.97-1.21-5.63-2.47-1.46-1.1-2.7-2.51-4.26-3.47-1.56-.96-3.62-1.43-5.2-.46-1.56.94-2.76,3.22-4.51,2.7-.79-.25-1.29-1.02-1.73-1.73-1.33-2.24-2.68-4.47-4.03-6.71-1.02-1.7-2.04-3.43-2.54-5.34-.33-1.23-.42-2.58-1.14-3.64-.71-1.06-2.33-1.68-3.28-.81-1.18,1.12-.12,3.01.4,4.55.6,1.72.37,3.68-.6,5.22-.93,1.46-2.54,3.16-1.6,4.61.67,1.06,2.22,1.04,3.26,1.7,1.43.91,1.7,2.83,2.58,4.26,1.46,2.31,4.39,3.08,6.9,4.16,3.68,1.62,6.82,4.24,9.91,6.82,1.45,1.2,3.03,2.91,2.39,4.68-.52,1.43-2.24,1.99-3.26,3.12-1.62,1.83-1.1,4.65-.46,7.02.46,1.73.94,3.49,1.41,5.24.27,1.04.58,2.14,1.23,3.01.67.85,1.81,1.45,2.87,1.16.87-.25,1.5-1.04,2.39-1.23,1.19-.29,2.41.71,2.79,1.87.4,1.18.21,2.47-.02,3.68-.5,2.83-1.14,5.65-1.85,8.42-.42,1.7-.91,3.39-1.79,4.9-2.43,4.16-7.73,6.57-8.71,11.3-.08.39-.5.6-.1.69.67,3.08-1.31,6.23-3.91,8-2.6,1.77-5.74,2.53-8.75,3.45-6.55,2-12.76,5.05-19.41,6.65-4.41,1.06-9.04,1.48-13.2,3.28-4.92,2.1-9.29,6.11-14.65,6.17-5.92.06-11.45-5.42-16.92-3.22-2.26.91-3.35,3.95-2.18,6.09.48.89,1.25,1.58,1.75,2.47.54.96.69,2.08.85,3.18.25,1.85.5,3.72.75,5.57.04.29.08.62-.06.89-.56,1.1-2.72-.17-3.33.89-.4.71.44,1.46.75,2.22.58,1.37-.66,2.81-.81,4.3-.08.83.15,1.64.04,2.45-.27,1.77-2.26,3.32-1.6,4.97.64,1.66,3.41,1.77,3.82,3.51-1.02-.04-1.58,1.21-1.6,2.26-.02,1.02.15,2.18-.54,2.95-.37.4-.93.6-1.45.79-3.53,1.19-7.04,2.41-10.56,3.6-2.2.75-4.39,1.5-6.71,1.73-2.29.23-4.72-.1-6.67-1.37-1.35-.91-2.64-2.31-4.28-2.16-.81.08-1.56.58-2.37.67-3.14.4-4.61-4.53-7.75-4.92-1.83-.23-3.51,1.33-4.07,3.08-.58,1.77-.31,3.68-.02,5.51.13.89.29,1.81.81,2.54.54.73,1.43,1.19,1.89,2,.83,1.43-.02,3.3.54,4.84.27.79.89,1.45,1.08,2.26.19.85-.1,1.72-.31,2.54-.44,1.75-.48,3.6-.15,5.4.08.37.17.77.46,1.02.27.21.62.27.94.33,2.2.37,4.16.91,6.34,1.27.5.48.13,1.33-.33,1.85-.46.5-1.04,1.12-.87,1.79.1.35.42.64.52.98.17.6-.29,1.23-.85,1.48-.58.25-1.21.23-1.83.27-1.14.1-2.33.44-3.08,1.31-.73.87-.79,2.37.12,3.05.52.39,1.18.46,1.81.52,2.51.31,4.95.98,7.25,2.02.4.17.83.4.98.83.17.52-.23,1.08-.71,1.33-.48.25-1.04.29-1.58.42-1.1.25-2.1.85-3.05,1.46-2.8,1.77-5.57,3.74-7.38,6.5-1.81,2.78-2.51,6.52-.89,9.39.46.87,1.14,1.68,1.16,2.64.06,1.46-1.37,2.6-1.52,4.05-.12,1.06.42,2.04.83,3.03.39.98.6,2.2-.08,3.01-.31.39-.77.6-1.21.79-1.41.6-2.91,1.04-4.11,2-1.18.96-1.97,2.64-1.35,4.03.29.62.79,1.1,1.16,1.68.37.58.58,1.37.17,1.91-1.45.83-3.18,1.14-4.84.87-1.5-.25-3.1-.96-4.47-.31-1.95.94-2.35,4.16-4.49,4.43-.91.1-1.75-.42-2.64-.58-1.91-.37-3.8.94-4.84,2.58-1.04,1.64-1.45,3.59-2.06,5.44-.62,1.83-1.85,3.28-3.08,4.76-2.29,2.76-4.57,5.49-6.86,8.23-.6.71-1.21,1.48-1.39,2.39-.44,2.31,1.97,4.09,4.12,4.99,2.54,1.08,5.2,1.89,7.92,2.41,1.19.21,2.54.48,3.16,1.52.37.62.39,1.39.75,2.02.31.54.85.91,1.39,1.23,3.03,1.81,6.69,2.54,1.02,2.04,1.83-.25,3.91-.79,5.42.31.75.56,1.21,1.45,1.48,2.35.81,2.72.17,5.84-1.66,8-.56.67-1.25,1.31-1.41,2.16-.23,1.41,1.04,2.53,1.68,3.8.13.25.25.56.15.83-.13.44-.67.58-1.08.79-1.72.89-1.64,3.66-3.32,4.61-.75.42-1.66.37-2.53.5-3.99.58-6.11,4.93-9.33,7.38-1.37,1.04-2.99,1.75-4.3,2.89-2.95,2.56-3.82,6.75-4.51,10.58-.17,1-.35,2.06.06,2.97.31.71.94,1.23,1.27,1.93.64,1.31.12,2.87-.42,4.24-1.18,2.91-2.66,6.07-5.57,7.27-2.62,1.08-6.03.23-7.75,2.51-1.29,1.72-2.58,3.41-3.87,5.13-.91,1.21-1.85,2.45-2.33,3.89-.66,1.99-.4,4.14-.04,6.21,1.25,6.8,3.82,13.4,7.46,19.29-.35-.02-.71-.08-1.08-.13-1.64-.29-3.16-.98-4.76-1.45-2.91-.81-6.03-.83-8.94-.02-2.7.73-5.17,2.14-7.86,2.91-2.68.77-5.99.48-8.35-1.04-2.2-1.43-4.01-4.51-2.41-6.61-4.92.17-9.87-.17-14.71-1.04-1.21-.21-2.51-.48-3.41-1.33-.91-.83-1.29-2.04-1.64-3.22-1.62-5.32-3.22-10.66-4.84-15.98-3.2,1.2-6.38,2.41-9.58,3.6-7.71-8.08-7.5-22.38.42-30.22,1.85-1.81,4.14-3.49,4.82-5.99,1.16-4.38-3.1-9.6-.33-13.16,1.04-1.37,2.79-1.95,4.05-3.1,3.39-3.18,1.7-8.92,3.37-13.26,1.37-3.49,5.05-6.46,4.3-10.12-.67-3.24-4.59-5.13-4.95-8.4-.29-2.39,1.43-4.47,2.58-6.59,2.39-4.34,2.54-9.81.44-14.28-2.27-.04-4.55-.08-6.82-.1-1.48-2.27.91-5.26,3.47-6.09,2.58-.83,5.49-.6,7.84-1.93,2.35-1.33,3.32-5.44.81-6.46-3.39,0-6.78-.89-9.73-2.6.15-4.55.29-9.12.44-13.69.06-1.81.1-3.7-.81-5.26-1.25-2.22-3.97-3.1-5.86-4.8-1.89-1.72-2.37-5.61.1-6.23.83-.21,1.73.06,2.54-.21.75-.25,1.29-.93,1.73-1.58,3.03-4.55,3.59-10.64,1.45-15.67-1.52-3.55-4.28-6.59-4.86-10.41-.4-2.56.25-5.15.77-7.69,1.52-7.56,5.65-17.06,2.29-24-4.53-9.37.29-22.05,9.89-26.04-3.91-3.7-1.83-10.33-3.7-15.38-.71-1.93-2-3.6-3.08-5.36-5.94-9.54-5.61-22.57.77-31.82,1.46-2.14,3.26-4.11,4.3-6.5.81-1.83,1.14-3.82,1.46-5.78.87-5.28,1.75-10.58,2.62-15.86.19-1.1.37-2.22.56-3.33,1.12-6.77,2.26-13.55,2.85-20.39.25-2.83.4-5.67.56-8.52.08-1.52.17-3.05.02-4.57-.25-2.45-1.14-4.78-1.99-7.09-2.76-7.34-5.49-14.69-8.25-22.03-.71-1.95-1.46-3.97-1.25-6.05.13-1.12.52-2.22.6-3.33.08-1.39-.37-2.76-.71-4.11-1.62-6.13-1.62-12.66-.02-18.79h5.99c-.33-2.97.85-6.07,3.05-8.1.77-.71,1.72-1.35,2.06-2.33.79-2.22-1.62-4.09-3.26-5.76-4.97-5.07-3.89-13.55-.93-19.99,2.97-6.46,7.52-12.36,8.71-19.37.46-2.76.4-5.65,1.54-8.19,2.22-4.95,8.06-6.92,13.26-8.4.39-6.59-8.11-12.32-5.49-18.39.46-1.1,1.29-2.04,1.56-3.22.79-3.59-3.8-6.19-4.34-9.81-.42-2.93,1.85-5.45,3.12-8.11,1.29-2.66.66-8.29-2.24-8.87-1.73-.35-1.21-3.12.21-4.16,1.43-1.04,3.43-1.6,4.03-3.26.42-1.14.02-2.39.08-3.59.25-5.07,7.23-5.92,11.7-8.27,4.36-2.29,6.96-7.07,7.85-11.91.89-4.84.29-9.81-.29-14.69-.13-1.14-.33-2.37-1.16-3.12-2.1-1.93-5.22.83-8.06,1.1-3.59.35-6.19-3.62-6.46-7.21-.27-3.59.87-7.19.5-10.78-.93-9.27-11.53-16.6-9.5-25.71-1.45.73-3.12.96-4.72.67-3.05-2.39-3.53-7.42-.98-10.35-.15-3.14-.31-6.26-.46-9.41-.19-4.09.23-9.21,4.05-10.74-1.97-3.68-6.03-5.59-9.41-8.02-3.39-2.43-6.53-6.46-5.26-10.43.87-2.66,3.59-5.42,2.02-7.75-.66-.98-1.89-1.43-2.56-2.39-1.12-1.6-.31-3.97-1.41-5.57-.98-1.46-3.2-1.6-4.78-.79-1.56.81-2.62,2.33-3.62,3.78-.33-1.18-.66-2.35-.98-3.53-1.41-.71-2.83-1.45-4.24-2.16-1.45,1.04-2.87,2.1-4.32,3.14,4.07.39,6.63,5.84,4.34,9.19-2.29,3.35-7.07,3.45-10.85,4.9-.58.23-1.16.48-1.7.81-1.77-2.81-3.95-5.3-6.65-7.34-2.64-2-5.72-3.47-7.94-5.94-2-2.22-3.14-5.07-4.76-7.58-7.05-10.85-21.45-13.38-33.89-17-15.29-4.43-29.66-11.95-42.04-21.95-7.29-5.88-14.03-12.84-17.6-21.49-2.45-5.9-3.18-12.72-1.6-18.85h614.88Z" />
           </g>
         </svg>
+       
       </div>
-      <canvas id="linesCanvas" class="lines-canvas"></canvas>
-    </section>
-    <!-- FOOTER -->
-    <footer class="bg-gradient-to-br w-full from-[#0D7FB2] to-[#1B9DD0] text-white py-8">
-      <div class="max-w-5xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-6 px-6">
-        <img src="assets/img/logo-park-negativo.png" alt="Logo blanco"
-          class="w-20 sm:w-24 md:w-28 lg:w-32 h-auto max-w-full" />
+      <p class="text-xs text-gray-500 mt-3 text-center">
+        Haz clic en los puntos para ver información detallada de cada región
+      </p>
+    </div>
+
+    <!-- Panel derecho -->
+    <div class="flex flex-col gap-6" data-aos="fade-left">
+      <!-- Panel superior: resumen numérico -->
+      <div class="bg-white shadow-xl rounded-3xl px-6 py-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+        <div>
+          <div class="text-[#33CCFF] text-2xl font-extrabold">4</div>
+          <div class="text-sm text-gray-600 font-bold">Regiones Activas</div>
+        </div>
+        <div>
+          <div class="text-[#33CCFF] text-2xl font-extrabold">392</div>
+          <div class="text-sm text-gray-600 font-bold">Proyectos Activos</div>
+        </div>
+        <div>
+          <div class="text-[#33CCFF] text-2xl font-extrabold">20.8K</div>
+          <div class="text-sm text-gray-600 font-bold">Usuarios Activos</div>
+        </div>
+        <div>
+          <div class="text-[#33CCFF] text-2xl font-extrabold">98%</div>
+          <div class="text-sm text-gray-600 font-bold">Eficiencia Promedio</div>
+        </div>
+      </div>
+
+      <!-- Panel inferior: regiones -->
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl shadow p-4 flex justify-between items-center">
+          <div>
+            <h4 class="text-sm font-bold text-[#006699]">Región Valparaíso</h4>
+            <p class="text-xs text-gray-600">45 Proyectos - 2800 Usuarios</p>
+          </div>
+          <div class="text-[#33CCFF] text-xl">📍</div>
+        </div>
+        <div class="bg-white rounded-xl shadow p-4 flex justify-between items-center">
+          <div>
+            <h4 class="text-sm font-bold text-[#006699]">Región Metropolitana</h4>
+            <p class="text-xs text-gray-600">287 Proyectos - 15.600 Usuarios</p>
+          </div>
+          <div class="text-[#33CCFF] text-xl">📍</div>
+        </div>
+        <div class="bg-white rounded-xl shadow p-4 flex justify-between items-center">
+          <div>
+            <h4 class="text-sm font-bold text-[#006699]">Región O'Higgins</h4>
+            <p class="text-xs text-gray-600">32 Proyectos - 1450 Usuarios</p>
+          </div>
+          <div class="text-[#33CCFF] text-xl">📍</div>
+        </div>
+        <div class="bg-white rounded-xl shadow p-4 flex justify-between items-center">
+          <div>
+            <h4 class="text-sm font-bold text-[#006699]">Región Araucanía</h4>
+            <p class="text-xs text-gray-600">28 Proyectos - 980 Usuarios</p>
+          </div>
+          <div class="text-[#33CCFF] text-xl">📍</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-        <div class="flex gap-4 justify-center md:justify-end">
-          <!-- WhatsApp -->
-          <a href="#"
-            class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
+
+
+<!-- FOOTER -->
+    <footer class="bg-[#032F41] text-white pt-12 pb-6 px-6 md:px-12 w-full">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+    <!-- Columna 1: Logo + descripción + RRSS -->
+    <div class="flex flex-col gap-4">
+      <div class="flex items-center gap-3">
+        <div class="bg-[#28B7E3] p-3 rounded-xl">
+          <img src="assets/img/logo-park-negativo.png" alt="Ícono Park" class="w-12" />
+        </div>
+        <div>
+          <h2 class="text-xl font-bold">PARK</h2>
+          <p class="text-sm text-[#94E6FF]">by Vaala</p>
+        </div>
+      </div>
+      <p class="text-sm leading-relaxed text-[#D1ECF5]">
+        Solución tecnológica integral para la gestión y control eficiente de estacionamientos, orientada al cobro oportuno, la prevención de fraudes y la valorización del uso del espacio.
+      </p>
+      <div class="flex gap-4 mt-2">
+        <a href="#"
+            class=" hover:scale-105 transition"
             aria-label="WhatsApp">
             <img src="assets/img/svg/whatsapp-logo.svg" alt="WhatsApp logo" class="w-6 h-6 md:w-8 md:h-8 invert" />
           </a>
 
           <!-- Instagram -->
           <a href="#"
-            class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
+            class=" hover:scale-105 transition"
             aria-label="Instagram">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24" fill="#ffffff">
               <path
@@ -224,53 +314,143 @@
 
           <!-- LinkedIn -->
           <a href="#"
-            class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
+            class=" hover:scale-105 transition"
             aria-label="LinkedIn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 md:w-8 md:h-8 fill-white">
               <path
                 d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z" />
             </svg>
           </a>
-        </div>
       </div>
-      <p class="text-center font-semibold text-lg mt-4">© 2025 Vaalagroup</p>
-      <p class="text-center font-semibold text-md mt-4">
-        Desarrollado Por
-        <a href="https://www.kalexmart.com" target="_blank" rel="noopener noreferrer"
-          class="text-cyan-200  hover:text-cyan-700 transition">
-          kalexmart.com
-        </a>
-      </p>
-    </footer>
+    </div>
+
+    <!-- Columna 2: Contacto -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-[#33CCFF] font-bold text-lg">CONTACTO</h3>
+      <div class="flex items-center gap-3 text-[#D1ECF5]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M21.75 6.75 12 13.5 2.25 6.75"></path>
+        </svg>
+        <span>contacto@parkbyvaala.cl</span>
+      </div>
+      <div class="flex items-center gap-3 text-[#D1ECF5]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M2.25 4.5 21.75 19.5M21.75 4.5 2.25 19.5" />
+        </svg>
+        <span>+56 2 XXXX XXXX</span>
+      </div>
+      <div class="flex items-center gap-3 text-[#D1ECF5]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25z"></path>
+        </svg>
+        <span>Santiago, Chile</span>
+      </div>
+    </div>
+
+    <!-- Columna 3: Servicios -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-[#33CCFF] font-bold text-lg">SERVICIOS</h3>
+      <ul class="text-[#D1ECF5] space-y-1">
+        <li>Gestión Inteligente</li>
+        <li>Control de Fraudes</li>
+        <li>Integración SII</li>
+        <li>Análisis de Datos</li>
+      </ul>
+    </div>
   </div>
-  <script src="js/main.js"></script>
-  <script src="js/mapa.js"></script>
-  <script src="js/script.js"></script>
-  <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar el menú móvil
-            setupMobileMenu("menu-toggle", "mobile-menu");
 
-            // Animación de la sección del logo
-            setupScrollAnimation("logo-section", "-translate-x-10", 0.2); // El logo se resetea al salir por defecto
+  <!-- Línea divisoria -->
+  <div class="w-full border-t border-[#0F4D64] my-6"></div>
 
-            // Animación y control de video
-            setupVideoPlayerOnScroll("video-section", "video-frame");
+  <!-- Footer legal -->
+  <div class="max-w-7xl mx-auto px-6 md:px-12 text-sm flex flex-col md:flex-row justify-between items-center gap-4 text-[#B3DFF1]">
+    <p>© 2025 Park by Vaala. Todos los derechos reservados.</p>
+    <div class="flex items-center gap-4 text-sm">
+      <a href="#" class="hover:underline">Política de Privacidad</a>
+      <a href="#" class="hover:underline">Términos de Uso</a>
+      <span class="flex items-center gap-1">
+        Premio ASIVA 2025 <span class="w-2 h-2 bg-yellow-400 rounded-full inline-block"></span>
+      </span>
+    </div>
+  </div>
+</footer>
+</div>
+<script src="js/main.js"></script>
+<script src="js/mapa.js"></script>
+<script src="js/script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Inicializar el menú móvil
+    setupMobileMenu("menu-toggle", "mobile-menu");
 
-            // Animación de texto "¿Qué es Park?" (anim-left y anim-right)
-            setupScrollAnimation('anim-left', '-translate-x-10');
-            setupScrollAnimation('anim-right', 'translate-x-10');
-            // Animación de pulso para el botón "CONTÁCTANOS" (si lo deseas)
-            // Para que este botón tenga pulso, debes agregar la clase "animate-pulse-smooth" a tu CSS/Tailwind
-            // setupButtonPulseAnimation("anim-right", "boton-contactanos", 0.5, 1000, false); // No anima la sección anim-right, solo el botón
+    // Animación de la sección del logo
+    setupScrollAnimation("logo-section", "-translate-x-10", 0.2); // El logo se resetea al salir por defecto
 
-            // Animación de la sección "Cómo funciona Park" y su botón "NOSOTROS"
-            setupButtonPulseAnimation("funciona-section", "boton-nosotros", 0.5, 1000); // Esto anima la sección y el botón
+    // Animación y control de video
+    setupVideoPlayerOnScroll("video-section", "video-frame");
 
-            // Animación de "Typewriter"
-            setupTypewriterAnimation("typewriter-title", "typewriter-paragraph", DEFAULT_TITLE_TEXT, DEFAULT_PARAGRAPH_TEXT);
-        });
-    </script>
+    // Animación de texto "¿Qué es Park?" (anim-left y anim-right)
+    setupScrollAnimation('anim-left', '-translate-x-10');
+    setupScrollAnimation('anim-right', 'translate-x-10');
+    // Animación de pulso para el botón "CONTÁCTANOS" (si lo deseas)
+    // Para que este botón tenga pulso, debes agregar la clase "animate-pulse-smooth" a tu CSS/Tailwind
+    // setupButtonPulseAnimation("anim-right", "boton-contactanos", 0.5, 1000, false); // No anima la sección anim-right, solo el botón
+
+    // Animación de la sección "Cómo funciona Park" y su botón "NOSOTROS"
+    setupButtonPulseAnimation("funciona-section", "boton-nosotros", 0.5, 1000); // Esto anima la sección y el botón
+
+    // Animación de "Typewriter"
+    setupTypewriterAnimation("typewriter-title", "typewriter-paragraph", DEFAULT_TITLE_TEXT, DEFAULT_PARAGRAPH_TEXT);
+  });
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<!-- Partículas.js -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 70, density: { enable: true, value_area: 800 } },
+      color: { value: "#FFFFFF" },
+      shape: { type: "circle" },
+      opacity: { value: 0.15 },
+      size: { value: 2 },
+      line_linked: {
+        enable: true,
+        distance: 130,
+        color: "#006699",
+        opacity: 0.3,
+        width: 1
+      },
+      move: { enable: true, speed: 1.5 }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: { onhover: { enable: true, mode: "grab" }, resize: true },
+      modes: { grab: { distance: 140, line_linked: { opacity: 0.6 } } }
+    },
+    retina_detect: true
+  });
+
+  // Activar sonido del video
+  function unmuteVideo() {
+    const iframe = document.getElementById("park-video");
+    iframe.src = iframe.src.replace("mute=1", "mute=0");
+  }
+</script>
+<!-- Enlaza tus scripts al final del body MAPA --> 
+    <script src="js/main.js"></script> <!-- Tu JS principal -->
+    <script src="js/mapa-interactivo.js"></script> <!-- El JS de la sección -->
+</body>
+
+
 </body>
 
 </html>

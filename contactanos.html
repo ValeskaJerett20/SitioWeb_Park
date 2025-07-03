@@ -55,118 +55,294 @@
         </div>
     </header>
 
-<section
-  class="relative py-16 md:py-24 px-4 md:px-8 bg-cover bg-center bg-no-repeat bg-gradient-to-r from-[#33CDFC] to-[#66A1BE]"
->
-  <!-- Overlay oscuro -->
-  <div class="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+<!-- Sección de Contacto -->
+<!-- Sección Contacto -->
+<!-- SECCIÓN 1: Encabezado CONTACTO -->
+<section class="relative bg-gradient-to-b from-[#005c86] to-[#0379ac] text-white py-24 px-6 overflow-hidden">
+  <!-- Círculos flotantes -->
+  <div class="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+    <div class="absolute w-40 h-40 bg-white/10 rounded-full top-10 left-10 animate-pulse"></div>
+    <div class="absolute w-32 h-32 bg-white/10 rounded-full bottom-10 right-20 animate-bounce"></div>
+  </div>
 
-  <!-- Contenido principal -->
-  <div
-    class="relative z-10 bg-white bg-opacity-90 backdrop-blur-sm max-w-6xl mx-auto rounded-3xl shadow-2xl p-6 md:p-10 grid md:grid-cols-2 gap-10 items-center"
-  >
-    <!-- Texto Izquierdo -->
-    <div class="text-center md:text-left">
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-[#003366] mb-6">
-        HABLEMOS<br />
-        DE COMO <span class="text-[#36d2ff]">PARK</span><br />
-        PUEDE <span class="text-[#003366]">ADAPTARSE</span><br />
-        A <span class="text-[#003366]">TU ESPACIO</span>
-      </h2>
-      <p class="text-[#36d2ff] font-semibold text-sm md:text-base leading-relaxed">
-        EN UN <span class="font-bold">PLAZO MÁXIMO DE 24 HORAS HÁBILES</span> RECIBIRÁS UNA RESPUESTA Y,
-        SI CORRESPONDE, UN <span class="font-bold">LINK PARA AGENDAR UNA REUNIÓN.</span>
-      </p>
+  <!-- Contenido -->
+  <div class="relative z-10 max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-extrabold pt-12 mb-6">CONTACTO</h2>
+    <p class="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
+      ¿Listo para transformar la gestión de tus estacionamientos?<br />
+      Contáctanos y descubre cómo Park by Vaala puede revolucionar tu negocio con tecnología de vanguardia.
+    </p>
+    <div class="mt-4 h-1 w-24 bg-white/60 mx-auto rounded"></div>
+  </div>
+</section>
+
+<!-- SECCIÓN 2: Múltiples formas de contactarnos -->
+<section class="py-20 px-4 bg-white text-center">
+  <h3 class="text-xl font-bold text-sky-700 tracking-wide mb-2">MÚLTIPLES FORMAS DE CONTACTARNOS</h3>
+  <p class="text-gray-600 mb-10">Elige la opción que mejor se adapte a tus necesidades</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <!-- Chat -->
+    <div class="bg-sky-50 rounded-xl shadow hover:shadow-lg transition-all duration-300 p-6">
+      <div class="text-sky-600 text-3xl mb-4"><i class="fas fa-comments"></i></div>
+      <h4 class="font-bold text-lg">Chat en Vivo</h4>
+      <p class="text-sm text-gray-500 mb-4">Respuesta inmediata</p>
+      <a href="#" class="text-sky-600 font-semibold hover:underline">Iniciar Chat</a>
     </div>
 
-    <!-- Formulario Derecho -->
-    <form class="space-y-4 w-full">
-      <input
-        type="text"
-        placeholder="INGRESA TU NOMBRE*"
-        class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-[#66A1BE] text-[#66A1BE] font-semibold focus:outline-none focus:ring-2 focus:ring-[#36d2ff] transition"
-        required
-      />
-      <input
-        type="text"
-        placeholder="INGRESA TU COMUNA*"
-        class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-[#66A1BE] text-[#66A1BE] font-semibold focus:outline-none focus:ring-2 focus:ring-[#36d2ff] transition"
-        required
-      />
-      <input
-        type="email"
-        placeholder="INGRESA TU E-MAIL*"
-        class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-[#66A1BE] text-[#66A1BE] font-semibold focus:outline-none focus:ring-2 focus:ring-[#36d2ff] transition"
-        required
-      />
-      <input
-        type="tel"
-        placeholder="INGRESA TU TELÉFONO*"
-        class="w-full rounded-full px-6 py-3 bg-blue-100 placeholder-[#66A1BE] text-[#66A1BE] font-semibold focus:outline-none focus:ring-2 focus:ring-[#36d2ff] transition"
-        required
-      />
-      <textarea
-        placeholder="INGRESA TU MENSAJE..."
-        rows="4"
-        class="w-full rounded-3xl px-6 py-4 bg-blue-100 placeholder-[#66A1BE] text-[#66A1BE] font-semibold resize-none focus:outline-none focus:ring-2 focus:ring-[#36d2ff] transition"
-        required
-      ></textarea>
-      <div class="text-right">
-        <button
-          type="submit"
-          class="bg-gradient-to-r from-[#007ACC] to-[#36d2ff] text-white font-extrabold py-3 px-10 rounded-full shadow-md hover:opacity-90 transition"
-        >
-          ENVIAR
-        </button>
+    <!-- Reunión -->
+    <div class="bg-sky-50 rounded-xl shadow hover:shadow-lg transition-all duration-300 p-6">
+      <div class="text-sky-600 text-3xl mb-4"><i class="fas fa-calendar-check"></i></div>
+      <h4 class="font-bold text-lg">Agendar Reunión</h4>
+      <p class="text-sm text-gray-500 mb-4">Demostración personalizada</p>
+      <a href="#" class="text-sky-600 font-semibold hover:underline">Agendar Cita</a>
+    </div>
+
+    <!-- Llamada -->
+    <div class="bg-sky-50 rounded-xl shadow hover:shadow-lg transition-all duration-300 p-6">
+      <div class="text-sky-600 text-3xl mb-4"><i class="fas fa-phone-alt"></i></div>
+      <h4 class="font-bold text-lg">Llamada Directa</h4>
+      <p class="text-sm text-gray-500 mb-4">Asesoría telefónica</p>
+      <a href="tel:+56912345678" class="text-sky-600 font-semibold hover:underline">Llamar Ahora</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 3: Formulario personalizado -->
+<!-- SECCIÓN DE FORMULARIO - estilo Park by Vaala -->
+<section class="bg-white py-16 px-6">
+  <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-10 border border-gray-200">
+    <h2 class="text-center text-2xl md:text-3xl font-extrabold text-sky-900 mb-4">SOLICITA UNA DEMOSTRACIÓN PERSONALIZADA</h2>
+    <p class="text-center text-gray-600 mb-8">
+      Completa el formulario y nuestro equipo se pondrá en contacto contigo para agendar una demostración adaptada a tus necesidades específicas.
+    </p>
+
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Nombre -->
+      <div>
+        <label class="block text-sm font-semibold text-sky-900 mb-1">Nombre Completo *</label>
+        <input type="text" placeholder="Ingresa tu nombre completo" class="w-full border border-sky-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500" required />
+      </div>
+
+      <!-- Comuna -->
+      <div>
+        <label class="block text-sm font-semibold text-sky-900 mb-1">Comuna/Ciudad *</label>
+        <input type="text" placeholder="¿En qué comuna te encuentras?" class="w-full border border-sky-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500" required />
+      </div>
+
+      <!-- Correo -->
+      <div>
+        <label class="block text-sm font-semibold text-sky-900 mb-1">Correo Electrónico *</label>
+        <input type="email" placeholder="correo@empresa.com" class="w-full border border-sky-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500" required />
+      </div>
+
+      <!-- Teléfono -->
+      <div>
+        <label class="block text-sm font-semibold text-sky-900 mb-1">Teléfono *</label>
+        <input type="tel" placeholder="+56 9 XXXX XXXX" class="w-full border border-sky-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500" required />
+      </div>
+
+      <!-- Tipo de Proyecto -->
+      <div class="md:col-span-2">
+        <label class="block text-sm font-semibold text-sky-900 mb-1">Tipo de Proyecto *</label>
+        <select class="w-full border border-sky-200 rounded-lg px-4 py-2 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-sky-500" required>
+          <option value="">Selecciona el tipo de proyecto</option>
+          <option>Edificio Corporativo</option>
+          <option>Estacionamiento Público</option>
+          <option>Hospital / Clínica</option>
+          <option>Otro</option>
+        </select>
+      </div>
+
+      <!-- Mensaje Adicional -->
+      <div class="md:col-span-2">
+        <label class="block text-sm font-semibold text-sky-900 mb-1">Mensaje Adicional</label>
+        <textarea rows="4" placeholder="Cuéntanos sobre tu proyecto, número de espacios, necesidades específicas, presupuesto estimado, etc." class="w-full border border-sky-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+      </div>
+
+      <!-- Botón -->
+      <div class="md:col-span-2 text-center mt-4">
+        <button type="submit"
+  class="relative inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white font-bold rounded-full shadow-lg transition-all duration-300 group overflow-hidden">
+  
+  ENVIAR SOLICITUD
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2 transform transition-transform duration-300 group-hover:rotate-12 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 2.11a1 1 0 00.78 0L21 5m0 0l-5.3 14.3a1 1 0 01-1.87.3L11 13l-3.4 3.4a1 1 0 01-1.42-1.42l3.4-3.4L5 7l16-2z" />
+  </svg>
+</button>
       </div>
     </form>
   </div>
 </section>
 
+<!-- SECCIÓN 4: TIEMPO DE ESPERA -->
+ <section class="py-12 px-4 bg-white">
+  <div class="max-w-4xl mx-auto bg-[#f0faff] border border-[#d7f0fb] rounded-xl p-8 text-center shadow-sm">
+    <div class="text-3xl text-sky-700 mb-2">
+      <i class="fas fa-clock"></i>
+    </div>
+    <h3 class="text-lg font-bold text-gray-800">TIEMPO DE RESPUESTA GARANTIZADO</h3>
+    <p class="text-gray-600 mt-2">
+      <span class="font-semibold">EN UN PLAZO MÁXIMO DE 24 HORAS HÁBILES</span> recibirás una respuesta personalizada de nuestro equipo comercial y, si corresponde, un enlace para agendar una reunión de demostración adaptada a tus necesidades específicas.
+    </p>
+  </div>
+</section>
 
-<footer class="bg-gradient-to-br from-[#0D7FB2] to-[#1B9DD0] text-white py-8">
-    <div class="max-w-5xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-6 px-6">
-      <img src="assets/img/logo-park-negativo.png" alt="Logo blanco"
-        class="w-20 sm:w-24 md:w-28 lg:w-32 h-auto max-w-full" />
 
-      <div class="flex gap-4 justify-center md:justify-end">
-        <!-- WhatsApp -->
+<!-- SECCIÓN 5: contacto -->
+ <section class="py-16 bg-gray-100 px-4">
+  <div class="text-center max-w-3xl mx-auto mb-12">
+    <h3 class="text-xl font-bold text-gray-800">INFORMACIÓN DE CONTACTO DIRECTO</h3>
+    <p class="text-gray-600 mt-2">También puedes contactarnos directamente a través de estos canales</p>
+  </div>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <!-- Email -->
+    <div>
+      <div class="w-12 h-12 mx-auto bg-gradient-to-br from-sky-500 to-cyan-500 text-white flex items-center justify-center rounded-xl shadow-lg text-xl mb-4">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <h4 class="font-bold text-sm text-gray-700 uppercase">Email Comercial</h4>
+      <p class="text-gray-600 text-sm mt-1">ventas@parkbyvaala.cl</p>
+      <p class="text-gray-600 text-sm">soporte@parkbyvaala.cl</p>
+    </div>
+
+    <!-- Teléfonos -->
+    <div>
+      <div class="w-12 h-12 mx-auto bg-gradient-to-br from-sky-500 to-cyan-500 text-white flex items-center justify-center rounded-xl shadow-lg text-xl mb-4">
+        <i class="fas fa-phone-alt"></i>
+      </div>
+      <h4 class="font-bold text-sm text-gray-700 uppercase">Teléfonos</h4>
+      <p class="text-gray-600 text-sm mt-1">+56 2 2XXX XXXX</p>
+      <p class="text-gray-600 text-sm">+56 9 9XXX XXXX</p>
+    </div>
+
+    <!-- Oficina -->
+    <div>
+      <div class="w-12 h-12 mx-auto bg-gradient-to-br from-sky-500 to-cyan-500 text-white flex items-center justify-center rounded-xl shadow-lg text-xl mb-4">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <h4 class="font-bold text-sm text-gray-700 uppercase">Oficinas</h4>
+      <p class="text-gray-600 text-sm mt-1">Santiago Centro</p>
+      <p class="text-gray-600 text-sm">Región Metropolitana</p>
+    </div>
+
+    <!-- Soporte -->
+    <div>
+      <div class="w-12 h-12 mx-auto bg-gradient-to-br from-sky-500 to-cyan-500 text-white flex items-center justify-center rounded-xl shadow-lg text-xl mb-4">
+        <i class="fas fa-user-friends"></i>
+      </div>
+      <h4 class="font-bold text-sm text-gray-700 uppercase">Soporte 24/7</h4>
+      <p class="text-gray-600 text-sm mt-1">Lun - Vie: 8:00 - 18:00</p>
+      <p class="text-gray-600 text-sm">Emergencias: 24/7</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+    <footer class="bg-[#032F41] text-white pt-12 pb-6 px-6 md:px-12 w-full">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+    <!-- Columna 1: Logo + descripción + RRSS -->
+    <div class="flex flex-col gap-4">
+      <div class="flex items-center gap-3">
+        <div class="bg-[#28B7E3] p-3 rounded-xl">
+          <img src="assets/img/logo-park-negativo.png" alt="Ícono Park" class="w-12" />
+        </div>
+        <div>
+          <h2 class="text-xl font-bold">PARK</h2>
+          <p class="text-sm text-[#94E6FF]">by Vaala</p>
+        </div>
+      </div>
+      <p class="text-sm leading-relaxed text-[#D1ECF5]">
+        Solución tecnológica integral para la gestión y control eficiente de estacionamientos, orientada al cobro oportuno, la prevención de fraudes y la valorización del uso del espacio.
+      </p>
+      <div class="flex gap-4 mt-2">
         <a href="#"
-          class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
-          aria-label="WhatsApp">
-          <img src="assets/img/svg/whatsapp-logo.svg" alt="WhatsApp logo" class="w-6 h-6 md:w-8 md:h-8 invert" />
-        </a>
+            class=" hover:scale-105 transition"
+            aria-label="WhatsApp">
+            <img src="assets/img/svg/whatsapp-logo.svg" alt="WhatsApp logo" class="w-6 h-6 md:w-8 md:h-8 invert" />
+          </a>
 
-        <!-- Instagram -->
-        <a href="#"
-          class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
-          aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24" fill="#ffffff">
-            <path
-              d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.75 2.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" />
-          </svg>
-        </a>
+          <!-- Instagram -->
+          <a href="#"
+            class=" hover:scale-105 transition"
+            aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24" fill="#ffffff">
+              <path
+                d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.75 2.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" />
+            </svg>
+          </a>
 
-        <!-- LinkedIn -->
-        <a href="#"
-          class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
-          aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 md:w-8 md:h-8 fill-white">
-            <path
-              d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z" />
-          </svg>
-        </a>
+          <!-- LinkedIn -->
+          <a href="#"
+            class=" hover:scale-105 transition"
+            aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 md:w-8 md:h-8 fill-white">
+              <path
+                d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z" />
+            </svg>
+          </a>
       </div>
     </div>
-    <p class="text-center font-semibold text-lg mt-4">© 2025 Vaalagroup</p>
-    <p class="text-center font-semibold text-md mt-4">
-      Desarrollado Por
-      <a href="https://www.kalexmart.com" target="_blank" rel="noopener noreferrer"
-        class="text-cyan-200  hover:text-cyan-700 transition">
-        kalexmart.com
-      </a>
-    </p>
-  </footer>
+
+    <!-- Columna 2: Contacto -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-[#33CCFF] font-bold text-lg">CONTACTO</h3>
+      <div class="flex items-center gap-3 text-[#D1ECF5]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M21.75 6.75 12 13.5 2.25 6.75"></path>
+        </svg>
+        <span>contacto@parkbyvaala.cl</span>
+      </div>
+      <div class="flex items-center gap-3 text-[#D1ECF5]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M2.25 4.5 21.75 19.5M21.75 4.5 2.25 19.5" />
+        </svg>
+        <span>+56 2 XXXX XXXX</span>
+      </div>
+      <div class="flex items-center gap-3 text-[#D1ECF5]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25z"></path>
+        </svg>
+        <span>Santiago, Chile</span>
+      </div>
+    </div>
+
+    <!-- Columna 3: Servicios -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-[#33CCFF] font-bold text-lg">SERVICIOS</h3>
+      <ul class="text-[#D1ECF5] space-y-1">
+        <li>Gestión Inteligente</li>
+        <li>Control de Fraudes</li>
+        <li>Integración SII</li>
+        <li>Análisis de Datos</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Línea divisoria -->
+  <div class="w-full border-t border-[#0F4D64] my-6"></div>
+
+  <!-- Footer legal -->
+  <div class="max-w-7xl mx-auto px-6 md:px-12 text-sm flex flex-col md:flex-row justify-between items-center gap-4 text-[#B3DFF1]">
+    <p>© 2025 Park by Vaala. Todos los derechos reservados.</p>
+    <div class="flex items-center gap-4 text-sm">
+      <a href="#" class="hover:underline">Política de Privacidad</a>
+      <a href="#" class="hover:underline">Términos de Uso</a>
+      <span class="flex items-center gap-1">
+        Premio ASIVA 2025 <span class="w-2 h-2 bg-yellow-400 rounded-full inline-block"></span>
+      </span>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

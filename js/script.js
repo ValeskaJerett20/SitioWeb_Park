@@ -252,3 +252,193 @@ document.addEventListener('DOMContentLoaded', function() {
     // setupTypewriterAnimation("our-title", "our-paragraph", "NUESTRA HISTORIA", "Un largo y hermoso viaje.");
 });
 */
+
+//* animacion Inicio Hero
+
+  document.addEventListener('mousemove', (e) => {
+    const circles = document.querySelectorAll('.parallax-circle');
+    circles.forEach((circle, index) => {
+      const speed = 10 + index * 2;
+      const x = (window.innerWidth / 2 - e.clientX) / speed;
+      const y = (window.innerHeight / 2 - e.clientY) / speed;
+      circle.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  });
+
+  
+//   const canvas = document.getElementById('confetti-canvas');
+//   const ctx = canvas.getContext('2d');
+//   canvas.width = canvas.offsetWidth;
+//   canvas.height = canvas.offsetHeight;
+
+//   const particles = Array.from({ length: 80 }, () => ({
+//     x: Math.random() * canvas.width,
+//     y: Math.random() * canvas.height,
+//     r: Math.random() * 6 + 2,
+//     d: Math.random() * 80,
+//     color: `hsl(${Math.floor(Math.random() * 360)}, 100%, 70%)`,
+//     tilt: Math.floor(Math.random() * 10) - 10,
+//     tiltAngleIncremental: Math.random() * 0.07 + 0.05,
+//     tiltAngle: 0
+//   }));
+
+//   function drawConfetti() {
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//     particles.forEach(p => {
+//       ctx.beginPath();
+//       ctx.lineWidth = p.r / 2;
+//       ctx.strokeStyle = p.color;
+//       ctx.moveTo(p.x + p.tilt + p.r / 4, p.y);
+//       ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 4);
+//       ctx.stroke();
+//     });
+//     updateParticles();
+//     requestAnimationFrame(drawConfetti);
+//   }
+
+//   function updateParticles() {
+//     for (let i = 0; i < particles.length; i++) {
+//       const p = particles[i];
+//       p.tiltAngle += p.tiltAngleIncremental;
+//       p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
+//       p.x += Math.sin(p.d);
+//       p.tilt = Math.sin(p.tiltAngle - i / 3) * 15;
+
+//       if (p.y > canvas.height) {
+//         particles[i] = {
+//           ...p,
+//           y: -10,
+//           x: Math.random() * canvas.width
+//         };
+//       }
+//     }
+//   }
+
+//   drawConfetti();
+
+  // --- FONDO VIDEO SECCION INICIO ---
+   particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+      "color": { "value": "#33CCFF" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.3 },
+      "size": { "value": 3 },
+      "line_linked": { "enable": true, "distance": 150, "color": "#33CCFF", "opacity": 0.3, "width": 1 },
+      "move": { "enable": true, "speed": 1.5 }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": { "enable": true, "mode": "grab" },
+        "onclick": { "enable": false },
+        "resize": true
+      },
+      "modes": {
+        "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } }
+      }
+    },
+    "retina_detect": true
+  });
+
+
+  // ========= SCRIPT PARA MAPA INTERACTIVO =========
+document.addEventListener('DOMContentLoaded', () => {
+
+    const regionCards = document.querySelectorAll('.region-card');
+    const mapRegions = document.querySelectorAll('.chile-region');
+
+    if (regionCards.length === 0 || mapRegions.length === 0) {
+        console.warn("No se encontraron elementos del mapa interactivo. Revisa las clases '.region-card' y '.chile-region'.");
+        return;
+    }
+
+    const setActiveRegion = (regionName) => {
+        regionCards.forEach(card => card.classList.remove('active'));
+        mapRegions.forEach(mapPath => mapPath.classList.remove('active'));
+
+        if (regionName) {
+            const activeCard = document.querySelector(`.region-card[data-region="${regionName}"]`);
+            const activeMapRegion = document.querySelector(`#map-${regionName}`);
+
+            if (activeCard) activeCard.classList.add('active');
+            if (activeMapRegion) activeMapRegion.classList.add('active');
+        }
+    };
+
+    regionCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const regionName = card.dataset.region;
+            const isAlreadyActive = card.classList.contains('active');
+            setActiveRegion(isAlreadyActive ? null : regionName);
+        });
+    });
+
+    mapRegions.forEach(mapPath => {
+        mapPath.addEventListener('click', () => {
+            const regionName = mapPath.id.replace('map-', '');
+            const isAlreadyActive = mapPath.classList.contains('active');
+            setActiveRegion(isAlreadyActive ? null : regionName);
+        });
+    });
+    
+    // Activa una región por defecto
+    setActiveRegion('metropolitana');
+});
+
+  // --- SECCION MAPA ---
+  // Ejemplo simple para cambiar color en mapa al hacer clic
+  document.querySelectorAll('.region-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const regionId = card.dataset.region;
+      const svgDoc = document.querySelector('#svgMap').contentDocument;
+      if (!svgDoc) return;
+      svgDoc.querySelectorAll('[data-region]').forEach(el => el.classList.remove('highlight'));
+      const regionElement = svgDoc.querySelector(`[data-region="${regionId}"]`);
+      if (regionElement) regionElement.classList.add('highlight');
+    });
+  });
+
+
+
+  // --- SECCION Hero reconocimiento ---
+   window.addEventListener('scroll', () => {
+    const offset = window.scrollY * 0.05;
+    document.querySelectorAll('.parallax').forEach(el => {
+      el.style.setProperty('--scroll-offset', `${offset}px`);
+    });
+  });
+ // --- SECCION Hero reconocimiento texto e imagen ---
+ // Simple Confetti
+const canvas = document.getElementById("confetti-canvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = 600;
+
+const confetti = Array.from({ length: 100 }, () => ({
+  x: Math.random() * canvas.width,
+  y: Math.random() * canvas.height,
+  r: Math.random() * 6 + 2,
+  d: Math.random() * 3 + 1,
+  color: `hsl(${Math.random() * 200 + 180}, 100%, 70%)`
+}));
+
+function drawConfetti() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  confetti.forEach(c => {
+    ctx.beginPath();
+    ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
+    ctx.fillStyle = c.color;
+    ctx.fill();
+    c.y += c.d;
+    if (c.y > canvas.height) {
+      c.y = -10;
+      c.x = Math.random() * canvas.width;
+    }
+  });
+  requestAnimationFrame(drawConfetti);
+}
+drawConfetti();
+ 
+   
+

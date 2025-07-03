@@ -21,7 +21,7 @@
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans">
-    <canvas id="digitalNetworkCanvas"></canvas>
+    <!-- <canvas id="digitalNetworkCanvas"></canvas> -->
     <!-- Header -->
     <header class="bg-white header shadow fixed w-full z-50">
         <div class="max-w-7xl mx-auto flex justify-between items-center px-14 py-3">
@@ -56,66 +56,143 @@
         </div>
     </header>
 
-    <section class=" bg-[#F2F2F2] py-16 px-4">
-        <div class="text-center mx-auto">
-            <!-- Título principal -->
-            <h2 class="text-3xl md:text-5xl font-bold text-[#006699] leading-tight mt-24 mb-4">
-                ¿CÓMO FUNCIONA<br />
-                <span class="text-[#006699] font-extrabold">PARK BY VAALA?</span>
-            </h2>
+    <section id="nosotros-hero"
+        class="relative w-full py-24 px-4 overflow-hidden text-white bg-gradient-to-br from-[#003249] via-[#014d72] to-[#006699]">
+        <!-- Fondo animado con orbes -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-20 left-20 w-72 h-72 bg-blue-900 rounded-full opacity-10 blur-3xl animate-pulse">
+            </div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-sky-500 rounded-full opacity-20 blur-2xl animate-ping">
+            </div>
+            <div class="absolute inset-0 bg-[url('/assets/img/bg/grid-light.svg')] bg-center bg-cover opacity-10"></div>
+        </div>
 
-            <!-- Subtítulo -->
-            <p class="text-[#006699] text-lg md:text-xl font-medium leading-snug mb-6">
-                OPERA A TRAVÉS DE UNA <span class="font-extrabold">PLATAFORMA DIGITAL</span> DISEÑADA PARA<br />
-                FACILITAR LA GESTIÓN DE ESTACIONAMIENTOS DE MANERA<br />
+        <!-- Contenido -->
+        <div class="relative z-10 max-w-5xl mx-auto text-center px-4 pt-20">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 animate-fade-in-up">
+                ¿CÓMO FUNCIONA</br> <span class="text-sky-400">PARK BY VAALA</span>?
+            </h1>
+            <p class="text-lg sm:text-xl font-light text-white/80 max-w-3xl mx-auto animate-fade-in-up delay-200">
+                OPERA A TRAVÉS DE UNA PLATAFORMA DIGITAL
+                <span class="font-semibold text-white">PLATAFORMA DIGITAL</span>,
+                DISEÑADA PARA
+                FACILITAR LA GESTIÓN DE ESTACIONAMIENTOS DE MANERA
                 EFICIENTE, SEGURA Y ORDENADA.
             </p>
+            <div class="h-1 w-20 bg-sky-400 mx-auto mt-8 rounded-full animate-grow-in delay-300"></div>
+        </div>
+    </section>
+    <section class="relative bg-white py-24 px-6 overflow-hidden" style="z-index: 9999999999999999; background-color: #ffffff !important;" id="procesos-clave">
+        <!-- Fondo decorativo animado -->
+        <div
+            class="absolute inset-0 z-0 pointer-events-none bg-[url('/assets/bg/network.svg')] bg-no-repeat bg-cover opacity-5">
+        </div>
 
-            <!-- Franja con proceso clave -->
-            <div class="inline-block bg-[#29C5FF] text-white px-5 py-2 rounded-full font-bold text-base mb-10 shadow">
-                SU FUNCIONAMIENTO SE BASA EN <span class="font-extrabold">TRES PROCESOS CLAVE:</span>
+        <div class="relative z-10 max-w-7xl mx-auto text-center">
+            <!-- Texto introductorio animado con estilo destacado -->
+            <div class="relative mb-16 px-4 animate-fade-in-up delay-200">
+                <p
+                    class="text-[1.1rem] md:text-lg lg:text-xl text-[#006699] font-bold leading-relaxed max-w-3xl mx-auto transition-all duration-500">
+                    <span class="block text-4xl py-3">SU FUNCIONAMIENTO SE BASA EN</span>
+                    <span
+                        class="font-bold text-4xl py-3 my-3 text-sky-600 tracking-wide bg-sky-100 font-extrabold px-2 py-1 rounded-lg transition duration-300 hover:bg-sky-200 inline-block">
+                        TRES PROCESOS CLAVE
+                    </span>
+                    <span class="block py-3">
+                        Que permiten controlar y optimizar los estacionamientos de manera efectiva.
+                    </span>
+                </p>
+
+                <!-- Decorador inferior animado -->
+                <div class="mt-6 flex justify-center">
+                    <div
+                        class="h-1.5 w-20 bg-gradient-to-r from-sky-400 via-cyan-500 to-sky-500 rounded-full animate-pulse">
+                    </div>
+                </div>
             </div>
 
-            <!-- Secciones: Gestión - Supervisión - Seguimiento -->
-            <div class="flex flex-col md:flex-row justify-center items-center gap-8 mt-6">
-                <div id="gestion-card" class="bg-[#29C5FF] rounded-full px-6 py-4 w-64 shadow-xl flex items-center gap-4
-               opacity-0 -translate-y-10 transition-all duration-700 ease-out
-               hover:scale-105 hover:shadow-2xl hover:bg-[#0099CC] cursor-pointer">
-                    <div class="bg-white p-4 rounded-full shadow-md">
-                        <img src="assets/img/icons/Proceso01_Sin_fondo.png" alt="Gestión" class="w-10 h-10" />
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- TARJETA -->
+                <div
+                    class="relative group bg-white border border-sky-100 rounded-2xl shadow-xl p-8 text-center transition-transform duration-500 hover:scale-[1.03] hover:shadow-2xl hover:border-sky-300 animate-fade-in-up delay-100">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2">
+                        <span
+                            class="w-10 h-10 bg-sky-500 text-white font-bold rounded-full shadow-lg flex items-center justify-center text-sm">1</span>
                     </div>
-                    <span class="text-white font-bold text-lg">GESTIÓN</span>
+                    <div
+                        class="bg-sky-100 mx-auto mb-4 p-4 w-16 h-16 rounded-xl flex items-center justify-center transition duration-300 group-hover:bg-sky-200">
+                        <img src="/assets/img/icons/Proceso01_Sin_fondo.png" alt="Gestión" class="w-8 h-8" />
+                    </div>
+                    <h3 class="text-lg font-extrabold text-sky-900 mb-2">GESTIÓN</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Plataforma digital para la gestión eficiente de estacionamientos. Simplifica la operación y
+                        mejora la experiencia.
+                    </p>
                 </div>
 
-                <div id="supervision-card" class="bg-[#29C5FF] rounded-full px-6 py-4 w-64 shadow-xl flex items-center gap-4
-               opacity-0 -translate-y-10 transition-all duration-700 ease-out delay-150
-               hover:scale-105 hover:shadow-2xl hover:bg-[#0099CC] cursor-pointer">
-                    <div class="bg-white p-4 rounded-full shadow-md">
-                        <img src="assets/img/icons/Proceso02_Sin_fondo.png" alt="Supervisión" class="w-10 h-10" />
+                <!-- TARJETA -->
+                <div
+                    class="relative group bg-white border border-sky-100 rounded-2xl shadow-xl p-8 text-center transition-transform duration-500 hover:scale-[1.03] hover:shadow-2xl hover:border-sky-300 animate-fade-in-up delay-200">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2">
+                        <span
+                            class="w-10 h-10 bg-sky-500 text-white font-bold rounded-full shadow-lg flex items-center justify-center text-sm">2</span>
                     </div>
-                    <span class="text-white font-bold text-lg">SUPERVISIÓN</span>
+                    <div
+                        class="bg-sky-100 mx-auto mb-4 p-4 w-16 h-16 rounded-xl flex items-center justify-center transition duration-300 group-hover:bg-sky-200">
+                        <img src="/assets/img/icons/Proceso02_Sin_fondo.png" alt="Supervisión" class="w-8 h-8" />
+                    </div>
+                    <h3 class="text-lg font-extrabold text-sky-900 mb-2">SUPERVISIÓN</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Permite controlar en tiempo real el funcionamiento de cada zona. Identifica problemas y optimiza
+                        la operación.
+                    </p>
                 </div>
 
-                <div id="seguimiento-card" class="bg-[#29C5FF] rounded-full px-6 py-4 w-64 shadow-xl flex items-center gap-4
-               opacity-0 -translate-y-10 transition-all duration-700 ease-out delay-300
-               hover:scale-105 hover:shadow-2xl hover:bg-[#0099CC] cursor-pointer">
-                    <div class="bg-white p-4 rounded-full shadow-md">
-                        <img src="assets/img/icons/Proceso03_Sin_fondo.png" alt="Seguimiento" class="w-10 h-10" />
+                <!-- TARJETA -->
+                <div
+                    class="relative group bg-white border border-sky-100 rounded-2xl shadow-xl p-8 text-center transition-transform duration-500 hover:scale-[1.03] hover:shadow-2xl hover:border-sky-300 animate-fade-in-up delay-300">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2">
+                        <span
+                            class="w-10 h-10 bg-sky-500 text-white font-bold rounded-full shadow-lg flex items-center justify-center text-sm">3</span>
                     </div>
-                    <span class="text-white font-bold text-lg">SEGUIMIENTO</span>
+                    <div
+                        class="bg-sky-100 mx-auto mb-4 p-4 w-16 h-16 rounded-xl flex items-center justify-center transition duration-300 group-hover:bg-sky-200">
+                        <img src="/assets/img/icons/Proceso03_Sin_fondo.png" alt="Seguimiento" class="w-8 h-8" />
+                    </div>
+                    <h3 class="text-lg font-extrabold text-sky-900 mb-2">SEGUIMIENTO</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Analiza datos, genera reportes y mejora el desempeño general gracias a herramientas
+                        automatizadas.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
 
+
+
+
+
+
+
+
+
+
+
+
     <section id="benefits-section" class="bg-[#F2F2F2] py-16 px-4 text-center font-sans">
+        <canvas id="digitalNetworkCanvas"></canvas>
         <div class="max-w-6xl mx-auto">
             <h2 id="benefits-title" class="text-3xl md:text-5xl font-extrabold text-[#003F6B] mb-12
                    opacity-0 -translate-y-10 transition-all duration-1000 ease-out">
                 ¿QUÉ <span class="text-[#00C3FF]">OBTENDRÁS</span><br class="md:hidden" />
                 <span class="text-[#00C3FF]">CON NOSOTROS?</span>
             </h2>
+            <p class="text-gray-600 max-w-3xl mx-auto text-base md:text-lg mb-12 animate-fade-in-up delay-100">
+                Accede a un ecosistema completo que transforma la gestión de estacionamientos con soluciones
+                inteligentes y conectadas.
+            </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div id="benefit-card-1" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
@@ -184,74 +261,130 @@
                     </p>
                 </div>
             </div>
+
+
+
         </div>
+        
+
+
     </section>
 
-    <section class="bg-[#F2F2F2] py-16 px-4 font-sans">
+    <section class="bg-[#F2F2F2] py-10 px-4 font-sans">
         <div class="max-w-3xl mx-auto">
-            <div class="border-2 border-[#00C3FF] rounded-full px-10 py-10 text-center">
-                <h3 class="text-2xl md:text-3xl font-bold text-[#00568F] mb-4">
-                    SÚMATE A UN <span class="font-extrabold">SOFTWARE<br />MÁS COMPLETO</span>
-                </h3>
-                <button class="bg-gradient-to-r from-[#00C3FF] to-[#007ACC] text-white rounded-full px-10 py-2 mt-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline" fill="none" viewBox="0 0 24 24"
-                        stroke="white">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="6"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-
-                </button>
+            <div class=" px-6 py-6 text-center">
+                <!-- Llamado a la acción -->
+                <a href="contactanos.html"
+                    class="inline-flex items-center justify-center text-white bg-gradient-to-r from-sky-500 to-blue-600 px-10 py-8 rounded-full text-lg font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition transform duration-300 animate-fade-in-up delay-800">
+                    SÚMATE AL SOFTWARE MÁS COMPLETO →
+                </a>
             </div>
+        </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-gradient-to-br from-[#0D7FB2] to-[#1B9DD0] text-white py-8">
-        <div class="max-w-5xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-6 px-6">
-            <img src="assets/img/logo-park-negativo.png" alt="Logo blanco"
-                class="w-20 sm:w-24 md:w-28 lg:w-32 h-auto max-w-full" />
+    <footer class="bg-[#032F41] text-white pt-12 pb-6 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Columna 1: Logo + descripción + RRSS -->
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="bg-[#28B7E3] p-3 rounded-xl">
+                        <img src="assets/img/logo-park-negativo.png" alt="Ícono Park" class="w-12" />
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold">PARK</h2>
+                        <p class="text-sm text-[#94E6FF]">by Vaala</p>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed text-[#D1ECF5]">
+                    Solución tecnológica integral para la gestión y control eficiente de estacionamientos, orientada al
+                    cobro oportuno, la prevención de fraudes y la valorización del uso del espacio.
+                </p>
+                <div class="flex gap-4 mt-2">
+                    <a href="#" class=" hover:scale-105 transition" aria-label="WhatsApp">
+                        <img src="assets/img/svg/whatsapp-logo.svg" alt="WhatsApp logo"
+                            class="w-6 h-6 md:w-8 md:h-8 invert" />
+                    </a>
 
-            <div class="flex gap-4 justify-center md:justify-end">
-                <!-- WhatsApp -->
-                <a href="#"
-                    class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
-                    aria-label="WhatsApp">
-                    <img src="assets/img/svg/whatsapp-logo.svg" alt="WhatsApp logo"
-                        class="w-6 h-6 md:w-8 md:h-8 invert" />
-                </a>
+                    <!-- Instagram -->
+                    <a href="#" class=" hover:scale-105 transition" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24"
+                            fill="#ffffff">
+                            <path
+                                d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.75 2.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" />
+                        </svg>
+                    </a>
 
-                <!-- Instagram -->
-                <a href="#"
-                    class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
-                    aria-label="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24"
-                        fill="#ffffff">
-                        <path
-                            d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.75 2.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" />
+                    <!-- LinkedIn -->
+                    <a href="#" class=" hover:scale-105 transition" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                            class="w-6 h-6 md:w-8 md:h-8 fill-white">
+                            <path
+                                d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna 2: Contacto -->
+            <div class="flex flex-col gap-4">
+                <h3 class="text-[#33CCFF] font-bold text-lg">CONTACTO</h3>
+                <div class="flex items-center gap-3 text-[#D1ECF5]">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor"
+                        stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75 12 13.5 2.25 6.75"></path>
                     </svg>
-                </a>
-
-                <!-- LinkedIn -->
-                <a href="#"
-                    class="p-4 md:p-5 rounded-full bg-gradient-to-br from-[#30C5F8] to-[#0570A3] hover:scale-105 transition"
-                    aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                        class="w-6 h-6 md:w-8 md:h-8 fill-white">
-                        <path
-                            d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z" />
+                    <span>contacto@parkbyvaala.cl</span>
+                </div>
+                <div class="flex items-center gap-3 text-[#D1ECF5]">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor"
+                        stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.25 4.5 21.75 19.5M21.75 4.5 2.25 19.5" />
                     </svg>
-                </a>
+                    <span>+56 2 XXXX XXXX</span>
+                </div>
+                <div class="flex items-center gap-3 text-[#D1ECF5]">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor"
+                        stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25z">
+                        </path>
+                    </svg>
+                    <span>Santiago, Chile</span>
+                </div>
+            </div>
+
+            <!-- Columna 3: Servicios -->
+            <div class="flex flex-col gap-4">
+                <h3 class="text-[#33CCFF] font-bold text-lg">SERVICIOS</h3>
+                <ul class="text-[#D1ECF5] space-y-1">
+                    <li>Gestión Inteligente</li>
+                    <li>Control de Fraudes</li>
+                    <li>Integración SII</li>
+                    <li>Análisis de Datos</li>
+                </ul>
             </div>
         </div>
-        <p class="text-center font-semibold text-lg mt-4">© 2025 Vaalagroup</p>
-        <p class="text-center font-semibold text-md mt-4">
-            Desarrollado Por
-            <a href="https://www.kalexmart.com" target="_blank" rel="noopener noreferrer"
-                class="text-cyan-200  hover:text-cyan-700 transition">
-                kalexmart.com
-            </a>
-        </p>
+
+        <!-- Línea divisoria -->
+        <div class="w-full border-t border-[#0F4D64] my-6"></div>
+
+        <!-- Footer legal -->
+        <div
+            class="max-w-7xl mx-auto px-6 md:px-12 text-sm flex flex-col md:flex-row justify-between items-center gap-4 text-[#B3DFF1]">
+            <p>© 2025 Park by Vaala. Todos los derechos reservados.</p>
+            <div class="flex items-center gap-4 text-sm">
+                <a href="#" class="hover:underline">Política de Privacidad</a>
+                <a href="#" class="hover:underline">Términos de Uso</a>
+                <span class="flex items-center gap-1">
+                    Premio ASIVA 2025 <span class="w-2 h-2 bg-yellow-400 rounded-full inline-block"></span>
+                </span>
+            </div>
+        </div>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             setupMobileMenu("menu-toggle", "mobile-menu");
