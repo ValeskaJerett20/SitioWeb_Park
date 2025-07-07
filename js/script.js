@@ -450,6 +450,121 @@ module.exports = {
     },
   },
 };
- 
-   
+// --- MAPA------------------------------------------------------ ---
 
+const regions = [
+    {
+      id: 'valparaiso',
+      name: 'Valparaíso',
+      projects: 45,
+      users: 2800,
+      description: 'Conectamos múltiples comunas costeras y urbanas a través de soluciones innovadoras para estacionamientos.'
+    },
+    {
+      id: 'metropolitana',
+      name: 'Metropolitana',
+      projects: 287,
+      users: 15600,
+      description: 'Nuestra región más activa con una amplia red de usuarios, empresas y municipalidades.'
+    },
+    {
+      id: 'ohiggins',
+      name: "O'Higgins",
+      projects: 32,
+      users: 1450,
+      description: 'Apoyamos el crecimiento de ciudades emergentes y soluciones de movilidad sustentable.'
+    },
+    {
+      id: 'araucania',
+      name: 'Araucanía',
+      projects: 28,
+      users: 980,
+      description: 'Enlace clave para conectar el sur de Chile con infraestructura tecnológica moderna.'
+    }
+  ];
+
+  let selected = null;
+
+  function updateView() {
+    const container = document.getElementById('region-cards');
+    container.innerHTML = '';
+    regions.forEach(region => {
+      const isActive = selected === region.id;
+
+      const div = document.createElement('div');
+      div.className = `border rounded-xl p-4 transition cursor-pointer overflow-hidden
+        ${isActive ? 'bg-[#E6F7FF] border-[#006699] shadow-md' : 'bg-white border-[#33CCFF]/20 hover:border-[#006699]'}`;
+      div.onclick = () => {
+        selected = selected === region.id ? null : region.id;
+        updateView();
+        highlightDot();
+      };
+      div.innerHTML = `
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-[#006699]"></span>
+            <h4 class="text-lg font-bold text-[#006699]">Región ${region.name}</h4>
+          </div>
+          <span class="text-[#E6007E]">📍</span>
+        </div>
+        <div class="grid grid-cols-2 text-sm text-gray-700 mb-2">
+          <p><strong>${region.projects}</strong> Proyectos</p>
+          <p><strong>${region.users.toLocaleString()}</strong> Usuarios</p>
+        </div>
+        ${isActive ? `<div class="pt-2 mt-2 border-t border-[#33CCFF]/30 text-sm text-gray-600 leading-relaxed">
+          ${region.description}
+        </div>` : ''}
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  function highlightDot() {
+    document.querySelectorAll('.map-dot').forEach(dot => {
+      dot.setAttribute('r', dot.dataset.region === selected ? '8' : '5');
+    });
+  }
+
+  document.querySelectorAll('.map-dot').forEach(dot => {
+    dot.addEventListener('click', () => {
+      const id = dot.dataset.region;
+      selected = selected === id ? null : id;
+      updateView();
+      highlightDot();
+    });
+  });
+
+  updateView();
+
+  // CUENTA REGRESIVA MAPA-------------------------------------------------------------------
+   function animateCounters() {
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const isK = target >= 1000;
+      const duration = 2000;
+      const increment = target / (duration / 16); // Aproximadamente 60fps
+
+      let count = 0;
+
+      const update = () => {
+        count += increment;
+        if (count < target) {
+          counter.textContent = isK
+            ? (count / 1000).toFixed(1) + 'K'
+            : Math.round(count);
+          requestAnimationFrame(update);
+        } else {
+          counter.textContent = isK
+            ? (target / 1000).toFixed(1) + 'K'
+            : target + (target === 98 ? '%' : '');
+        }
+      };
+
+      update();
+    });
+  }
+
+  // Iniciar la animación cuando el DOM esté cargado
+  window.addEventListener('DOMContentLoaded', animateCounters);
