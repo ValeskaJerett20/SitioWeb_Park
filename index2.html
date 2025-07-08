@@ -246,35 +246,71 @@
                         </div>
                     </div>
 
-                    <!-- Panel inferior: regiones -->
-                    <div class="space-y-4">
-                        <div class="bg-white rounded-xl shadow p-4 flex justify-between items-center">
+                    <div id="regions" class="space-y-4">
+                        <!-- Card -->
+                        <div class="rounded-xl border shadow-md overflow-hidden transition-all ease-in-out duration-300" data-region="valpo">
+                            <button onclick="toggleDropdown('valpo')" class="w-full px-5 py-4 bg-white flex justify-between items-start gap-4 text-left hover:bg-gray-50">
                             <div>
-                                <h4 class="text-sm font-bold text-[#006699]">Región Valparaíso</h4>
-                                <p class="text-xs text-gray-600">45 Proyectos - 2800 Usuarios</p>
+                                <h4 class="text-base font-bold text-[#006699]">Región Valparaíso</h4>
+                                <div class="text-sm text-gray-700 mt-1 space-y-1">
+                                <p class="flex items-center gap-1">🏢 45 Proyectos</p>
+                                <p class="flex items-center gap-1">👥 2,800 Usuarios</p>
+                                </div>
                             </div>
-                            <div class="text-[#33CCFF] text-xl">📍</div>
+                                    <span id="icon-valpo" class="text-[#33CCFF] text-xl transform transition-transform duration-300">📍</span>
+
+                            </button>
+                            <div id="dropdown-valpo" class="px-5 pt-2 pb-4 text-sm text-gray-600 hidden border-t">
+                            Puerto principal con alta demanda turística y comercial. Implementación exitosa en zonas patrimoniales y centros comerciales.
+                            </div>
                         </div>
-                        <div class="bg-white rounded-xl shadow p-4 flex justify-between items-center">
+                        <div class="rounded-xl border shadow-md overflow-hidden transition-all ease-in-out duration-300" data-region="metro">
+                            <button onclick="toggleDropdown('metro')" class="w-full px-5 py-4 bg-white flex justify-between items-start gap-4 text-left hover:bg-gray-50">
                             <div>
-                                <h4 class="text-sm font-bold text-[#006699]">Región Metropolitana</h4>
-                                <p class="text-xs text-gray-600">287 Proyectos - 15.600 Usuarios</p>
+                                <h4 class="text-base font-bold text-[#006699]">Región Metropolitana</h4>
+                                <div class="text-sm text-gray-700 mt-1 space-y-1">
+                                <p class="flex items-center gap-1">🏢 45 Proyectos</p>
+                                <p class="flex items-center gap-1">👥 2,800 Usuarios</p>
+                                </div>
                             </div>
-                            <div class="text-[#33CCFF] text-xl">📍</div>
+                                    <span id="icon-metro" class="text-[#33CCFF] text-xl transform transition-transform duration-300">📍</span>
+
+                            </button>
+                            <div id="dropdown-metro" class="px-5 pt-2 pb-4 text-sm text-gray-600 hidden border-t">
+                            Puerto principal con alta demanda turística y comercial. Implementación exitosa en zonas patrimoniales y centros comerciales.
+                            </div>
                         </div>
-                        <div class="bg-white rounded-xl shadow p-4 flex justify-between items-center">
+                        <div class="rounded-xl border shadow-md overflow-hidden transition-all ease-in-out duration-300" data-region="ohiggins">
+                            <button onclick="toggleDropdown('ohiggins')" class="w-full px-5 py-4 bg-white flex justify-between items-start gap-4 text-left hover:bg-gray-50">
                             <div>
-                                <h4 class="text-sm font-bold text-[#006699]">Región O'Higgins</h4>
-                                <p class="text-xs text-gray-600">32 Proyectos - 1450 Usuarios</p>
+                                <h4 class="text-base font-bold text-[#006699]">Región O´Higgins</h4>
+                                <div class="text-sm text-gray-700 mt-1 space-y-1">
+                                <p class="flex items-center gap-1">🏢 45 Proyectos</p>
+                                <p class="flex items-center gap-1">👥 2,800 Usuarios</p>
+                                </div>
                             </div>
-                            <div class="text-[#33CCFF] text-xl">📍</div>
+                                    <span id="icon-ohiggins" class="text-[#33CCFF] text-xl transform transition-transform duration-300">📍</span>
+
+                            </button>
+                            <div id="dropdown-ohiggins" class="px-5 pt-2 pb-4 text-sm text-gray-600 hidden border-t">
+                            Puerto principal con alta demanda turística y comercial. Implementación exitosa en zonas patrimoniales y centros comerciales.
+                            </div>
                         </div>
-                        <div class="bg-white rounded-xl shadow p-4 flex justify-between items-center">
+                        <div class="rounded-xl border shadow-md overflow-hidden transition-all ease-in-out duration-300" data-region="araucania">
+                            <button onclick="toggleDropdown('araucania')" class="w-full px-5 py-4 bg-white flex justify-between items-start gap-4 text-left hover:bg-gray-50">
                             <div>
-                                <h4 class="text-sm font-bold text-[#006699]">Región Araucanía</h4>
-                                <p class="text-xs text-gray-600">28 Proyectos - 980 Usuarios</p>
+                                <h4 class="text-base font-bold text-[#006699]">Región Araucanía</h4>
+                                <div class="text-sm text-gray-700 mt-1 space-y-1">
+                                <p class="flex items-center gap-1">🏢 45 Proyectos</p>
+                                <p class="flex items-center gap-1">👥 2,800 Usuarios</p>
+                                </div>
                             </div>
-                            <div class="text-[#33CCFF] text-xl">📍</div>
+                                    <span id="icon-araucania" class="text-[#33CCFF] text-xl transform transition-transform duration-300">📍</span>
+
+                            </button>
+                            <div id="dropdown-araucania" class="px-5 pt-2 pb-4 text-sm text-gray-600 hidden border-t">
+                            Puerto principal con alta demanda turística y comercial. Implementación exitosa en zonas patrimoniales y centros comerciales.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -457,6 +493,39 @@
             iframe.src = iframe.src.replace("mute=1", "mute=0");
         }
     </script>
+<script>
+  function toggleDropdown(regionId) {
+    const allDropdowns = document.querySelectorAll('[id^="dropdown-"]');
+    const allIcons = document.querySelectorAll('[id^="icon-"]');
+    const allCards = document.querySelectorAll('[data-region]');
+
+    allDropdowns.forEach(el => {
+      if (el.id === 'dropdown-' + regionId) {
+        el.classList.toggle('hidden');
+      } else {
+        el.classList.add('hidden');
+      }
+    });
+    allIcons.forEach(icon => {
+      if (icon.id === 'icon-' + regionId) {
+        icon.classList.toggle('rotate-90');
+      } else {
+        icon.classList.remove('rotate-90');
+      }
+    });
+
+    allCards.forEach(card => {
+      if (card.dataset.region === regionId) {
+        card.classList.toggle('bg-[#E6F5FA]');
+        card.classList.toggle('border-[#33CCFF]');
+      } else {
+        card.classList.remove('bg-[#E6F5FA]');
+        card.classList.remove('border-[#33CCFF]');
+      }
+    });
+  }
+</script>
+
 
 </body>
 
