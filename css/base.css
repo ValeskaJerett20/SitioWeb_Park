@@ -1,0 +1,94 @@
+/* === TIPOGRAFÍA GLOBAL === */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700&display=swap');
+
+/* RESET GENERAL */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1em !important;
+  color: #2C3E50; /* Texto oscuro */
+  background-color: #f8f9fc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === JERARQUÍA DE TÍTULOS === */
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1em !important;
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5rem; line-height: 2.5rem; }
+h2 { font-size: 2rem; line-height: 2rem; }
+h3 { font-size: 1.5rem; line-height: 1.5rem; }
+h4 { font-size: 1.25rem; line-height: 1.25rem; }
+h5 { font-size: 1rem; line-height: 1rem; }
+h6 { font-size: 0.85rem; line-height: 0.85rem; }
+
+/* === PÁRRAFOS === */
+p {
+  text-transform: none; /* Alta y baja */
+  font-size: 1rem;
+  line-height: 1em !important;
+  margin-bottom: 1em;
+}
+
+/* === CLASES UTILITARIAS === */
+.uppercase-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.highlight-text {
+  color: #0052D4;
+  font-weight: 600;
+}
+
+/* === TRANSICIONES SUAVES === */
+a, button, .region-card, .stat-item, .map-region-path, .chile-region {
+  transition: all 0.3s ease-in-out;
+}
+
+/* === BOTÓN GLOBAL BASE === */
+.btn-primary {
+  background: linear-gradient(to right, #26D0FE, #1A8DFF);
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(38, 208, 254, 0.25);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #13a7d8, #0052d4);
+  transform: translateY(-2px);
+}
+
+/* === ENLACES === */
+a {
+  color: #0052D4;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* === SELECCIÓN DE TEXTO === */
+::selection {
+  background-color: #33ccff;
+  color: white;
+}

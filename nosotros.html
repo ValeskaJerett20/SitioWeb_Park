@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PARK by Vaala</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- En todos los HTML o en una plantilla común -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+
     <script src="js/main.js"></script>
 
 
@@ -23,11 +27,11 @@
 <body class="bg-gray-50 text-gray-800 font-sans">
     <!-- <canvas id="digitalNetworkCanvas"></canvas> -->
     <!-- Header -->
-    <header class="bg-white header shadow fixed w-full  z-50">
-        <div class="max-w-8xl mx-auto flex justify-between items-center px-16 py-3">
+    <header class="bg-white header shadow fixed w-full z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-14 py-3">
             <!-- Logo -->
             <div class="logo">
-                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-10" />
+                <img src="assets/img/logo-park.png" alt="Logo Park" class="h-16" />
             </div>
 
             <!-- Botón hamburguesa (solo visible en mobile) -->
@@ -41,9 +45,10 @@
             <!-- Menú de escritorio -->
             <nav class="hidden md:flex space-x-6">
                 <a href="index.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">INICIO</a>
-                <a href="nosotros.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">NOSOTROS</a>
+                <a href="nosotros.html"
+                    class="  text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">NOSOTROS</a>
                 <a href="reconocimientos.html"
-                    class="text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">RECONOCIMIENTOS</a>
+                    class="text-sm font-bold text-[#006699] hover:text-blue-600">RECONOCIMIENTOS</a>
                 <a href="contactanos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">CONTACTO</a>
             </nav>
         </div>
@@ -85,7 +90,8 @@
             <div class="h-1 w-20 bg-sky-400 mx-auto mt-8 rounded-full animate-grow-in delay-300"></div>
         </div>
     </section>
-    <section class="relative bg-white py-24 px-6 overflow-hidden" style="z-index: 9999999999999999; background-color: #ffffff !important;" id="procesos-clave">
+    <section class="relative bg-white py-24 px-6 overflow-hidden"
+        style="z-index: 9999999999999999; background-color: #ffffff !important;" id="procesos-clave">
         <!-- Fondo decorativo animado -->
         <div
             class="absolute inset-0 z-0 pointer-events-none bg-[url('/assets/bg/network.svg')] bg-no-repeat bg-cover opacity-5">
@@ -98,7 +104,7 @@
                     class="text-[1.1rem] md:text-lg lg:text-xl text-[#006699] font-bold leading-relaxed max-w-3xl mx-auto transition-all duration-500">
                     <span class="block text-4xl py-3">SU FUNCIONAMIENTO SE BASA EN</span>
                     <span
-                        class="font-bold text-4xl py-3 my-3 text-sky-600 tracking-wide bg-sky-100 font-extrabold px-2 py-1 rounded-lg transition duration-300 hover:bg-sky-200 inline-block">
+                        class="font-bold text-4xl py-3 my-3 text-[#FFFFFF] tracking-wide bg-[#33CCFF] font-extrabold px-2 py-1 rounded-lg transition duration-300 hover:bg-sky-200 inline-block">
                         TRES PROCESOS CLAVE
                     </span>
                     <span class="block py-3">
@@ -204,7 +210,7 @@
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_01.png" class="w-16 h-16" alt="Monitoreo" />
                     </div>
-                    <p class="text-[#00568F] font-bold leading-tight">
+                    <p class="text-[#006699] font-bold leading-tight">
                         MONITOREO<br /><span class="font-extrabold">EN TIEMPO REAL</span>
                     </p>
                 </div>
@@ -215,7 +221,7 @@
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_02.png" class="w-16 h-16" alt="Validación" />
                     </div>
-                    <p class="text-[#00568F] font-bold leading-tight">
+                    <p class="text-[#006699] font-bold leading-tight">
                         VALIDACIÓN POR<br /><span class="font-extrabold">DIRECCIÓN DEL TRABAJO</span>
                     </p>
                 </div>
@@ -226,7 +232,7 @@
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_03.png" class="w-16 h-16" alt="Clientes" />
                     </div>
-                    <p class="text-[#00568F] font-bold leading-tight">
+                    <p class="text-[#006699] font-bold leading-tight">
                         ESPACIO PARA<br /><span class="font-extrabold">TUS CLIENTES</span>
                     </p>
                 </div>
@@ -237,7 +243,7 @@
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_04.png" class="w-16 h-16" alt="SII" />
                     </div>
-                    <p class="text-[#00568F] font-bold leading-tight">
+                    <p class="text-[#006699] font-bold leading-tight">
                         VENTA ENLAZADA<br /><span class="font-extrabold">AL SERVICIO DE<br />IMPUESTOS INTERNOS</span>
                     </p>
                 </div>
@@ -268,7 +274,7 @@
 
 
         </div>
-        
+
 
 
     </section>
@@ -278,7 +284,7 @@
             <div class=" px-6 py-6 text-center">
                 <!-- Llamado a la acción -->
                 <a href="contactanos.html"
-                    class="inline-flex items-center justify-center text-white bg-gradient-to-r from-sky-500 to-blue-600 px-10 py-8 rounded-full text-lg font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition transform duration-300 animate-fade-in-up delay-800">
+                    class="inline-flex items-center justify-center text-white bg-gradient-to-r from-[#006699] to-[#33CCFF] px-10 py-8 rounded-full text-lg font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition transform duration-300 animate-fade-in-up delay-800">
                     SÚMATE AL SOFTWARE MÁS COMPLETO →
                 </a>
             </div>

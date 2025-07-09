@@ -30,7 +30,7 @@
 
 /* mapa  */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -259,10 +259,6 @@ body {
 
 /* --- ESTILOS GENERALES Y RESET BÁSICO --- */
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Work Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
