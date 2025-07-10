@@ -96,8 +96,9 @@ body {
 }
 
 .map-region-path {
-    stroke: white;
+    stroke: #33CCFF;
     stroke-width: 1.5;
+    z-index: 9999;
     transition: fill 0.3s ease-in-out, transform 0.2s ease-in-out;
     transform-origin: center;
 }
@@ -108,17 +109,17 @@ body {
 
 .map-region-path.highlighted:hover {
     fill: #13a7d8;
-    transform: scale(1.15);
-    margin-left: 10px;
+    transform: scale(1.1);
+    margin-left: 20px;
 }
 
 .map-region-path.normal {
-    fill: #E5E5E5;
+    fill: #374151;
 }
 
 .map-region-path:hover,
 .map-region-path.hover-active {
-    fill: #acacac;
+    fill: #2d3645;
     transform: scale(1.03);
     cursor: pointer;
 }

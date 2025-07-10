@@ -30,6 +30,3 @@ header, section, footer {
   del canvas sea visible a través de ellas. El color de fondo general
   lo define la clase del <body>.
 */
-section {
-    background-color: transparent !important;
-}
