@@ -12,7 +12,12 @@
     <!-- En todos los HTML o en una plantilla común -->
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/animaciones.css">
     <link rel="stylesheet" href="css/animacion-fondo.css">
+    <script src="js/animaciones.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -77,52 +82,58 @@
                 <!-- Texto -->
                 <div class="text-center uppercase md:text-left md:w-1/2">
                     <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-                        <span class="block z-100" data-aos="fade-up">Conectividad,</span>
-                        <span class="block z-100 text-[#33CCFF]" data-aos="fade-up" data-aos-delay="200">Control y
-                            Cobro</span>
-                        <span class="block" data-aos="fade-up" data-aos-delay="400">en una sola solución</span>
+                        <span class="block" data-aos="fade-left" data-aos-duration="800"
+                            data-aos-delay="0">Conectividad,</span>
+                        <span class="block text-[#33CCFF]" data-aos="fade-left" data-aos-duration="800"
+                            data-aos-delay="200">Control y Cobro</span>
+                        <span class="block" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">en una
+                            sola solución</span>
                     </h1>
-                    <p class="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-white/90 max-w-2xl"
-                        data-aos="fade-up" data-aos-delay="600">
+                    <p class="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white/90 max-w-2xl"
+                        data-aos="fade-left" data-aos-duration="800" data-aos-delay="600">
                         En Park, nos mueve la innovación, la eficiencia y el diseño de herramientas
                         que hacen más simple, seguro y ordenado el uso de los espacios.
                     </p>
-
-                    
                 </div>
 
+
+            
+
+
                 <!-- Cápsula del logo -->
-                <div class="md:w-1/2 flex justify-center md:justify-center">
+                <div class="md:w-1/2 flex justify-center md:justify-center" data-aos="slide-up" data-aos-duration="800"
+                            data-aos-delay="0">
                     <!-- <div class="bg-white rounded-full shadow-lg px-10 py-10 sm:px-16 sm:py-16 flex items-center justify-center" -->
-                        <!-- style="border-top-left-radius: 2000px; border-top-right-radius: 2000px; border-bottom-left-radius: 2000px; border-bottom-right-radius: 0;"> -->
-                        <img src="assets/img/logo-park-negativo.png" alt="Logo Park"
-                            class="h-24 sm:h-28 md:h-36 object-contain" />
+                    <!-- style="border-top-left-radius: 2000px; border-top-right-radius: 2000px; border-bottom-left-radius: 2000px; border-bottom-right-radius: 0;"> -->
+                    <img src="assets/img/logo-park-negativo.png" alt="Logo Park"
+                        class="h-24 sm:h-28 md:h-36 object-contain" />
                     <!-- </div> -->
                 </div>
 
             </div>
             <!-- Flecha scroll -->
-<div class="animate-bounce text-white/70 hidden md:flex justify-center" data-aos="fade-up" data-aos-delay="800">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-    stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-  </svg>
-</div>
+            <div class="animate-bounce text-white/70 hidden md:flex justify-center" data-aos="fade-up"
+                data-aos-delay="800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
 
         </section>
 
-        <section id="video-section" class="relative w-full py-24 px-4 text-white overflow-hidden" style="z-index: 9999999999999999; background-color: #ffffff !important;"
+        <section id="video-section" class="relative w-full py-24 px-4 text-white overflow-hidden"
+            style="z-index: 9999999999999999; background-color: #ffffff !important;"
             style="font-family: 'Work Sans', sans-serif;">
             <!-- Fondo con gradiente + partículas -->
             <div id="particles-js" class="absolute inset-0 z-0 bg-[#FFFFFF] opacity-95"></div>
-
-            <!-- Contenido -->
-            <!-- Contenido principal -->
             <div class="relative uppercase z-10 max-w-6xl mx-auto text-center">
-                <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-[#006699]">
+                <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-[#006699]" data-aos="fade-left" data-aos-duration="800"
+                            data-aos-delay="0">
                     ¿QUÉ ES <span class="text-[#33CCFF]">PARK BY VAALA</span>?
                 </h2>
-                <p class="text-lg md:text-xl font-semibold mb-12 max-w-3xl mx-auto text-[#006699]">
+                <p class="text-lg md:text-xl font-semibold mb-12 max-w-3xl mx-auto text-[#006699]" data-aos="fade-left" data-aos-duration="800"
+                            data-aos-delay="0">
                     Una solución tecnológica integral para la gestión y control eficiente de estacionamientos, orientada
                     al cobro
                     oportuno, la prevención de fraudes y la valoración del uso del espacio.
@@ -140,7 +151,8 @@
 
                 <!-- Video -->
                 <div
-                    class="relative w-full max-w-5xl aspect-video mx-auto rounded-xl overflow-hidden shadow-2xl border border-white/10">
+                    class="relative w-full max-w-5xl aspect-video mx-auto rounded-xl overflow-hidden shadow-2xl border border-white/10" data-aos="zoom-in" data-aos-duration="800"
+                            data-aos-delay="0">
                     <iframe id="park-video" class="w-full h-full"
                         src="https://www.youtube.com/embed/KC-DS8HZMXs?autoplay=1&mute=1&controls=1&loop=0&playlist=KC-DS8HZMXs"
                         title="Video Park by Vaala" frameborder="0" allow="autoplay; encrypted-media"
@@ -155,7 +167,7 @@
             </div>
         </section>
         <section class="w-full bg-[#111827] py-20 px-6">
-                        <canvas id="digitalNetworkCanvas"></canvas>
+            <canvas id="digitalNetworkCanvas"></canvas>
 
             <div class="max-w-7xl uppercase mx-auto text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-white" data-aos="fade-up">NUESTRA <span
@@ -165,7 +177,7 @@
                     Con presencia consolidada en las principales regiones de Chile, Park by Vaala conecta
                     más de 390 proyectos activos, sirviendo a más de 20,000 usuarios en todo el territorio nacional.
                 </p>
-                
+
                 <!-- Decorador inferior animado -->
                 <div class="mt-6 flex justify-center">
                     <div
@@ -222,8 +234,7 @@
                 </div>
                 <div class="flex flex-col gap-6 bg-[#122239] p-6 rounded-3xl" data-aos="fade-left">
                     <!-- Panel superior: resumen numérico -->
-                    <div
-                        class=" rounded-3xl px-6 py-8 grid grid-cols-2 sm:grid-cols-3 gap-4 text-center">
+                    <div class=" rounded-3xl px-6 py-8 grid grid-cols-2 sm:grid-cols-3 gap-4 text-center">
                         <div>
                             <div class="text-[#33CCFF] text-2xl font-extrabold">5</div>
                             <div class="text-sm text-gray-400 font-bold">
@@ -263,17 +274,17 @@
                                     <div class="text-sm text-gray-400 mt-1 space-y-1">
                                         <p class="flex items-center gap-1">
                                             🏢
-                                             45 Proyectos</p>
+                                            45 Proyectos</p>
                                         <p class="flex items-center gap-1">👥 2,800 Usuarios</p>
                                     </div>
                                 </div>
                                 <div class="bg-[#33CCFF] p-3 rounded-xl">
                                     <svg class="text-white w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
                                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- Heroicon ejemplo: BriefcaseIcon -->
-                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        <!-- Heroicon ejemplo: BriefcaseIcon -->
+                                        <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M9 12h6m2 0a2 2 0 002-2V7a2 2 0 00-2-2h-1V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v1H7a2 2 0 00-2 2v3a2 2 0 002 2m6 0v5m-6-5v5m0 0h6">
-                                    </path>
+                                        </path>
                                     </svg>
                                 </div>
                             </button>
@@ -299,10 +310,10 @@
                                 <div class="bg-[#33CCFF] p-3 rounded-xl">
                                     <svg class="text-white w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
                                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- Heroicon ejemplo: BriefcaseIcon -->
-                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        <!-- Heroicon ejemplo: BriefcaseIcon -->
+                                        <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M9 12h6m2 0a2 2 0 002-2V7a2 2 0 00-2-2h-1V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v1H7a2 2 0 00-2 2v3a2 2 0 002 2m6 0v5m-6-5v5m0 0h6">
-                                    </path>
+                                        </path>
                                     </svg>
                                 </div>
                             </button>
@@ -325,13 +336,13 @@
                                         <p class="flex items-center gap-1">👥 2,800 Usuarios</p>
                                     </div>
                                 </div>
-                            <div class="bg-[#33CCFF] p-3 rounded-xl">
+                                <div class="bg-[#33CCFF] p-3 rounded-xl">
                                     <svg class="text-white w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
                                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- Heroicon ejemplo: BriefcaseIcon -->
-                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        <!-- Heroicon ejemplo: BriefcaseIcon -->
+                                        <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M9 12h6m2 0a2 2 0 002-2V7a2 2 0 00-2-2h-1V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v1H7a2 2 0 00-2 2v3a2 2 0 002 2m6 0v5m-6-5v5m0 0h6">
-                                    </path>
+                                        </path>
                                     </svg>
                                 </div>
                             </button>
@@ -357,10 +368,10 @@
                                 <div class="bg-[#33CCFF] p-3 rounded-xl">
                                     <svg class="text-white w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
                                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- Heroicon ejemplo: BriefcaseIcon -->
-                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        <!-- Heroicon ejemplo: BriefcaseIcon -->
+                                        <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M9 12h6m2 0a2 2 0 002-2V7a2 2 0 00-2-2h-1V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v1H7a2 2 0 00-2 2v3a2 2 0 002 2m6 0v5m-6-5v5m0 0h6">
-                                    </path>
+                                        </path>
                                     </svg>
                                 </div>
                             </button>
@@ -518,8 +529,15 @@
             });
         }
     </script>
-<script src="js/animacion-fondo.js"></script>
-
+    <script src="js/animacion-fondo.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: false,   
+            mirror: true   
+        });
+    </script>
+    
 </body>
 
 </html>

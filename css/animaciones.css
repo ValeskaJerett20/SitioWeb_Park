@@ -1,0 +1,30 @@
+/* Animaciones personalizadas (puedes meterlas en tu archivo CSS o dentro de <style> en el HTML) */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.fade-out-left {
+  animation: fadeOutLeft 0.8s ease forwards;
+}

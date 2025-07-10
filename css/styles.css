@@ -2,31 +2,6 @@
     @apply bg-gradient-to-r from-cyan-400 to-blue-600 text-white font-bold px-6 py-2 rounded-full shadow-lg;
 }
 
-.region-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.region-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border: 2px solid transparent;
-    border-radius: 9999px;
-    background: linear-gradient(120deg, #26D0FE, #1A8DFF);
-    z-index: 0;
-    transition: opacity 0.3s ease;
-    opacity: 0;
-}
-
-.region-card:hover::before {
-    opacity: 1;
-}
-
-.region-content {
-    position: relative;
-    z-index: 10;
-}
 
 /* mapa  */
 body {
@@ -40,24 +15,6 @@ body {
     background-color: #f0f0f0;
 }
 
-.section-background {
-    background: linear-gradient(to bottom right, #e0e0e0, #f8f8f8);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.region-box {
-    background-color: #33CCFF;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
-}
-
-.region-box:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(51, 204, 255, 0.4);
-    animation: none;
-}
 
 .lines-canvas {
     position: absolute;
@@ -69,34 +26,8 @@ body {
     z-index: 5;
 }
 
-.cls-1,
-.cls-2 {
-    fill: #3CF;
-}
-
-.cls-1,
-.cls-3 {
-    stroke: #F2F2F2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.cls-4 {
-    fill: #E5E5E5;
-}
-
-.cls-3 { 
-    fill: #8e3b3b;
-}
-
-.cls-5 {
-    fill: none;
-    stroke: #3CF;
-    stroke-miterlimit: 10;
-}
-
 .map-region-path {
-    stroke: #33CCFF;
+    stroke: #3d97b5;
     stroke-width: 1.5;
     z-index: 9999;
     transition: fill 0.3s ease-in-out, transform 0.2s ease-in-out;
@@ -140,18 +71,7 @@ body {
     /* Menor que el canvas */
 }
 
-.lines-canvas {
-    position: absolute;
-    /* Posicionamiento absoluto */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    /* Permite interactuar con elementos debajo del canvas */
-    z-index: 10;
-    /* Asegura que el canvas esté por encima de todo */
-}
+
 
 @keyframes pulse {
 
@@ -166,17 +86,6 @@ body {
     }
 }
 
-/*
-        @keyframes drawLine {
-            0% {
-                stroke-dashoffset: 1000;
-            }
-
-            100% {
-                stroke-dashoffset: 0;
-            }
-        }
-        */
 
 @media (max-width: 1000px) {
     #linesCanvas {
@@ -199,47 +108,12 @@ body {
   animation: typing 2.5s steps(30, end) forwards;
 }
 
-/* anmimacion inicio/
-@keyframes move1 {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(80px, 40px); }
-  100% { transform: translate(0, 0); }
-}
-
-@keyframes move2 {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(-120px, -60px); }
-  100% { transform: translate(0, 0); }
-}
-
-@keyframes move3 {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(60px, -80px); }
-  100% { transform: translate(0, 0); }
-}
-
-@keyframes move4 {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(-60px, 100px); }
-  100% { transform: translate(0, 0); }
-}
-
-@keyframes move5 {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(100px, -100px); }
-  100% { transform: translate(0, 0); }
-}
-
 @keyframes move6 {
   0% { transform: translate(0, 0); }
   50% { transform: translate(-90px, 90px); }
   100% { transform: translate(0, 0); }
 }
 
-
-/* Contenedor del fondo animado pagina inicio index*/
-/* Variables CSS para una gestión de colores más fácil */
-/* --- VARIABLES CSS GLOBALES --- */
 :root {
   --primary-dark-blue: #022e46; /* Azul muy oscuro */
   --medium-blue: #006699; /* Azul intermedio */
