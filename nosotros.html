@@ -21,6 +21,8 @@
     <script src="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/jquery-jvectormap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jvectormap@2.0.5/tests/assets/jquery-jvectormap-cl-mill.js"></script>
     <link rel="stylesheet" href="css/animacion-fondo.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
 
 </head>
 
@@ -70,24 +72,30 @@
         <div class="absolute inset-0 z-0">
             <div class="absolute top-20 left-20 w-72 h-72 bg-blue-900 rounded-full opacity-10 blur-3xl animate-pulse">
             </div>
-            <div class="absolute bottom-10 right-10 w-48 h-48 bg-sky-500 rounded-full opacity-20 blur-2xl animate-pulse">
+            <div
+                class="absolute bottom-10 right-10 w-48 h-48 bg-sky-500 rounded-full opacity-20 blur-2xl animate-pulse">
             </div>
             <div class="absolute inset-0 bg-[url('/assets/img/bg/grid-light.svg')] bg-center bg-cover opacity-10"></div>
         </div>
 
         <!-- Contenido -->
         <div class="relative z-10 max-w-5xl mx-auto text-center px-4 pt-20">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 animate-fade-in-up">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 animate-fade-in-up"
+                data-aos="fade-up" data-aos-duration="800">
                 ¿CÓMO FUNCIONA</br> <span class="text-sky-400">PARK BY VAALA</span>?
             </h1>
-            <p class="text-lg sm:text-xl font-light text-white/80 max-w-3xl mx-auto animate-fade-in-up delay-200">
-                OPERA A TRAVÉS DE UNA PLATAFORMA DIGITAL
-                <span class="font-semibold text-white">PLATAFORMA DIGITAL</span>,
-                DISEÑADA PARA
-                FACILITAR LA GESTIÓN DE ESTACIONAMIENTOS DE MANERA
-                EFICIENTE, SEGURA Y ORDENADA.
+            <p class="text-lg sm:text-xl font-light text-white/80 max-w-3xl mx-auto animate-fade-in-up delay-200"
+                data-aos="fade-up" data-aos-duration="800">
+                Opera a través de una <span class="font-semibold text-white">plataforma digital</span>,
+                diseñada para
+                facilitar la <span class="font-semibold text-white">gestión de estacionamientos</span> de manera
+                eficiente, segura y ordenada.
             </p>
-            <div class="h-1 w-20 bg-sky-400 mx-auto mt-8 rounded-full animate-grow-in delay-300"></div>
+            <div class="mt-6 flex justify-center">
+                <div
+                    class="h-1.5 w-20 bg-gradient-to-r from-sky-400 via-cyan-500 to-sky-500 rounded-full animate-pulse" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                </div>
+            </div>
         </div>
     </section>
     <section class="relative bg-white py-24 px-6 overflow-hidden"
@@ -101,14 +109,18 @@
             <!-- Texto introductorio animado con estilo destacado -->
             <div class="relative mb-16 px-4 animate-fade-in-up delay-200">
                 <p
-                    class="text-[1.1rem] md:text-lg lg:text-xl text-[#006699] font-extrabold leading-relaxed max-w-3xl mx-auto transition-all duration-500">
-                    <span class="block text-4xl py-3">SU FUNCIONAMIENTO SE BASA EN</span>
+                    class="text-[1.1rem] md:text-lg lg:text-xl text-[ #022E46] font-extrabold leading-relaxed max-w-3xl mx-auto transition-all duration-500">
+                    <span class="block text-4xl py-3" data-aos="fade-up" data-aos-duration="800">SU FUNCIONAMIENTO SE
+                        BASA EN</span>
                     <span
-                        class="font-bold text-4xl py-3 my-3 text-[#FFFFFF] tracking-wide bg-gradient-to-r from-[#33CCFF] to-[#006699] font-extrabold px-2 py-1 rounded-lg transition duration-300 hover:bg-sky-200 inline-block">
+                        class="font-bold text-4xl py-3 my-3 text-[#FFFFFF] tracking-wide bg-gradient-to-r from-[#33CCFF] to-[#006699] font-extrabold px-2 py-1 rounded-lg transition duration-300 hover:bg-sky-200 inline-block"
+                        data-aos="fade-up" data-aos-duration="800">
                         TRES PROCESOS CLAVE
                     </span>
-                    <span class="block py-3 uppercase">
-                        Que permiten controlar y optimizar los estacionamientos de manera efectiva.
+                    <span class="block py-1 font-light text-lg text-[#022E46]" data-aos="fade-up"
+                        data-aos-duration="800">
+                        Que permiten <span class="font-semibold">controlar y optimizar los estacionamientos</span> de
+                        manera efectiva.
                     </span>
                 </p>
 
@@ -122,8 +134,8 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <!-- TARJETA -->
-                <div
-                    class="relative group bg-white border border-sky-100 rounded-2xl shadow-xl p-8 text-center transition-transform duration-500 hover:scale-[1.03] hover:shadow-2xl hover:border-sky-300 animate-fade-in-up delay-100">
+                <div class="relative group bg-white border border-sky-100 rounded-2xl shadow-xl p-8 text-center transition-transform duration-500 hover:scale-[1.03] hover:shadow-2xl hover:border-sky-300 animate-fade-in-up delay-100"
+                    data-aos="fade-up" data-aos-duration="800">
                     <div class="absolute -top-5 left-4">
                         <span
                             class="w-10 h-10 bg-sky-500 text-white font-bold rounded-full shadow-lg flex items-center justify-center text-sm">1</span>
@@ -140,8 +152,8 @@
                 </div>
 
                 <!-- TARJETA -->
-                <div
-                    class="relative group bg-white border border-sky-100 rounded-2xl shadow-xl p-8 text-center transition-transform duration-500 hover:scale-[1.03] hover:shadow-2xl hover:border-sky-300 animate-fade-in-up delay-200">
+                <div class="relative group bg-white border border-sky-100 rounded-2xl shadow-xl p-8 text-center transition-transform duration-500 hover:scale-[1.03] hover:shadow-2xl hover:border-sky-300 animate-fade-in-up delay-200"
+                    data-aos="fade-up" data-aos-duration="800">
                     <div class="absolute -top-5 left-4">
                         <span
                             class="w-10 h-10 bg-sky-500 text-white font-bold rounded-full shadow-lg flex items-center justify-center text-sm">2</span>
@@ -158,20 +170,20 @@
                 </div>
 
                 <!-- TARJETA -->
-                <div
-  class="relative group bg-white border border-sky-100 rounded-2xl shadow-xl p-8 text-center transition-transform duration-500 hover:scale-[1.03] hover:shadow-2xl hover:border-sky-300 animate-fade-in-up delay-300">
+                <div class="relative group bg-white border border-sky-100 rounded-2xl shadow-xl p-8 text-center transition-transform duration-500 hover:scale-[1.03] hover:shadow-2xl hover:border-sky-300 animate-fade-in-up delay-300"
+                    data-aos="fade-up" data-aos-duration="800">
 
-  <div class="absolute -top-5 left-4">
-    <span
-      class="w-10 h-10 bg-sky-500 text-white font-bold rounded-full shadow-lg flex items-center justify-center text-sm">
-      3
-    </span>
-  </div>
+                    <div class="absolute -top-5 left-4">
+                        <span
+                            class="w-10 h-10 bg-sky-500 text-white font-bold rounded-full shadow-lg flex items-center justify-center text-sm">
+                            3
+                        </span>
+                    </div>
 
-  <div
-    class="bg-gradient-to-r from-[#33CCFF] to-[#006699] mx-auto mb-4 p-4 w-16 h-16 rounded-full flex items-center justify-center transition duration-300 group-hover:bg-sky-200">
-    <img src="/assets/img/icons/Proceso03_Sin_fondo.png" alt="Seguimiento" class="w-8 h-8" />
-  </div>
+                    <div
+                        class="bg-gradient-to-r from-[#33CCFF] to-[#006699] mx-auto mb-4 p-4 w-16 h-16 rounded-full flex items-center justify-center transition duration-300 group-hover:bg-sky-200">
+                        <img src="/assets/img/icons/Proceso03_Sin_fondo.png" alt="Seguimiento" class="w-8 h-8" />
+                    </div>
 
                     <h3 class="text-lg font-extrabold text-[#006699] mb-2">SEGUIMIENTO</h3>
                     <p class="text-sm text-[#006699] leading-relaxed">
@@ -198,79 +210,84 @@
     <section id="benefits-section" class="bg-[#F2F2F2] py-16 px-4 text-center font-sans">
         <canvas id="digitalNetworkCanvas"></canvas>
         <div class="max-w-6xl mx-auto">
-            <h2 id="benefits-title" class="text-3xl md:text-5xl font-extrabold text-[#003F6B] mb-12
-                   opacity-0 -translate-y-10 transition-all duration-1000 ease-out">
-                ¿QUÉ <span class="text-[#00C3FF]">OBTENDRÁS</span><br class="md:hidden" />
-                <span class="text-[#00C3FF]">CON NOSOTROS?</span>
+            <h2 id="benefits-title" class="text-3xl md:text-5xl font-extrabold text-[#022E46] mb-12
+                   opacity-0 -translate-y-10 transition-all duration-1000 ease-out" data-aos="fade-up"
+                data-aos-duration="800">
+                ¿QUÉ <span class="bg-gradient-to-r from-[#006699] to-[#33CCFF] bg-clip-text text-transparent">OBTENDRÁS
+                    CON NOSOTROS</span>?<br class="md:hidden" />
+
+
+
             </h2>
-            <p class="text-gray-600 max-w-3xl mx-auto text-base md:text-lg mb-12 animate-fade-in-up delay-100">
-                Accede a un ecosistema completo que transforma la gestión de estacionamientos con soluciones
-                inteligentes y conectadas.
+            <p class="text-[#022E46] max-w-3xl mx-auto text-base md:text-lg mb-12 animate-fade-in-up delay-100"
+                data-aos="fade-up" data-aos-duration="800">
+                Accede a un ecosistema completo que transforma la gestión de estacionamientos con <span
+                    class="font-bold">soluciones inteligentes y conectadas.</span>
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div id="benefit-card-1" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
                         translate-y-10 transition-all duration-700 ease-out
-                       hover:scale-105 hover:shadow-lg cursor-pointer">
+                       hover:scale-105 hover:shadow-lg cursor-pointer" data-aos="fade-up" data-aos-duration="800">
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_01.png" class="w-16 h-16" alt="Monitoreo" />
                     </div>
-                    <p class="text-[#006699] font-bold leading-tight">
+                    <p class="text-[#006699] font-bold leading-tight" data-aos="fade-up" data-aos-duration="800">
                         MONITOREO<br /><span class="font-extrabold">EN TIEMPO REAL</span>
                     </p>
                 </div>
 
                 <div id="benefit-card-2" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
                         translate-y-10 transition-all duration-700 ease-out delay-150
-                       hover:scale-105 hover:shadow-lg cursor-pointer">
+                       hover:scale-105 hover:shadow-lg cursor-pointer" data-aos="fade-up" data-aos-duration="800">
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_02.png" class="w-16 h-16" alt="Validación" />
                     </div>
-                    <p class="text-[#006699] font-bold leading-tight">
+                    <p class="text-[#006699] font-bold leading-tight" data-aos="fade-up" data-aos-duration="800">
                         VALIDACIÓN POR<br /><span class="font-extrabold">DIRECCIÓN DEL TRABAJO</span>
                     </p>
                 </div>
 
                 <div id="benefit-card-3" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
                         translate-y-10 transition-all duration-700 ease-out delay-300
-                       hover:scale-105 hover:shadow-lg cursor-pointer">
+                       hover:scale-105 hover:shadow-lg cursor-pointer" data-aos="fade-up" data-aos-duration="800">
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_03.png" class="w-16 h-16" alt="Clientes" />
                     </div>
-                    <p class="text-[#006699] font-bold leading-tight">
+                    <p class="text-[#006699] font-bold leading-tight" data-aos="fade-up" data-aos-duration="800">
                         ESPACIO PARA<br /><span class="font-extrabold">TUS CLIENTES</span>
                     </p>
                 </div>
 
                 <div id="benefit-card-4" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
                         translate-y-10 transition-all duration-700 ease-out delay-450
-                       hover:scale-105 hover:shadow-lg cursor-pointer">
+                       hover:scale-105 hover:shadow-lg cursor-pointer" data-aos="fade-up" data-aos-duration="800">
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_04.png" class="w-16 h-16" alt="SII" />
                     </div>
-                    <p class="text-[#006699] font-bold leading-tight">
+                    <p class="text-[#006699] font-bold leading-tight" data-aos="fade-up" data-aos-duration="800">
                         VENTA ENLAZADA<br /><span class="font-extrabold">AL SERVICIO DE<br />IMPUESTOS INTERNOS</span>
                     </p>
                 </div>
 
                 <div id="benefit-card-5" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
                         translate-y-10 transition-all duration-700 ease-out delay-600
-                       hover:scale-105 hover:shadow-lg cursor-pointer">
+                       hover:scale-105 hover:shadow-lg cursor-pointer" data-aos="fade-up" data-aos-duration="800">
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_05.png" class="w-16 h-16" alt="Verticales" />
                     </div>
-                    <p class="text-[#00568F] font-bold leading-tight">
+                    <p class="text-[#00568F] font-bold leading-tight" data-aos="fade-up" data-aos-duration="800">
                         NUEVAS<br /><span class="font-extrabold">VERTICALES<br />DE NEGOCIO</span>
                     </p>
                 </div>
 
                 <div id="benefit-card-6" class="bg-[white] opacity-80 rounded-2xl shadow-md py-6 px-4 flex flex-col items-center
                         translate-y-10 transition-all duration-700 ease-out delay-750
-                       hover:scale-105 hover:shadow-lg cursor-pointer">
+                       hover:scale-105 hover:shadow-lg cursor-pointer" data-aos="fade-up" data-aos-duration="800">
                     <div class="bg-transparent p-4 rounded-full mb-4">
                         <img src="assets/img/icons/ICON_06.png" class="w-16 h-16" alt="Comunicación" />
                     </div>
-                    <p class="text-[#00568F] font-bold leading-tight">
+                    <p class="text-[#00568F] font-bold leading-tight" data-aos="fade-up" data-aos-duration="800">
                         COMUNICACIÓN<br /><span class="font-extrabold">DIRECTA CON<br />TUS CLIENTES</span>
                     </p>
                 </div>
@@ -286,10 +303,10 @@
 
     <section class="bg-[#F2F2F2] py-10 px-4 font-sans">
         <div class="max-w-3xl mx-auto">
-            <div class=" px-6 py-6 text-center">
+            <div class=" px-6 py-6 text-center" data-aos="fade-up" data-aos-duration="800">
                 <!-- Llamado a la acción -->
                 <a href="contactanos.html"
-                    class="inline-flex items-center justify-center text-white bg-gradient-to-r from-[#006699] to-[#33CCFF] px-10 py-8 rounded-full text-lg font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition transform duration-300 animate-fade-in-up delay-800">
+                    class="inline-flex items-center text-2xl justify-center text-white bg-gradient-to-r from-[#006699] to-[#33CCFF] px-8 py-6 rounded-full font-bold shadow-lg hover:scale-105 hover:shadow-xl transition transform duration-300 animate-fade-in-up delay-800">
                     SÚMATE AL SOFTWARE MÁS COMPLETO →
                 </a>
             </div>
@@ -423,6 +440,13 @@
         });
     </script>
     <script src="js/animacion-fondo.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: false,
+            mirror: true
+        });
+    </script>
 </body>
 
 </html>
