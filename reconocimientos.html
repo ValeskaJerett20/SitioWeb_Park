@@ -73,7 +73,7 @@
     <!-- Título -->
     <h2 class="text-3xl md:text-5xl font-extrabold mb-2 animate-fade-in-up delay-100 z-10 relative" data-aos="fade-up"
       data-aos-duration="800">
-      SEGUIMOS <span class="text-sky-300">AVANZANDO</span>
+      SEGUIMOS <span class="text-[#33CCFF]">AVANZANDO</span>
     </h2>
 
     <!-- Subtítulo -->
@@ -116,15 +116,15 @@
       <div
         class="bg-white shadow-2xl rounded-2xl p-8 animate-fade-in-up transition-all duration-700 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-3xl"
         data-aos="fade-right" data-aos-duration="800">
-        <h4 class="text-sky-600 font-semibold text-sm mb-2">PREMIO ASIVA 2025</h4>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight mb-4">
+        <h4 class="text-[#33CCFF] font-semibold text-sm mb-2">PREMIO ASIVA 2025</h4>
+        <h2 class="text-3xl sm:text-4xl font-extrabold uppercase text-[#022E46] leading-tight mb-4">
           Reconocimiento a la <br><span class="text-primary">Innovación</span>
         </h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-[#3F3F3F] mb-4 italic" >
           "Este reconocimiento no solo celebra una iniciativa en particular, sino que también destaca el compromiso
           constante con la innovación y la excelencia que caracteriza a nuestro equipo."
         </p>
-        <p class="text-sky-700 font-semibold">Equipo Park by Vaala</p>
+        <p class="text-[#33CCFF] font-semibold">Equipo Park by Vaala</p>
         <p class="text-sm text-gray-500">Desarrolladores de soluciones tecnológicas</p>
       </div>
 
@@ -132,7 +132,7 @@
       <div class="relative animate-fade-in-up delay-300" data-aos="fade-left" data-aos-duration="800">
         <img src="assets/img/bg/Premios.png" alt="Premio ASIVA 2025"
           class="rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105" />
-        <p class="text-center text-sm text-sky-600 mt-2">Premio ASIVA 2025 - Categoría Innovación</p>
+        <p class="text-center text-sm text-[#3F3F3F] mt-2">Premio ASIVA 2025 - Categoría Innovación</p>
       </div>
     </div>
   </section>
@@ -165,6 +165,10 @@
 
   <!-- Sección -->
   <section class="relative bg-gray-100 py-24 px-4 overflow-hidden" id="significado-premio">
+
+
+    <canvas id="confetti-canvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none"></canvas>
+
     <!-- Círculos animados -->
     <div class="floating-circle w-20 h-20 top-10 left-10 bg-sky-300"></div>
     <div class="floating-circle w-14 h-14 top-1/3 right-20 bg-sky-400 animate-delay-1000"></div>
@@ -172,12 +176,12 @@
 
     <div class="max-w-7xl mx-auto text-center relative z-10">
       <!-- Título -->
-      <h2 data-aos="fade-up" class="text-3xl sm:text-4xl font-extrabold text-[#006699] mb-4">
-        LO QUE <span class="text-[#33CCFF]">SIGNIFICA</span> ESTE PREMIO
+      <h2 data-aos="fade-up" class="text-3xl sm:text-4xl font-extrabold text-[#022E46] mb-4">
+        LO QUE <span class="bg-gradient-to-r from-[#006699] to-[#33CCFF] bg-clip-text text-transparent">SIGNIFICA</span> ESTE PREMIO
       </h2>
       <p data-aos="fade-up" data-aos-delay="100"
-        class="text-[#006699] max-w-xl mx-auto uppercase text-base font-semibold mb-12">
-        Un reconocimiento que valida nuestro compromiso con la innovación y la excelencia
+        class="text-[#022E46] max-w-xl mx-auto text-lg font-light mb-12">
+        Un <span class="font-bold">reconocimiento</span> que valida nuestro compromiso con la  <span class="font-bold">innovación </span>y la <span class="font-bold">excelencia</span>
       </p>
 
       <!-- Tarjetas -->
@@ -236,10 +240,10 @@
       <h2 class="text-4xl sm:text-5xl font-extrabold mb-4" data-aos="fade-up" data-aos-duration="800">
         ¡VAMOS POR MÁS! <span class="inline-block animate-bounce"></span>
       </h2>
-      <p class="text-lg text-white/90 mb-10 max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="800">
+      <p class="text-lg text-white/90 mb-10 max-w-3xl mx-auto font-light" data-aos="fade-up" data-aos-duration="800">
         Estos reconocimientos son solo el comienzo de nuestro viaje hacia la excelencia.<br>
-        Continuamos innovando y desarrollando nuevas funcionalidades para mantener nuestro
-        liderazgo en el sector y ofrecer las mejores soluciones tecnológicas del mercado.
+        <span class="font-semibold">Continuamos innovando y desarrollando</span> nuevas funcionalidades para mantener nuestro
+        <span class="font-semibold">liderazgo en el sector y ofrecer las mejores soluciones</span> tecnológicas del mercado.
       </p>
 
       <!-- Tarjetas -->
@@ -283,7 +287,7 @@
 
       <!-- Texto destacado -->
       <div
-        class="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-md rounded-full px-6 py-3 text-sm text-white font-semibold shadow transition hover:shadow-lg"
+        class="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-md rounded-full px-6 py-3 text-lg text-white font-semibold shadow transition hover:shadow-lg"
         data-aos="fade-up" data-aos-duration="1600">
         Próximamente más innovaciones
       </div>
@@ -352,13 +356,13 @@
           </svg>
           <span>contacto@parkbyvaala.cl</span>
         </div>
-        <div class="flex items-center gap-3 text-[#D1ECF5]">
+        <!-- <div class="flex items-center gap-3 text-[#D1ECF5]">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
             viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 4.5 21.75 19.5M21.75 4.5 2.25 19.5" />
           </svg>
           <span>+56 2 XXXX XXXX</span>
-        </div>
+        </div> -->
         <div class="flex items-center gap-3 text-[#D1ECF5]">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
             viewBox="0 0 24 24">
@@ -366,7 +370,7 @@
               d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25z">
             </path>
           </svg>
-          <span>Santiago, Chile</span>
+          <span>Viña del Mar, Chile</span>
         </div>
       </div>
 
@@ -424,6 +428,8 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>AOS.init();</script>
+
+  
 
 
 </body>

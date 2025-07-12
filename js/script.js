@@ -410,35 +410,102 @@ document.addEventListener('DOMContentLoaded', () => {
   });
  // --- SECCION Hero reconocimiento texto e imagen ---
  // Simple Confetti
-const canvas = document.getElementById("confetti-canvas");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = 600;
 
-const confetti = Array.from({ length: 100 }, () => ({
-  x: Math.random() * canvas.width,
-  y: Math.random() * canvas.height,
-  r: Math.random() * 6 + 2,
-  d: Math.random() * 3 + 1,
-  color: `hsl(${Math.random() * 200 + 180}, 100%, 70%)`
-}));
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx = canvas.getContext('2d');
+  let confettis = [];
 
-function drawConfetti() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  confetti.forEach(c => {
-    ctx.beginPath();
-    ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
-    ctx.fillStyle = c.color;
-    ctx.fill();
-    c.y += c.d;
-    if (c.y > canvas.height) {
-      c.y = -10;
-      c.x = Math.random() * canvas.width;
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = document.getElementById('significado-premio').offsetHeight;
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  const shapes = ['circle', 'triangle', 'star'];
+  const colors = ['#006699', '#33CCFF'];
+
+  function randomGradient(x, y, size) {
+    const grad = ctx.createLinearGradient(x, y, x + size, y + size);
+    grad.addColorStop(0, colors[0]);
+    grad.addColorStop(1, colors[1]);
+    return grad;
+  }
+
+  function createConfetti() {
+    for (let i = 0; i < 60; i++) {
+      confettis.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: 8 + Math.random() * 12,
+        shape: shapes[Math.floor(Math.random() * shapes.length)],
+        speedY: 0.5 + Math.random() * 1.5,
+        angle: Math.random() * 360,
+        rotationSpeed: (Math.random() - 0.5) * 2,
+      });
     }
-  });
-  requestAnimationFrame(drawConfetti);
-}
-drawConfetti();
+  }
+
+  function drawShape(confetti) {
+    ctx.save();
+    ctx.translate(confetti.x, confetti.y);
+    ctx.rotate((confetti.angle * Math.PI) / 180);
+    ctx.fillStyle = randomGradient(confetti.x, confetti.y, confetti.size);
+
+    switch (confetti.shape) {
+      case 'circle':
+        ctx.beginPath();
+        ctx.arc(0, 0, confetti.size / 2, 0, 2 * Math.PI);
+        ctx.fill();
+        break;
+      case 'triangle':
+        ctx.beginPath();
+        ctx.moveTo(0, -confetti.size / 2);
+        ctx.lineTo(confetti.size / 2, confetti.size / 2);
+        ctx.lineTo(-confetti.size / 2, confetti.size / 2);
+        ctx.closePath();
+        ctx.fill();
+        break;
+      case 'star':
+        ctx.beginPath();
+        for (let i = 0; i < 5; i++) {
+          const angle = (i * 2 * Math.PI) / 5;
+          const radius = confetti.size / 2;
+          ctx.lineTo(Math.cos(angle) * radius, Math.sin(angle) * radius);
+          ctx.lineTo(
+            Math.cos(angle + Math.PI / 5) * (radius / 2),
+            Math.sin(angle + Math.PI / 5) * (radius / 2)
+          );
+        }
+        ctx.closePath();
+        ctx.fill();
+        break;
+    }
+
+    ctx.restore();
+  }
+
+  function animateConfetti() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    confettis.forEach((confetti) => {
+      confetti.y += confetti.speedY;
+      confetti.angle += confetti.rotationSpeed;
+
+      if (confetti.y > canvas.height + confetti.size) {
+        confetti.y = -confetti.size;
+        confetti.x = Math.random() * canvas.width;
+      }
+
+      drawShape(confetti);
+    });
+    requestAnimationFrame(animateConfetti);
+  }
+
+  createConfetti();
+  animateConfetti();
+
+
 
 // tailwind.config.js
 module.exports = {
@@ -568,3 +635,21 @@ const regions = [
 
   // Iniciar la animación cuando el DOM esté cargado
   window.addEventListener('DOMContentLoaded', animateCounters);
+
+  // __________ Confirmación de envío de formulario __________
+  document.getElementById('demo-form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Evita envío real
+
+    const success = document.getElementById('success-message');
+    success.classList.remove('opacity-0', 'pointer-events-none');
+    success.classList.add('opacity-100');
+
+    // Ocultar después de 4 segundos
+    setTimeout(() => {
+      success.classList.remove('opacity-100');
+      success.classList.add('opacity-0', 'pointer-events-none');
+    }, 4000);
+
+    // Opcional: limpiar formulario
+    e.target.reset();
+  });
