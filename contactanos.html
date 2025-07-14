@@ -30,7 +30,9 @@
     <div class="max-w-7xl mx-auto flex justify-between items-center px-14 py-3">
       <!-- Logo -->
       <div class="logo">
-        <img src="assets/img/logo-park.png" alt="Logo Park" class="h-16" />
+        <a href="index.html">
+          <img src="assets/img/logo-park.png" alt="Logo Park" class="h-16" />
+        </a>
       </div>
 
       <!-- Botón hamburguesa (solo visible en mobile) -->
@@ -80,11 +82,12 @@
         data-aos-duration="800">
         ¿Listo para transformar la gestión de tus estacionamientos?<br />
 
-       <span class="font-light">Contáctanos y descubre cómo Park by Vaala puede revolucionar tu negocio con tecnología de vanguardia.</span>
+        <span class="font-light">Contáctanos y descubre cómo Park by Vaala puede revolucionar tu negocio con tecnología
+          de vanguardia.</span>
       </p>
       <div class="mt-6 flex justify-center">
-        <div class="h-1.5 w-20 bg-gradient-to-r from-sky-400 via-cyan-500 to-sky-500 rounded-full animate-pulse" data-aos="fade-up"
-          data-aos-duration="1200" data-aos-delay="300">
+        <div class="h-1.5 w-20 bg-gradient-to-r from-sky-400 via-cyan-500 to-sky-500 rounded-full animate-pulse"
+          data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
         </div>
       </div>
     </div>
@@ -96,79 +99,81 @@
   <!-- SECCIÓN 3: Formulario personalizado -->
   <!-- SECCIÓN DE FORMULARIO - estilo Park by Vaala -->
   <section class="bg-white py-10 px-6">
-  <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-10 border border-gray-200 relative" data-aos="fade-up">
-    <h2 class="text-center text-3xl font-extrabold text-[#006699] mb-4">SOLICITA UNA DEMOSTRACIÓN PERSONALIZADA</h2>
-    <p class="text-center text-[#006699] mb-8">
-      Completa el formulario y nuestro equipo se pondrá en contacto contigo para agendar una demostración adaptada a tus necesidades específicas.
-    </p>
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-10 border border-gray-200 relative"
+      data-aos="fade-up">
+      <h2 class="text-center text-3xl font-extrabold text-[#006699] mb-4">SOLICITA UNA DEMOSTRACIÓN PERSONALIZADA</h2>
+      <p class="text-center text-[#006699] mb-8">
+        Completa el formulario y nuestro equipo se pondrá en contacto contigo para agendar una demostración adaptada a
+        tus necesidades específicas.
+      </p>
 
-    <!-- Mensaje de éxito oculto -->
-    <div id="successMessage" class="hidden absolute top-4 right-4 bg-green-100 text-green-800 px-4 py-2 rounded-md shadow-lg border border-green-400 transition-all duration-500 z-50">
-      ✅ Tu solicitud fue enviada correctamente.
+      <!-- Mensaje de éxito oculto -->
+      <div id="successMessage"
+        class="hidden absolute top-4 right-4 bg-green-100 text-green-800 px-4 py-2 rounded-md shadow-lg border border-green-400 transition-all duration-500 z-50">
+        ✅ Tu solicitud fue enviada correctamente.
+      </div>
+
+      <form id="demoForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Campo de ejemplo -->
+        <div>
+          <label class="block text-sm font-medium text-[#006699] mb-1">Nombre Completo *</label>
+          <input name="name" required type="text" placeholder="Ingresa tu nombre completo"
+            class="w-full border border-[#33CCFF] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-[#006699] mb-1">Comuna/Ciudad *</label>
+          <input name="city" required type="text" placeholder="¿En qué comuna te encuentras?"
+            class="w-full border border-[#33CCFF] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-[#006699] mb-1">Correo Electrónico *</label>
+          <input name="email" required type="email" placeholder="correo@empresa.com"
+            class="w-full border border-[#33CCFF] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-[#006699] mb-1">Teléfono *</label>
+          <input name="phone" required type="tel" placeholder="+56 9 XXXX XXXX"
+            class="w-full border border-[#33CCFF] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition" />
+        </div>
+
+        <div class="md:col-span-2">
+          <label class="block text-sm font-medium text-[#006699] mb-1">Asunto *</label>
+          <input name="subject" required type="text" placeholder="Asunto del proyecto"
+            class="w-full border border-[#33CCFF] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition" />
+        </div>
+
+        <div class="md:col-span-2">
+          <label class="block text-sm font-medium text-[#006699] mb-1">Mensaje Adicional</label>
+          <textarea name="message" rows="4" placeholder="Cuéntanos sobre tu proyecto..."
+            class="w-full border border-[#33CCFF] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition"></textarea>
+        </div>
+
+        <div class="md:col-span-2 text-center mt-4">
+          <button type="submit"
+            class="relative inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-[#33CCFF] to-[#006699] hover:from-sky-600 hover:to-cyan-600 text-white font-bold rounded-full shadow-lg transition-all duration-300 group overflow-hidden">
+            ENVIAR SOLICITUD
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 ml-2 transform transition-transform duration-300 group-hover:rotate-12 group-hover:translate-x-1"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 8l7.89 2.11a1 1 0 00.78 0L21 5m0 0l-5.3 14.3a1 1 0 01-1.87.3L11 13l-3.4 3.4a1 1 0 01-1.42-1.42l3.4-3.4L5 7l16-2z" />
+            </svg>
+          </button>
+        </div>
+      </form>
     </div>
-
-    <form id="demoForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Campo de ejemplo -->
-      <div>
-        <label class="block text-sm font-medium text-[#006699] mb-1">Nombre Completo *</label>
-        <input name="name" required type="text" placeholder="Ingresa tu nombre completo"
-          class="w-full border border-[#33CCFF] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition" />
-      </div>
-
-      <div>
-        <label class="block text-sm font-medium text-[#006699] mb-1">Comuna/Ciudad *</label>
-        <input name="city" required type="text" placeholder="¿En qué comuna te encuentras?"
-          class="w-full border border-[#33CCFF] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition" />
-      </div>
-
-      <div>
-        <label class="block text-sm font-medium text-[#006699] mb-1">Correo Electrónico *</label>
-        <input name="email" required type="email" placeholder="correo@empresa.com"
-          class="w-full border border-[#33CCFF] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition" />
-      </div>
-
-      <div>
-        <label class="block text-sm font-medium text-[#006699] mb-1">Teléfono *</label>
-        <input name="phone" required type="tel" placeholder="+56 9 XXXX XXXX"
-          class="w-full border border-[#33CCFF] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition" />
-      </div>
-
-      <div class="md:col-span-2">
-        <label class="block text-sm font-medium text-[#006699] mb-1">Asunto *</label>
-        <input name="subject" required type="text" placeholder="Asunto del proyecto"
-          class="w-full border border-[#33CCFF] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition" />
-      </div>
-
-      <div class="md:col-span-2">
-        <label class="block text-sm font-medium text-[#006699] mb-1">Mensaje Adicional</label>
-        <textarea name="message" rows="4" placeholder="Cuéntanos sobre tu proyecto..."
-          class="w-full border border-[#33CCFF] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition"></textarea>
-      </div>
-
-      <div class="md:col-span-2 text-center mt-4">
-        <button type="submit"
-          class="relative inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-[#33CCFF] to-[#006699] hover:from-sky-600 hover:to-cyan-600 text-white font-bold rounded-full shadow-lg transition-all duration-300 group overflow-hidden">
-          ENVIAR SOLICITUD
-          <svg xmlns="http://www.w3.org/2000/svg"
-            class="w-5 h-5 ml-2 transform transition-transform duration-300 group-hover:rotate-12 group-hover:translate-x-1"
-            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M3 8l7.89 2.11a1 1 0 00.78 0L21 5m0 0l-5.3 14.3a1 1 0 01-1.87.3L11 13l-3.4 3.4a1 1 0 01-1.42-1.42l3.4-3.4L5 7l16-2z" />
-          </svg>
-        </button>
-      </div>
-    </form>
-  </div>
-</section>
+  </section>
 
   <!-- SECCIÓN 4: TIEMPO DE ESPERA -->
   <section class="pb-10 px-4 bg-white">
     <div class="max-w-4xl mx-auto bg-[#f0faff] border border-[#d7f0fb] rounded-xl p-8 text-center shadow-sm"
       data-aos="fade-up" data-aos-duration="600">
-       <div
-                        class="pb-4 rounded-full flex items-center justify-center transition duration-300 group-hover:bg-sky-200">
-                        <img src="/assets/icons/CONTACTO-TIEMPO.png" alt="Gestión" class="w-16 h-16" />
-                    </div>
+      <div class="pb-4 rounded-full flex items-center justify-center transition duration-300 group-hover:bg-sky-200">
+        <img src="/assets/icons/CONTACTO-TIEMPO.png" alt="Gestión" class="w-16 h-16" />
+      </div>
       <h3 class="text-lg font-bold text-[#006699]">TIEMPO DE RESPUESTA GARANTIZADO</h3>
       <p class="text-[#022E46] mt-2">
         <span class="font-bold">EN UN PLAZO MÁXIMO DE 24 HORAS HÁBILES</span> recibirás una respuesta personalizada
@@ -189,10 +194,9 @@
     <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
       <!-- Email -->
       <div data-aos="fade-up" data-aos-duration="400">
-         <div
-                        class="pb-4 rounded-full flex items-center justify-center transition duration-300 group-hover:bg-sky-200">
-                        <img src="/assets/icons/CONTACTO-CORREO.png" alt="Gestión" class="w-16 h-16" />
-                    </div>
+        <div class="pb-4 rounded-full flex items-center justify-center transition duration-300 group-hover:bg-sky-200">
+          <img src="/assets/icons/CONTACTO-CORREO.png" alt="Gestión" class="w-16 h-16" />
+        </div>
         <h4 class="font-bold text-sm text-gray-700 uppercase">Email Corporativo</h4>
         <p class="text-gray-600 text-sm mt-1">contacto@parkbyvaala.cl</p>
       </div>
@@ -210,21 +214,19 @@
 
       <!-- Oficina -->
       <div data-aos="fade-up" data-aos-duration="1200">
-        <div
-                        class="pb-4 rounded-full flex items-center justify-center transition duration-300 group-hover:bg-sky-200">
-                        <img src="/assets/icons/CONTACTO-OFICINA.png" alt="Gestión" class="w-16 h-16" />
-                    </div>
+        <div class="pb-4 rounded-full flex items-center justify-center transition duration-300 group-hover:bg-sky-200">
+          <img src="/assets/icons/CONTACTO-OFICINA.png" alt="Gestión" class="w-16 h-16" />
+        </div>
         <h4 class="font-bold text-sm text-gray-700 uppercase">Oficinas</h4>
         <p class="text-gray-600 text-sm mt-1">Viña del Mar, Chile</p>
-        
+
       </div>
 
       <!-- Soporte -->
       <div data-aos="fade-up" data-aos-duration="1600">
-        <div
-                        class="pb-4 rounded-full flex items-center justify-center transition duration-300 group-hover:bg-sky-200">
-                        <img src="/assets/icons/CONTACTO-SOPORTE.png" alt="Gestión" class="w-16 h-16" />
-                    </div>
+        <div class="pb-4 rounded-full flex items-center justify-center transition duration-300 group-hover:bg-sky-200">
+          <img src="/assets/icons/CONTACTO-SOPORTE.png" alt="Gestión" class="w-16 h-16" />
+        </div>
         <h4 class="font-bold text-sm text-gray-700 uppercase">Soporte 24/7</h4>
         <p class="text-gray-600 text-sm mt-1">Lun - Vie: 8:00 - 18:00</p>
         <p class="text-gray-600 text-sm">Emergencias: 24/7</p>
@@ -345,23 +347,23 @@
     });
   </script>
   <script>
-  const form = document.getElementById('demoForm');
-  const successMsg = document.getElementById('successMessage');
+    const form = document.getElementById('demoForm');
+    const successMsg = document.getElementById('successMessage');
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    // Aquí podrías usar emailJS, fetch o similar
-    // Simulación de envío exitoso
-    successMsg.classList.remove('hidden');
+      // Aquí podrías usar emailJS, fetch o similar
+      // Simulación de envío exitoso
+      successMsg.classList.remove('hidden');
 
-    // Ocultar luego de 4 segundos
-    setTimeout(() => {
-      successMsg.classList.add('hidden');
-      form.reset();
-    }, 4000);
-  });
-</script>
+      // Ocultar luego de 4 segundos
+      setTimeout(() => {
+        successMsg.classList.add('hidden');
+        form.reset();
+      }, 4000);
+    });
+  </script>
 </body>
 
 </html>
