@@ -19,7 +19,31 @@
   <script src="js/script.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+  <!-- Estilos personalizados en tu <style> o CSS global -->
+  <style>
+    .floating-circle {
+      position: absolute;
+      border-radius: 9999px;
+      opacity: 0.2;
+      animation: float 6s ease-in-out infinite;
+      background: #0ea5e9;
+      /* sky-500 */
+    }
 
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0);
+      }
+
+      50% {
+        transform: translateY(-20px) translateX(10px);
+      }
+
+      100% {
+        transform: translateY(0) translateX(0);
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -101,14 +125,15 @@
 
   </section>
 
-  <section class="relative py-20 bg-gradient-to-b from-[#f4fbff] to-white overflow-hidden">
+  <section id="confetti-section"
+    class="relative py-24 overflow-hidden bg-gradient-to-b from-[#f4fbff] to-white text-center">
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
     <!-- Círculos flotantes -->
     <div class="absolute top-10 left-10 w-36 h-36 bg-sky-100 rounded-full opacity-30 animate-float-slow"></div>
     <div class="absolute top-40 right-20 w-24 h-24 bg-sky-200 rounded-full opacity-30 animate-float-slower"></div>
     <div class="absolute bottom-10 left-1/3 w-28 h-28 bg-sky-100 rounded-full opacity-20 animate-float-slower"></div>
-
-    <!-- Confetti Canvas -->
-    <canvas id="confetti-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
 
     <!-- Contenido -->
     <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-10 items-center">
@@ -120,7 +145,7 @@
         <h2 class="text-3xl sm:text-4xl font-extrabold uppercase text-[#022E46] leading-tight mb-4">
           Reconocimiento a la <br><span class="text-primary">Innovación</span>
         </h2>
-        <p class="text-[#3F3F3F] mb-4 italic" >
+        <p class="text-[#3F3F3F] mb-4 italic">
           "Este reconocimiento no solo celebra una iniciativa en particular, sino que también destaca el compromiso
           constante con la innovación y la excelencia que caracteriza a nuestro equipo."
         </p>
@@ -137,37 +162,11 @@
     </div>
   </section>
 
-  <!-- Estilos personalizados en tu <style> o CSS global -->
-  <style>
-    .floating-circle {
-      position: absolute;
-      border-radius: 9999px;
-      opacity: 0.2;
-      animation: float 6s ease-in-out infinite;
-      background: #0ea5e9;
-      /* sky-500 */
-    }
 
-    @keyframes float {
-      0% {
-        transform: translateY(0) translateX(0);
-      }
-
-      50% {
-        transform: translateY(-20px) translateX(10px);
-      }
-
-      100% {
-        transform: translateY(0) translateX(0);
-      }
-    }
-  </style>
 
   <!-- Sección -->
   <section class="relative bg-gray-100 py-24 px-4 overflow-hidden" id="significado-premio">
 
-
-    <canvas id="confetti-canvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none"></canvas>
 
     <!-- Círculos animados -->
     <div class="floating-circle w-20 h-20 top-10 left-10 bg-sky-300"></div>
@@ -177,11 +176,12 @@
     <div class="max-w-7xl mx-auto text-center relative z-10">
       <!-- Título -->
       <h2 data-aos="fade-up" class="text-3xl sm:text-4xl font-extrabold text-[#022E46] mb-4">
-        LO QUE <span class="bg-gradient-to-r from-[#006699] to-[#33CCFF] bg-clip-text text-transparent">SIGNIFICA</span> ESTE PREMIO
+        LO QUE <span class="bg-gradient-to-r from-[#006699] to-[#33CCFF] bg-clip-text text-transparent">SIGNIFICA</span>
+        ESTE PREMIO
       </h2>
-      <p data-aos="fade-up" data-aos-delay="100"
-        class="text-[#022E46] max-w-xl mx-auto text-lg font-light mb-12">
-        Un <span class="font-bold">reconocimiento</span> que valida nuestro compromiso con la  <span class="font-bold">innovación </span>y la <span class="font-bold">excelencia</span>
+      <p data-aos="fade-up" data-aos-delay="100" class="text-[#022E46] max-w-xl mx-auto text-lg font-light mb-12">
+        Un <span class="font-bold">reconocimiento</span> que valida nuestro compromiso con la <span
+          class="font-bold">innovación </span>y la <span class="font-bold">excelencia</span>
       </p>
 
       <!-- Tarjetas -->
@@ -242,8 +242,10 @@
       </h2>
       <p class="text-lg text-white/90 mb-10 max-w-3xl mx-auto font-light" data-aos="fade-up" data-aos-duration="800">
         Estos reconocimientos son solo el comienzo de nuestro viaje hacia la excelencia.<br>
-        <span class="font-semibold">Continuamos innovando y desarrollando</span> nuevas funcionalidades para mantener nuestro
-        <span class="font-semibold">liderazgo en el sector y ofrecer las mejores soluciones</span> tecnológicas del mercado.
+        <span class="font-semibold">Continuamos innovando y desarrollando</span> nuevas funcionalidades para mantener
+        nuestro
+        <span class="font-semibold">liderazgo en el sector y ofrecer las mejores soluciones</span> tecnológicas del
+        mercado.
       </p>
 
       <!-- Tarjetas -->
@@ -293,16 +295,6 @@
       </div>
     </div>
   </section>
-
-
-
-
-
-
-
-
-
-
 
 
   <!-- FOOTER -->
@@ -356,13 +348,7 @@
           </svg>
           <span>contacto@parkbyvaala.cl</span>
         </div>
-        <!-- <div class="flex items-center gap-3 text-[#D1ECF5]">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 4.5 21.75 19.5M21.75 4.5 2.25 19.5" />
-          </svg>
-          <span>+56 2 XXXX XXXX</span>
-        </div> -->
+
         <div class="flex items-center gap-3 text-[#D1ECF5]">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
             viewBox="0 0 24 24">
@@ -409,27 +395,45 @@
 
     });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script>
-    const canvas = document.getElementById('confetti-canvas');
-    const confetti = window.confetti.create(canvas, { resize: true, useWorker: true });
 
-    setInterval(() => {
-      confetti({
-        particleCount: 4,
-        spread: 70,
-        startVelocity: 30,
-        scalar: Math.random() * 0.8 + 0.5,
-        origin: { y: Math.random() * 0.2 },
-        colors: ['#33CBFE', '#B3E5FC', '#006699'],
-        shapes: ['square', 'circle']
-      });
-    }, 500);
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>AOS.init();</script>
+  <script>
+    const confettiCanvas = document.getElementById('confetti-canvas');
+    const myConfetti = confetti.create(confettiCanvas, { resize: true, useWorker: true });
 
-  
+    const gradientBlues = ['#007ACC', '#0094e8', '#36d2ff', '#94E6FF'];
+
+    function launchConfetti() {
+      myConfetti({
+        particleCount: 180,
+        spread: 160,
+        origin: { y: 0.6 },
+        colors: gradientBlues,
+        gravity: 0.3,
+        scalar: 1.3
+      });
+    }
+
+    let isInView = false;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !isInView) {
+          isInView = true;
+          launchConfetti();
+          const interval = setInterval(() => {
+            if (isInView) launchConfetti();
+            else clearInterval(interval);
+          }, 4000);
+        } else if (!entry.isIntersecting) {
+          isInView = false;
+        }
+      });
+    }, { threshold: 0.4 });
+
+    observer.observe(document.getElementById('confetti-section'));
+  </script>
+
 
 
 </body>
