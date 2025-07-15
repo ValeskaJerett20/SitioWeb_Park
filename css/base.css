@@ -10,9 +10,9 @@
 
 /* BASE */
 body {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Work Sans', sans-serif !important;
   font-size: 16px;
-  line-height: 1em !important;
+  line-height: 1 !important;
   color: #2C3E50; /* Texto oscuro */
   background-color: #f8f9fc;
   -webkit-font-smoothing: antialiased;
@@ -24,22 +24,21 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.03em;
-  line-height: 1em !important;
+  line-height: 1 !important;
   margin-bottom: 0.5em;
 }
 
-h1 { font-size: 2.5rem; line-height: 2.5rem; }
-h2 { font-size: 2rem; line-height: 2rem; }
-h3 { font-size: 1.5rem; line-height: 1.5rem; }
-h4 { font-size: 1.25rem; line-height: 1.25rem; }
-h5 { font-size: 1rem; line-height: 1rem; }
-h6 { font-size: 0.85rem; line-height: 0.85rem; }
+h1 { font-size: 2.5rem; line-height: 1; }
+h2 { font-size: 2rem; line-height: 1; }
+h3 { font-size: 1.5rem; line-height: 1; }
+h4 { font-size: 1.25rem; line-height: 1; }
+h5 { font-size: 1rem; line-height: 1; }
+h6 { font-size: 0.85rem; line-height: 1; }
 
 /* === PÁRRAFOS === */
 p {
   text-transform: none; /* Alta y baja */
   font-size: 1rem;
-  line-height: 1em !important;
   margin-bottom: 1em;
 }
 

@@ -386,7 +386,7 @@ body {
     color: var(--text-light);
     max-width: 750px;
     margin: 0 auto 1rem auto;
-    line-height: 1.6;
+    line-height: 1;
 }
 
 .divider {
@@ -550,7 +550,7 @@ body {
     transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, margin-top 0.4s ease-in-out;
     font-size: 0.95rem;
     color: var(--text-dark);
-    line-height: 1.6;
+    line-height: 1;
 }
 
 .region-card.active .region-details {
