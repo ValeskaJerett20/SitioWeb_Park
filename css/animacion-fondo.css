@@ -6,7 +6,7 @@
   Aseguramos que el canvas se posicione correctamente detrás de todo el contenido.
   Usamos 'fixed' para que ocupe toda la pantalla y no se mueva con el scroll.
 */
-#digitalNetworkCanvas {
+.digitalNetworkCanvas {
     display: block;
     position: fixed;
     top: 0;
