@@ -2,6 +2,12 @@
     @apply bg-gradient-to-r from-cyan-400 to-blue-600 text-white font-bold px-6 py-2 rounded-full shadow-lg;
 }
 
+/* html, body {
+  overflow-x: hidden !important;
+} */
+ /* * {
+  outline: 1px solid red;
+} */
 
 
 /* mapa  */
