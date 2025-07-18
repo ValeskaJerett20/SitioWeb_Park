@@ -19,44 +19,43 @@
 </head>
 
 <body class="bg-gray-50 text-gray-800 overflow-x-hidden">
-  <header class="header fixed w-full z-50">
-    <div
-      class="w-full bg-white max-w-[90%] sm:max-w-[95%] md:max-w-2xl lg:max-w-5xl xl:max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 xl:px-10 py-3">
-      <!-- Logo -->
-      <div class="logo">
-        <a href="index.html">
-          <img src="assets/img/logo-park.png" alt="Logo Park" class="h-16" />
-        </a>
-      </div>
-
-      <!-- Botón hamburguesa (solo visible en mobile) -->
-      <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center space-y-1"
-        aria-label="Abrir menú">
-        <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
-        <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
-        <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
-      </button>
-
-      <!-- Menú de escritorio -->
-      <nav class="hidden md:flex space-x-6">
-        <a href="index.html"
-          class="text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">INICIO</a>
-        <a href="nosotros.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">NOSOTROS</a>
-        <a href="reconocimientos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">RECONOCIMIENTOS</a>
-        <a href="contactanos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">CONTACTO</a>
-      </nav>
+  <header class="header fixed w-full z-50 overflow-x-hidden bg-white">
+  <div class="w-full max-w-[95%] sm:max-w-[95%] md:max-w-2xl lg:max-w-5xl xl:max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 xl:px-10 py-3">
+    <!-- Logo -->
+    <div class="logo flex-shrink-0">
+      <a href="index.html">
+        <img src="assets/img/logo-park.png" alt="Logo Park" class="h-12 sm:h-14 md:h-16 w-auto max-w-[160px]" />
+      </a>
     </div>
 
-    <!-- Menú desplegable para mobile -->
-    <div id="mobile-menu"
-      class="md:hidden hidden flex-col items-center bg-white shadow-inner px-4 py-4 space-y-4 text-center">
-      <a href="index.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">INICIO</a>
-      <a href="nosotros.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">NOSOTROS</a>
-      <a href="reconocimientos.html"
-        class="block text-[#006699] font-bold text-sm hover:text-blue-600">RECONOCIMIENTO</a>
-      <a href="contactanos.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">CONTACTO</a>
-    </div>
-  </header>
+    <!-- Botón hamburguesa (solo visible en mobile) -->
+    <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center space-y-1"
+      aria-label="Abrir menú">
+      <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+      <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+      <span class="block w-6 h-0.5 bg-[#006699] transition-transform duration-300"></span>
+    </button>
+
+    <!-- Menú de escritorio -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html"
+        class="text-sm font-bold text-[#35D1FE] hover:text-[#35D1FE] border-b-2 border-[#35D1FE]">INICIO</a>
+      <a href="nosotros.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">NOSOTROS</a>
+      <a href="reconocimientos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">RECONOCIMIENTOS</a>
+      <a href="contactanos.html" class="text-sm font-bold text-[#006699] hover:text-blue-600">CONTACTO</a>
+    </nav>
+  </div>
+
+  <!-- Menú desplegable para mobile -->
+  <div id="mobile-menu"
+    class="md:hidden hidden flex flex-col items-center bg-white shadow-inner px-4 py-4 space-y-4 text-center w-full max-w-full overflow-x-hidden">
+    <a href="index.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">INICIO</a>
+    <a href="nosotros.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">NOSOTROS</a>
+    <a href="reconocimientos.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">RECONOCIMIENTOS</a>
+    <a href="contactanos.html" class="block text-[#006699] font-bold text-sm hover:text-blue-600">CONTACTO</a>
+  </div>
+</header>
+
   <div class="flex flex-row flex-wrap w-full justify-center items-center p-0 border border-gray-300 bg-gray-50 h-36">
 
     <section class="relative z-100 w-full overflow-hidden text-white font-['Work_Sans']">
@@ -165,7 +164,7 @@
         </div>
       </div>
     </section>
-    <section class="bg-[#111827]" style="width: -webkit-fill-available;">
+    <section class="bg-[#111827] roun">
 
       <canvas class="digital-network-canvas w-full h-full absolute top-0 left-0"></canvas>
 
